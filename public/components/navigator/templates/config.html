@@ -1,0 +1,40 @@
+<div id='component-navigator-form'>
+    <form>     
+        <div class="section">导航信息</div>
+        <div class='filed-wrapper clearfix'>
+            <ul class="sortable-field list-unstyled">
+                <% for (i in data) { %>
+                <li>
+                    <input disabled maxlength="6" class="name-field" type="text" name="name" value="<%= data[i].name %>"/>
+
+                    <div class="toggle-visible <% if(data[i].visible == 1) print('visible') %>"><% if(data[i].visible == 1) print('显示中'); else print('已隐藏') %></div>
+                    <input class="visible-field" type="hidden" name="visible" value="<%= data[i].visible %>"/>
+                    <input class="link-field" type="hidden" name="link" value="<%= data[i].link %>"/>
+                    <input class="code-field" type="hidden" name="code" value="<%= data[i].code %>"/>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">上间距</div> 
+            <div class="field">
+                无：<input <% if(hasMarginTop == 'no') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top' value='no'/> 
+                有：<input <% if(hasMarginTop == 'yes') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top' value='yes'/>
+            </div>
+        </div>
+        <div class="section">导航样式</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="title-theme">
+                <div class="select-wrapper <% if(themeId == 'theme-1') print('active') %>" data-role="themeId" data-val="theme-1">
+                    <img src="/marionette/js/components/navigator/images/theme_1.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(themeId == 'theme-2') print('active') %>" data-role="themeId" data-val="theme-2">
+                    <img src="/marionette/js/components/navigator/images/theme_2.png">
+                    <div class="selected-icon"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

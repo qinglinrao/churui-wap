@@ -1,0 +1,50 @@
+.component-banner {
+    #banner {
+        width: 100%;
+        height: 7em;
+        position: relative;
+
+        .banner-img,
+        .banner-img img {
+            width: 100%;
+            height: 7em;
+        }
+    }
+}
+
+
+
+/*
+* ==== edit form =====
+*/
+
+#banner-list li {
+    padding: 5px 5px 5px 15px;
+    position: relative;
+    .delete-item{
+        position: absolute;
+        right: 0;
+        top: -1px;
+        display: none;
+        cursor: pointer;
+    }
+
+    .banner-img img{
+        width: 147px;
+        float: left;
+    }
+
+    .slide-name input,
+    .slide-link input{
+        width: 150px;
+        height: 30px;
+        padding: 0 10px;
+        margin-left: 10px;
+        float: left;
+        border: 1px solid #cecccd;
+    }
+    .slide-name input{
+        margin-bottom: 5px;
+    }
+
+}

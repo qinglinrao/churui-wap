@@ -1,0 +1,137 @@
+.component-product.has-border {
+  border: 1px solid #ccbaae;
+  border-radius: 0.4em;
+  overflow: hidden; }
+  .component-product.has-border.tpl_1 {
+    border: none; }
+  .component-product.has-border.tpl_2 .product:last-child {
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em; }
+.component-product .component-title {
+  color: #634932;
+  height: 1em;
+  line-height: 0.9em;
+  margin-top: 0.5em;
+  margin-bottom: 0.4em; }
+  .component-product .component-title > span {
+    font-size: 0.9em; }
+  .component-product .component-title.title-theme-2 {
+    border-left: 0.2em solid #46939c; }
+.component-product.tpl_1 .product {
+  width: 7.25em;
+  float: left;
+  margin-bottom: 0.5em;
+  background-color: #fff;
+  margin-left: 0.5em; }
+  .component-product.tpl_1 .product .prod-img {
+    width: 100%;
+    height: 7.25em;
+    background: #ccc;
+    margin-bottom: 0.25em; }
+  .component-product.tpl_1 .product .prod-name {
+    color: #63492f;
+    height: 2em;
+    line-height: 0.75em;
+    padding: 0 0.25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative; }
+    .component-product.tpl_1 .product .prod-name span {
+      font-size: 0.6em; }
+  .component-product.tpl_1 .product .prod-saleprice {
+    color: #8f3523;
+    float: left;
+    height: 1em;
+    line-height: 0.75em;
+    padding: 0 0.25em; }
+    .component-product.tpl_1 .product .prod-saleprice span {
+      font-size: 0.6em; }
+  .component-product.tpl_1 .product .prod-parprice {
+    color: #8f3523;
+    padding: 0 0.25em; }
+    .component-product.tpl_1 .product .prod-parprice span {
+      font-size: 0.6em; }
+  .component-product.tpl_1 .product .prod-sale {
+    color: #888;
+    float: right;
+    height: 1em;
+    line-height: 0.75em;
+    padding: 0 0.25em; }
+    .component-product.tpl_1 .product .prod-sale span {
+      font-size: 0.6em; }
+.component-product.tpl_1.has-border .product {
+  border: 1px solid #ccbaae; }
+  .component-product.tpl_1.has-border .product.last {
+    margin-bottom: 0px; }
+.component-product.tpl_1.theme-2 .product .prod-img {
+  background: #30cab2; }
+.component-product.tpl_2 {
+  background: #fff;
+  width: 15em;
+  margin-left: 0.5em;
+  margin-right: 0.5em; }
+  .component-product.tpl_2 .component-title {
+    margin-bottom: 0; }
+  .component-product.tpl_2 .product {
+    border-bottom: 1px solid transparent;
+    background-color: #fff;
+    border-bottom: 1px solid #ccbaae; }
+    .component-product.tpl_2 .product:last-child {
+      border-bottom: 0; }
+    .component-product.tpl_2 .product:first-child {
+      padding-top: 0; }
+    .component-product.tpl_2 .product .prod-img {
+      float: left;
+      width: 5em;
+      height: 5em;
+      background: #ccc;
+      margin: 0.25em; }
+    .component-product.tpl_2 .product .prod-name {
+      color: #63492f;
+      float: left;
+      width: 8.25em;
+      height: 2em;
+      line-height: 0.75em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      margin-top: 0.5em; }
+      .component-product.tpl_2 .product .prod-name span {
+        font-size: 0.75em; }
+    .component-product.tpl_2 .product .prod-parprice {
+      color: #c5c4c4;
+      padding-top: 0.25em;
+      text-decoration: line-through;
+      width: 8.25em;
+      float: left;
+      line-height: 1em; }
+      .component-product.tpl_2 .product .prod-parprice span {
+        font-size: 0.7em; }
+    .component-product.tpl_2 .product .prod-saleprice {
+      color: #8f3523;
+      float: left;
+      width: 8.25em;
+      line-height: 1em; }
+      .component-product.tpl_2 .product .prod-saleprice span {
+        font-size: 1em; }
+  .component-product.tpl_2.theme-2 .product .prod-img {
+    background: #30cab2; }
+
+/*
+* ==== edit form ======
+*/
+.products-list li {
+  margin-bottom: 10px;
+  height: 70px; }
+
+.products-list li .prod-img {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-right: 10px; }
+
+.products-list li .prod-name,
+.products-list li .prod-desc {
+  float: left;
+  width: 260px; }

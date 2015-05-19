@@ -1,0 +1,57 @@
+a:hover{
+    text-decoration: none;
+}
+
+.phone-wrapper-inner{
+    font-size: 32px;
+}
+
+#preview-region{
+    font-size: 62.5%;
+    width: 320px;
+    margin: 0 auto;
+}
+
+#preview-region .region-warp {
+    min-height: 480px;
+    min-width: 320px;
+    max-width: 320px;
+    background-color: #edebde;
+    padding-bottom: 10px;
+}
+
+#preview-region .ui-draggable .title{
+    font-size: 16px;
+}
+
+form{
+    margin: 0;
+}
+/*
+ public
+*/
+
+.has-padding{
+     padding-left: 0.5em;
+     padding-right: 0.5em;
+ }
+
+.margin-top{
+    margin-top: 0.5em;
+}
+
+.float-right{
+    float: right;
+}
+
+.qrcode-wrapper{
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    padding-left: 200px;
+    z-index: -1;
+}
+.qrcode-text{
+    font-size: 16px;
+    text-align: center;
+}

@@ -1,0 +1,65 @@
+.component-slideshow #slideshow {
+  width: 320px;
+  height: 140px;
+  position: relative; }
+  .component-slideshow #slideshow .slide {
+    width: 320px;
+    height: 140px; }
+    .component-slideshow #slideshow .slide .slide-img,
+    .component-slideshow #slideshow .slide .slide-img img {
+      width: 320px;
+      height: 140px; }
+.component-slideshow .owl-controls .owl-dots {
+  position: absolute;
+  z-index: 99;
+  width: 320px;
+  height: 20px;
+  bottom: 0;
+  text-align: center; }
+  .component-slideshow .owl-controls .owl-dots .owl-dot {
+    display: inline-block;
+    background: #fff;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin: 6px 2px; }
+    .component-slideshow .owl-controls .owl-dots .owl-dot.active {
+      background: #ed4670; }
+
+/*
+*==== edit form ====
+*/
+#slides-list li {
+  padding: 5px 5px 5px 15px;
+  border: 2px solid transparent;
+  position: relative; }
+
+#slides-list li:hover {
+  border-color: #30cab2; }
+
+#slides-list li .delete-item {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  display: none;
+  cursor: pointer; }
+
+#slides-list li:hover .delete-item {
+  display: block; }
+
+#slides-list li .slide-img img {
+  width: 80px;
+  height: 65px;
+  float: left; }
+
+#slides-list li .slide-name input,
+#slides-list li .slide-link input {
+  width: 210px;
+  height: 30px;
+  padding: 0 10px;
+  margin-left: 10px;
+  float: left;
+  border: 1px solid #cecccd; }
+
+#slides-list li .slide-name input {
+  margin-bottom: 5px; }

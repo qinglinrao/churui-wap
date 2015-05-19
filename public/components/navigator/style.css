@@ -1,0 +1,122 @@
+.component-navigator .component-title.title-theme-1 {
+  padding: 0.1em 0.5em;
+  margin: 0.1em; }
+.component-navigator .component-title.title-theme-2 {
+  padding: 0.1em 0.5em;
+  border-left: 0.25em solid #000;
+  margin: 0.1em; }
+.component-navigator .nav-item {
+  float: left;
+  padding-bottom: 0.75em;
+  min-width: 25%; }
+  .component-navigator .nav-item .nav-item-img {
+    height: 2.25em;
+    margin: 0 auto; }
+  .component-navigator .nav-item .nav-item-name {
+    text-align: center;
+    height: 1em;
+    line-height: 1em;
+    overflow: hidden;
+    position: relative; }
+    .component-navigator .nav-item .nav-item-name span {
+      font-size: 0.6em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.shopping-cart {
+  background: url("./images/shopping_cart_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.orders {
+  background: url("./images/orders_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.categories {
+  background: url("./images/categories_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.cod {
+  background: url("./images/cod_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.collect {
+  background: url("./images/collect_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.deliver {
+  background: url("./images/deliver_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.guarantee {
+  background: url("./images/guarantee_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.maintain {
+  background: url("./images/maintain_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.postage {
+  background: url("./images/postage_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.profile {
+  background: url("./images/profile_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.returns {
+  background: url("./images/returns_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-1 .nav-item .nav-item-img.service {
+  background: url("./images/service_1.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.shopping-cart {
+  background: url("./images/shopping_cart_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.orders {
+  background: url("./images/orders_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.categories {
+  background: url("./images/categories_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.cod {
+  background: url("./images/cod_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.collect {
+  background: url("./images/collect_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.deliver {
+  background: url("./images/deliver_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.guarantee {
+  background: url("./images/guarantee_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.maintain {
+  background: url("./images/maintain_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.postage {
+  background: url("./images/postage_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.profile {
+  background: url("./images/profile_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.returns {
+  background: url("./images/returns_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+.component-navigator.theme-2 .nav-item .nav-item-img.service {
+  background: url("./images/service_2.png") center center no-repeat;
+  background-size: 2em 2em; }
+
+/*
+* ==== edit form====
+*/
+#component-navigator-form .sortable-field li {
+  padding: 5px;
+  border: 2px solid transparent;
+  position: relative; }
+
+#component-navigator-form .sortable-field li:hover {
+  border-color: #30cab2; }
+
+#component-navigator-form .sortable-field li .toggle-visible {
+  float: right;
+  margin-right: 50px;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+  background: #7f7f7f;
+  padding: 0 5px;
+  cursor: pointer; }
+
+#component-navigator-form .sortable-field li .toggle-visible.visible {
+  background-color: #30cab2; }
+
+#component-navigator-form .sortable-field li .name-field {
+  border: 1px solid #cecccd;
+  padding: 0 10px; }

@@ -1,0 +1,84 @@
+<div id='component-product-form'>
+<div id='component-product-form'>
+    <form>
+        <div class="section">橱窗信息</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">栏目标题</div> 
+            <div class="field">
+                无：<input <% if(hasTitle == 'no') print('checked="checked"') %> data-role='hasTitle' type='radio' name='has_title' class='with-role field-has-title' value='no'/> 
+                有：<input <% if(hasTitle == 'yes') print('checked="checked"') %> data-role='hasTitle' type='radio' name='has_title' class='with-role field-has-title' value='yes'/>
+                <div class="section-title-info clearfix">
+                    <input data-role="componentName" type="text" class="field-title with-role" placeholder="栏目标题" value="<%= componentName %>"/>
+                    <br/><br/>标题样式<br/>
+                    <div class="select-wrapper <% if(titleTheme == 'title-theme-1') print('active') %>" data-role="titleTheme" data-val="title-theme-1" >
+                        <img src="/marionette/js/components/products/images/title_theme_1.png">
+                        <div class="selected-icon"></div>
+                    </div>
+                    <div class="select-wrapper <% if(titleTheme == 'title-theme-2') print('active') %>"  data-role="titleTheme" data-val="title-theme-2">
+                        <img  src="/marionette/js/components/products/images/title_theme_2.png">
+                        <div class="selected-icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">边框</div> 
+            <div class="field">
+                无：<input <% if(hasBorder == 'no') print('checked="checked"') %> data-role='hasBorder' type='radio' name='has_border' class='field-border with-role' value='no'/> 
+                有：<input <% if(hasBorder == 'yes') print('checked="checked"') %> data-role='hasBorder' type='radio' name='has_border' class='field-border with-role' value='yes'/>
+            </div>
+        </div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">商品数量</div> 
+            <div class="field">
+                <input data-role='dataLimit' type='text' name='product_num' value="<%= dataLimit %>" class='product-num spin-button with-role'/>
+            </div>
+        </div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">上间距</div> 
+            <div class="field">
+                无：<input <% if(hasMarginTop == 'no') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top with-role' value='no'/> 
+                有：<input <% if(hasMarginTop == 'yes') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top with-role' value='yes'/>
+            </div>
+        </div>
+        <!--<div class='filed-wrapper clearfix'>
+            <div class="field-label">橱窗样式</div> 
+            <div class="field">
+                <select data-role="themeId">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>-->
+        <div class="section">橱窗结构</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="title-theme">
+                <div class="select-wrapper <% if(templateId == 'tpl_1') print('active') %>" data-role="templateId" data-val="tpl_1">
+                    <img src="/marionette/js/components/products/images/product_tpl_1.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(templateId == 'tpl_2') print('active') %>" data-role="templateId" data-val="tpl_2">
+                    <img src="/marionette/js/components/products/images/product_tpl_2.png">
+                    <div class="selected-icon"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="section">
+        商品列表 <a class="fancybox add-product" data-fancybox-type="iframe" href="http://backbonejs.org/#Events-listenTo">+添加商品</a>
+    </div>
+    <div id="products-list" class="products-list clearfix">
+        <ul class="sortable-list list-unstyled">
+            <% for (i in data){ %>
+            <li id="pid_1" class="product clearfix" data-id="<%= data[i].id %>">
+                <img class="prod-img" src="<%= data[i].thumb.url %>"/>
+                <div class="prod-name" data-saleprice="<%=data[i].sale_price %>"
+                     data-parprice="<%=data[i].par_price %>" data-sale="<%=data[i].sale_count %>"><%=data[i].name
+                    %></div>
+                <div class="prod-price">￥<%=data[i].sale_price %></div>
+            </li>
+            <% } %>      
+        </ol>
+    </div>
+</div>

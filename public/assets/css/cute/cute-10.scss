@@ -1,0 +1,1564 @@
+
+// 可爱10
+.cute-10 {
+
+  // 字体颜色
+  $font-color-title:#3f3f3f; // 一级标题
+  $font-color-m-t:#3f3f3f; // 二级标题
+  $font-color-s-c:#888888; // 内容
+  $price-color: #fd4788;   // 价格
+  $order-color-top: #fe954f; // 待发货
+  $common-color: #888888;   // 通用字体
+  $active-link-color: #a56afb; // 链接及线条选中颜色
+  $f-special-color:#ffffff;// 特殊的字体。白色
+  $form-tip-color:#cacac9; // 表单提示文字
+  $font-head-color:#ffffff;// 头部文字bar
+
+  // 线条颜色
+  $border-menu-color:#fdfcff;// top-menu 线条
+  $border-color: #e8e8e8; // 产品边框、登录边框、选择边框
+  $border-common-color:#e8e8e8;// 通用线条
+  $owl-border-color:rgba(250,129,134,0.5); // slide  border;
+
+
+  // 按钮颜色
+  $button-main-color: #b396df;// 与主题风格相似按钮颜色
+  $button-other-color: #ff5c9a;// 其他按钮颜色、icon背景颜色、返回顶部背景颜色
+  $button-login-color: #b396df;// 登录按钮
+  $button-border-color: #b396df; // 无背景按钮边框颜色
+  $num-icon-bg:#b396df;// 购物车数字背景颜色；
+  $owl-icon-color:#fa8186; // slide  icon;
+
+
+  // 背景颜色
+  $backgournd-color: #fbf9fe; // 全局背景颜色
+  $head-bg-color: #b396df;  // 头部背景bar
+  $head-dropdown-color: #b396df; // 分享背景 返回顶部icon背景rgba(250,149,179,0.9)
+  $b-special-color:#ffffff;// 特殊的背景。白色
+  $active-bg-color: #a56afb; // 地址选中颜色
+  $level-bg-color:#ff5c9a;// 进度条背景颜色
+
+  background: $backgournd-color;
+
+  .iradio,
+  .icheckbox {
+    background-image: url("../../images/cute10/iradio.png") ;
+  }
+  .iradio.checked,
+  .icheckbox.checked {
+
+  }
+
+  .text-field{
+    border-color: $border-color;
+  }
+
+  .submit-field {
+    background-color: $button-login-color;
+    color: $f-special-color;
+  }
+
+  .no-data{
+    span {
+      color: $font-color-m-t;
+    }
+  }
+
+  #header {
+    background-color: $head-bg-color;
+    color:$font-head-color;
+
+    .left{
+      .go-back{
+        background: url("../../images/cute10/back_arrow.png") left center / 3em 5em no-repeat;
+      }
+    }
+
+    .center{
+      #page-title{
+      }
+      #search-form{
+        .keyword-field{
+          border-color:  $border-common-color;
+          color: $common-color;
+        }
+        .submit{
+          background: url('../../images/cute10/search_bt_bg.png') center center /4em 4em no-repeat transparent;
+        }
+      }
+    }
+
+    .right {
+      .icon-menu{
+        background: transparent center center / 100% 100% no-repeat;
+      }
+      .dropdown-menu-wrapper {
+        background-color: $head-dropdown-color;
+        .up-arrow {
+          background: url("../../images/cute10/up_arrow_1.png") center center / 2.2em 1.7em no-repeat;
+        }
+        li {
+          &.share {
+            background: url("../../images/cute10/share_icon.png") left center / 4em 4em no-repeat;
+          }
+          &.home {
+            background: url("../../images/cute10/home_icon.png") left center / 4em 4em no-repeat;
+          }
+          a {
+            color: $f-special-color;
+          }
+        }
+      }
+      .new-address{
+        background-image: url("../../images/cute10/new_addr_icon.png");
+      }
+      .categories{
+        background-image: url("../../images/cute10/cat_icon.png");
+      }
+      .links-toggle-button{
+        background-image: url("../../images/cute10/menu_icon.png");
+      }
+      .home{
+        background-image: url("../../images/cute10/home_icon_1.png");
+      }
+      .shopping-cart{
+        background-image: url("../../images/cute10/cart_icon.png");
+      }
+    }
+  }
+
+  #main-content {
+
+
+    .top-menu {
+      background-color: #fafaf7;
+      border-bottom-color: $border-menu-color;
+      ul li {
+
+        a {
+          color: $font-color-s-c;
+          &.active {
+            color: $active-link-color;
+            border-bottom-color: $active-link-color;
+          }
+        }
+      }
+
+    }
+
+    .product-param-wrapper {
+      background-color: $b-special-color;
+
+      li {
+        border-bottom-color: $border-color;
+        &:last-child {
+          border-bottom: none;
+        }
+        .param-name {
+          color: $font-color-m-t;
+        }
+        .param-value {
+          @extend .param-name;
+        }
+      }
+    }
+
+    .product-detail {
+      color: $font-color-m-t;
+      img {
+
+      }
+      p {
+
+      }
+    }
+
+    .slideshow-wrapper {
+      .slide {
+
+      }
+      .slide-img {
+        img {
+
+        }
+      }
+      .owl-controls {
+        background: url("../../images/cute10/grey_bg.png") 0 0 repeat;
+        .owl-pagination {
+          .owl-page {
+            border-color: $owl-border-color;
+            &.active {
+              background-color:$owl-icon-color;
+            }
+          }
+        }
+      }
+    }
+
+    .filter-bar-wrapper {
+      background-color: $b-special-color;
+      .filters {
+        li {
+          a {
+            color: $common-color;
+          }
+        }
+      }
+      .theme-switcher {
+        li {
+          span {
+            color: $font-color-title;
+            background: url("../../images/cute10/theme_switcher.png") left top / 6.9em 3.14em no-repeat;
+            &.two-col {
+              background-position: left top;
+              &.active {
+                background-position: left bottom;
+              }
+            }
+            &.one-col {
+              background-position: -2.64em top;
+              &.active {
+                background-position: -2.64em bottom;
+              }
+            }
+            &.image {
+              background-position: right top;
+              &.active {
+                background-position: right bottom;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 商品分类
+    .product-categories {
+      background-color: $b-special-color;
+      .left {
+        background-color: $b-special-color;
+        li {
+          border-right-color: $border-color;
+          border-bottom-color: $border-color;
+
+          &.active {
+            background-color: $backgournd-color;
+            border-left-color:  $active-bg-color;
+            border-right-color: transparent;
+            a {
+              color: $active-link-color;
+            }
+          }
+          a {
+            color: $font-color-m-t;
+          }
+        }
+      }
+      .right {
+        background-color: $backgournd-color;
+        .section-title {
+          color: $font-color-m-t;
+        }
+        .list-wrapper {
+          ul {
+          }
+          li {
+            img {
+
+            }
+            span {
+              color: $font-color-m-t;
+
+            }
+          }
+        }
+        .brands-list {
+
+          li {
+
+            img {
+              border-color: $border-color;
+            }
+          }
+        }
+      }
+    }
+
+    //商品列表
+    .products-list {
+//      background-color: $b-special-color;
+      &.two-col {
+
+        .product {
+          border-color: $border-color;
+          background-color: $b-special-color;
+          .prod-img img {
+
+          }
+          .prod-name {
+            a {
+              color: $font-color-m-t;
+            }
+          }
+          .prod-par-price {
+            span {
+              color:  $common-color;
+            }
+          }
+          .prod-sale-price {
+            color: $price-color;
+          }
+          .prod-sales-count {
+            span {
+              color: $common-color;
+            }
+          }
+
+        }
+      }
+
+      &.one-col {
+        background-color: $b-special-color;
+        .product {
+          border-bottom-color: $border-color;
+          .prod-img {
+            img {
+            }
+          }
+          .prod-name {
+
+            a {
+              color: $font-color-m-t;
+            }
+          }
+          .prod-par-price {
+
+            span {
+              color:  $common-color;
+            }
+          }
+          .prod-sale-price {
+
+            span {
+              color: $price-color;
+            }
+          }
+          .prod-sales-count {
+
+            span {
+              color: $common-color;
+            }
+          }
+        }
+      }
+      &.image {
+        .product {
+          border-color: $border-color;
+          .prod-img {
+            background-color: $b-special-color;
+            img {
+
+            }
+          }
+          .prod-name {
+            a {
+              color: $font-color-m-t;
+            }
+          }
+          .prod-par-price {
+            span {
+              color:  $common-color;
+            }
+          }
+          .prod-sale-price {
+
+            span {
+              color: $price-color;
+            }
+          }
+          .prod-sales-count {
+            span {
+              color: $common-color;
+            }
+
+          }
+        }
+      }
+    }
+
+    //商品详情
+    .product-base-info {
+      background-color: $b-special-color;
+      border-bottom-color: $border-color;
+
+      .top {
+        .prod-name {
+          border-right-color: $border-common-color;
+          a {
+            color: $font-color-title;
+          }
+
+        }
+        .collect-button {
+          color: $common-color;
+          span.collect-icon {
+            background: url("../../images/cute10/comment_star.png") right top / 8.1em 3.6em no-repeat;
+          }
+          span.collect-text {
+            .collected {
+              display: none;
+            }
+          }
+          &.collected {
+            span.collect-icon {
+              background-position: left top;
+            }
+            span.collect-text {
+              .collected {
+                display: inline;
+              }
+            }
+          }
+        }
+      }
+      .middle {
+        border-bottom-color: $border-color;
+        .sale-price-wrapper {
+          .prod-sale-price {
+            span {
+              color: $price-color;
+            }
+          }
+          .activity {
+            background-color: $head-bg-color;
+            span {
+              color: $f-special-color;
+            }
+          }
+        }
+        .par-price-wrapper {
+          color: $common-color;
+          .prod-par-price {
+            border-right-color: $border-common-color;
+            span {
+
+            }
+          }
+          .prod-sale-count {
+            span {
+            }
+          }
+        }
+        .express-price {
+          color: $common-color;
+          span {
+
+          }
+        }
+      }
+      .bottom {
+        border-bottom-color: $border-color;
+        .label {
+          color: $font-color-m-t;
+        }
+        .services-list {
+          li {
+            color: $common-color;
+            span {
+
+            }
+          }
+        }
+      }
+      .select-attributes {
+        background: url("../../images/cute10/right_arrow.png") right center / 2em 3em no-repeat;
+        span {
+          color: $font-color-m-t;
+        }
+      }
+      .more-detail {
+        border-top-color: $border-color;
+        a {
+          color:  $font-color-m-t;
+        }
+      }
+    }
+
+    //商品评价
+    .product-comments {
+      @extend .product-base-info;
+      .comments-info {
+        border-bottom-color: $border-color;
+
+        .comments-count {
+          color:$font-color-title;
+        }
+      }
+      .comments-avg-start {
+        .five-star {
+          li {
+            background: url("../../images/cute10/comment_star.png") right center / 8.1em 3.6em no-repeat;
+            &.active {
+              background-position: left center;
+            }
+          }
+        }
+      }
+
+      .comment {
+        border-bottom-color: $border-color;
+        .comment-user {
+          .comments-avg-start {
+
+          }
+          .user-pic {
+            img {
+            }
+          }
+          .user-name {
+            color: $font-color-m-t;
+          }
+        }
+        .comment-detail {
+          span {
+            color: $font-color-s-c;
+          }
+        }
+        .comment-time,
+        .comment-prod-attr {
+          color: $common-color;
+        }
+      }
+      .comments-view-more {
+        a {
+          color: $font-color-m-t;
+        }
+      }
+    }
+
+    //我的评价
+    .comments-list {
+      .comment {
+        border-bottom-color: $border-color;
+        .comment-time {
+          color: $font-color-m-t;
+        }
+        .comment-text {
+
+          color: $common-color;
+        }
+        .comment-relate-product {
+          background-color: $b-special-color;
+
+          .up-arrow {
+
+          }
+          .prod-img {
+            img {
+
+            }
+          }
+          .prod-name {
+            color: #3f3f3f;
+          }
+          .prod-sale-price {
+            color: $price-color;
+          }
+        }
+        .comment-reply {
+          font-size: 2.6em;
+          color: $common-color;
+          span.user-name {
+            color: $font-color-m-t;
+          }
+        }
+      }
+    }
+
+    //添加评价
+    .comments-new {
+      .product-comment {
+        border-bottom-color: $border-color;
+        .product {
+          .prod-img {
+
+            border-color: $border-color;
+            img {
+
+            }
+          }
+          .prod-name {
+            span {
+              color: $font-color-m-t;
+            }
+          }
+        }
+        .comment {
+          .five-star-wrapper {
+            label {
+              span {
+                color: $font-color-m-t;
+              }
+            }
+            .five-star {
+              li {
+                background: url("../../images/cute10/comment_star.png") right center / 8.1em 3.6em no-repeat;
+                &.active {
+                  background-position: left center;
+                }
+              }
+            }
+          }
+          .comment-text-field-wrapper {
+
+            border-color: $border-color;
+            background-color: $b-special-color;
+            .comment-text-field {
+              border: none;
+              color: $common-color;
+              resize: none;
+            }
+          }
+          .comment-images-wrapper {
+
+            .img-block {
+              border-color: $border-common-color;
+              &.add-img {
+                background: url("../../images/cute10/add_img_bt_bg.png") center center / 2.4em no-repeat;
+                border-color:  $font-color-m-t;
+              }
+              img {
+
+              }
+              .add-img-field {
+
+              }
+            }
+          }
+        }
+      }
+    }
+    //订单(列表与详情共用此样式)
+    .order {
+
+      background-color: $f-special-color;
+      border-top-color: $border-color;
+      border-bottom-color: $border-color;
+
+      .order-top {
+
+        border-bottom-color: $backgournd-color;
+        .order-sn {
+          color: $font-color-m-t;
+          a {
+            color: $font-color-m-t;
+          }
+        }
+        .order-status {
+          color: $order-color-top;
+        }
+      }
+      .order-products-list {
+        .order-product {
+          @extend .order-top;
+          .left {
+            .prod-img {
+              img {
+
+              }
+            }
+          }
+          .center {
+            .prod-title {
+              a {
+                color: $font-color-m-t;
+              }
+            }
+            .prod-attrs {
+              span {
+                color:$font-color-s-c;
+              }
+            }
+          }
+          .right {
+            .prod-sale-price {
+              span {
+                color: $price-color;
+              }
+            }
+            .prod-num {
+              span {
+                color: $common-color;
+              }
+            }
+          }
+        }
+      }
+      .order-bottom {
+        @extend .order-top;
+        ul {
+          li {
+            color: $font-color-s-c;
+            span {
+              color: $price-color;
+            }
+          }
+        }
+      }
+      .order-actions-inner {
+        .order-action {
+          color: $font-color-s-c;
+          border-color: $button-border-color;
+          span {
+          }
+          &:hover,
+          &:active {
+            background-color: $button-main-color;
+            color: $f-special-color;
+          }
+        }
+      }
+    }
+
+    //订单详情
+    .order-detail {
+      .order-base-info {
+        background-color: $backgournd-color;
+        color: $font-color-s-c;
+        .order-status {
+
+        }
+        .order-total-price,
+        .express-price {
+
+        }
+      }
+      .order-more-wrapper {
+
+        border-bottom-color: $border-color;
+        background-color: $b-special-color;
+
+        .receiver-info {
+          .receiver-name {
+            color: $font-color-s-c;
+            .receiver-phone {
+
+            }
+          }
+          .receiver-address {
+            color: $font-color-s-c;
+          }
+
+        }
+        .order-detail-info {
+          display: none;
+          ul {
+            border-top-color: $border-color;
+            li {
+              color: $font-color-s-c;
+            }
+          }
+        }
+        .toggle-button {
+          border-top-color:  $border-color;
+          color: $font-color-s-c;
+          span {
+
+          }
+        }
+      }
+
+      .order-other-info {
+
+        background-color: $b-special-color;
+        .order-message {
+          border-bottom-color: $border-color;
+
+          .label {
+            span {
+            }
+            color: $font-color-m-t;
+
+          }
+          .message-detail {
+            span {
+            }
+            color: $common-color;
+          }
+        }
+        .order-logistics {
+          @extend .order-message;
+        }
+        .logistics-detail {
+          ul {
+            border-left-color: $border-common-color;
+            li {
+              color: $font-color-m-t;
+              background: url("../../images/cute10/grey_icon.png") left top / 3em 3em no-repeat;
+              &:first-child {
+                background: url("../../images/cute10/blue_icon.png") left top / 3em 3em no-repeat;
+                color: $active-link-color;
+              }
+              span {
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //用户地址列表
+    .user-addresses {
+      .address-wrapper {
+        border-top-color: $border-color;
+        background-color: $b-special-color;
+        .iradio {
+
+          input[type=radio] {
+
+          }
+        }
+        label {
+          color: $font-color-s-c;
+        }
+        label.checked {
+          color: $active-link-color;
+        }
+        .address-actions {
+          a {
+            color: $font-color-s-c;
+          }
+          .edit-addr {
+            background: url("../../images/cute10/edit_addr_icon.png") left center / 3em 3em no-repeat;
+          }
+          .delete-addr {
+            background: url("../../images/cute10/delete_addr_icon.png") left center / 3em 3em no-repeat;
+          }
+        }
+        .bottom {
+          border-top-color: $border-common-color;
+          color: $font-color-s-c;
+          .address-detail {
+
+          }
+          .receiver-name,
+          .phone {
+
+          }
+        }
+      }
+    }
+
+
+      //添加地址
+      .new-address-wrapper {
+
+        .block {
+          border-top-color: $border-color;
+          border-bottom-color: $border-color;
+          background-color: $b-special-color;
+
+          .field-wrapper {
+            border-bottom-color: $border-common-color;
+
+            input {
+              color: $font-color-s-c;
+              &.address-field {
+                color: $font-color-m-t;
+              }
+            }
+            ul li {
+              select {
+                border-color: $border-common-color;
+                color: $font-color-s-c;
+              }
+            }
+          }
+        }
+        .field-wrapper {
+
+        }
+      }
+
+      //用户中心
+      .profile-index {
+        .user-info-wrapper {
+          background: url("../../images/cute10/user_info_bg.png") center center / 100% 100% no-repeat;
+          .user-icon {
+            img {
+              border-color: $border-common-color;
+            }
+          }
+          .user-info {
+                     color: $f-special-color;
+          }
+          .user-info-detail {
+                     color: $f-special-color;
+                     background-color: transparent;
+            span {
+            }
+          }
+          .login-button {
+            a {
+              color: $active-link-color;
+              background-color: $b-special-color;
+              span {
+              }
+            }
+          }
+        }
+        .top-menu {
+              background-color: $b-special-color;
+              border-bottom-color: $border-color;
+          li {
+            a {
+              background: url("../../images/cute10/waitingpay.png") center 2em / 4em 4em no-repeat;
+              &.waiting-receive {
+                background-image: url("../../images/cute10/waitingrecive.png");
+                background-size: 5.2em 4em;
+              }
+              &.after-sales {
+                background-image: url("../../images/cute10/aftersales.png");
+              }
+              .text{
+                  color: $common-color;
+              }
+              .num {
+                   background-color: $num-icon-bg;
+                   color: $b-special-color;
+              }
+            }
+          }
+        }
+        .sub-menu {
+          border-top-color: $border-color;
+          border-bottom-color: $border-color;
+          background-color: $b-special-color;
+          li {
+              border-bottom-color: $border-common-color;
+              background: url("../../images/cute10/right_arrow.png") right center / 2em 3em no-repeat;
+            &:last-child {
+              border-bottom: none;
+            }
+            a {
+              color: $common-color;
+              background: url("../../images/cute10/menu_order.png") left center / 3em 3em no-repeat;
+              &.my-collects {
+                background: url("../../images/cute10/menu_collect.png") left center / 3em 3em no-repeat;
+              }
+              &.shopping-cart {
+                background: url("../../images/cute10/menu_cart.png") left center / 3em 3em no-repeat;
+              }
+              &.message {
+                background: url("../../images/cute10/menu_message.png") left center / 3em 3em no-repeat;
+              }
+              &.address {
+                background: url("../../images/cute10/menu_address.png") left center / 3em 3em no-repeat;
+              }
+              &.coupon {
+                background: url("../../images/cute10/menu_preferential.png") left center /3em 3em no-repeat;
+              }
+              &.about-us {
+                background: url("../../images/cute10/menu_about.png") left center / 3em 3em no-repeat;
+              }
+              &.shopping-cart {
+                background: url("../../images/cute10/menu_cart.png") left center / 3em 3em no-repeat;
+              }
+              &.after-sales {
+                background: url("../../images/cute10/menu_aftersales.png") left center / 3em 3em no-repeat;
+              }
+              span {
+
+              }
+            }
+          }
+        }
+      }
+
+      .profile-detail {
+        .user-detail-wrapper {
+          p.upload-picture-tip {
+             color: $form-tip-color;
+          }
+          .user-detail {
+            border-top-color: $border-color;
+            border-bottom-color: $border-color;
+            background-color: $b-special-color;
+            li {
+              border-bottom-color: $border-common-color;
+              background: url("../../images/cute10/right_arrow.png") right center / 2em 3em no-repeat;
+              &:last-child {
+                border-bottom: none;
+              }
+              &.picture {
+
+              }
+              .label {
+                color: $font-color-m-t;
+              }
+              .picture {
+                img {
+                }
+                .picture-field {
+                }
+              }
+              .value {
+                color:$common-color;
+                span {
+                  color: $active-link-color;
+                }
+              }
+            }
+          }
+        }
+      }
+      .change-name {
+
+      }
+      .change-password-form {
+
+        .field-wrapper {
+          border-color: $border-color;
+          background: $b-special-color;
+          .password-field {
+            border-bottom-color: $border-common-color;
+          }
+          .password-field:first-child {
+          }
+          .password-field:last-child {
+            border-bottom: 0;
+          }
+        }
+
+      }
+      .change-phone {
+
+        .current-phone {
+          color: $font-color-m-t;
+        }
+
+        .phone-field {
+
+        }
+        .get-code-button {
+          color: $f-special-color;
+//          border: none;
+          background-color: $button-login-color;
+        }
+      }
+
+      .user-level {
+        .level-info {
+          table {
+
+            td.first {
+              color: $active-link-color;
+            }
+            td.second {
+              .level-bar-bg {
+                background-color: $level-bg-color;
+                .level-bar {
+                  background-color: $active-bg-color;
+                  //              width: 79%;
+                  color: $f-special-color;
+                }
+              }
+              .left {
+                color: $font-color-s-c;
+              }
+              .right {
+                color:  $font-color-s-c;
+              }
+            }
+            td.last {
+              @extend td.first;
+            }
+          }
+        }
+        .level-detail {
+          background-color: $b-special-color;
+          color: $common-color;
+          table {
+            th {
+              border-top-color: $border-common-color;
+              color: $font-color-m-t;
+            }
+            th, td {
+              border-right-color: $border-common-color;
+              border-bottom-color: $border-common-color;
+              &:last-child {
+                border-right: none;
+              }
+            }
+            .first {
+            }
+            .second {
+            }
+            .last {
+            }
+          }
+        }
+      }
+
+      //我的收藏
+      .collects-list {
+
+        .collects-product {
+          border-bottom-color: $border-color;
+          .left {
+                      border-color: $border-color;
+          }
+          .center {
+            .prod-title {
+              a {
+                color: $font-color-m-t;
+
+              }
+            }
+            .prod-sale-price {
+              span {
+                color: $price-color;
+              }
+            }
+          }
+          .right {
+            color: $font-color-s-c;
+            .delete-collect {
+              background: url("../../images/cute10/delete_addr_icon.png") center center / 100% 100% no-repeat;
+            }
+          }
+        }
+      }
+
+      //购物车
+      .shopping-cart {
+        .products-list {
+          .product {
+            border-top-color: $border-color;
+            border-bottom-color: $border-color;
+            background-color: $b-special-color;
+            .left {
+              border-color: $border-color;
+            }
+            .center {
+              .prod-title {
+                a {
+                  color: $font-color-m-t;
+                }
+              }
+              .prod-attribute {
+                span {
+                  color: $common-color;
+                }
+              }
+            }
+            .right {
+              .prod-sale-price {
+                span {
+                  color: $price-color;
+                }
+              }
+              .prod-par-price {
+                span {
+                  color: $common-color;
+                }
+              }
+              .delete-collect {
+                background: url("../../images/cute10/delete_addr_icon.png") center center / 100% 100% no-repeat;
+                &.deleting {
+                  background-image: url('../../images/cute10/loading.gif');
+                }
+              }
+            }
+            .bottom {
+                      border-top-color: $border-color;
+              .label {
+                      color: $common-color;
+              }
+              .buy-count-form {
+
+                input {
+                  color: $font-color-m-t;
+                  border-color: $border-color;
+                }
+                span {
+                  border-color: $border-color;
+                  color: $font-color-m-t;
+                  &.sub {
+                  }
+                  &.plus {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //用户登录
+      .user-login {
+        .fields-group {
+          background-color: $b-special-color;
+          border-color: $border-color;
+          .text-field {
+            /*border: none;*/
+            &.phone-field {
+              border-bottom-color: $border-common-color;
+            }
+          }
+        }
+
+        .forget-password {
+          span {
+            color: $common-color;
+          }
+        }
+
+        .register-link {
+          a {
+            color: $common-color;
+          }
+        }
+
+        .social-login {
+          .title-wrapper {
+                      background: url("../../images/cute10/title_wrapper_bg.png") left center repeat-x;
+            span {
+              background: $backgournd-color;
+              color: $common-color;
+            }
+          }
+          ul {
+            li {
+              a {
+                background-color: $button-login-color;
+              }
+              &:first-child{
+                a{
+                  background-color: #60a6e2;
+                }
+              }
+              &:nth-child(2){
+                a{
+                  background-color: #3ab943;
+                }
+              }
+              &:last-child{
+                a{
+                  background-color: #ff5757;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //用户注册
+      .user-register {
+        .field-wrapper {
+          .label {
+            span {
+              color: $font-color-m-t;
+            }
+          }
+          &.term-field {
+            span.term {
+              color: $font-color-m-t;
+              a {
+                color: #fa95b2;
+              }
+            }
+          }
+
+          .toggle-password-text {
+                  background: url("../../images/cute10/eye_icon.png") center center / 4.4em 2.2em no-repeat;
+            span {
+            }
+          }
+          .text-field {
+            border-color: $border-color;
+          }
+          .auth-code-field {
+
+          }
+          .get-code-button {
+            border-color: $border-color;
+            color: $f-special-color;
+            background-color: $button-login-color;
+          }
+        }
+      }
+
+      //确认订单
+      .checkout {
+        .textarea-wrapper {
+          border-color: $border-color;
+          textarea {
+            color: $common-color;
+          }
+        }
+
+        .block-wrapper {
+          border-top-color: $border-color;
+          border-bottom-color: $border-color;
+          background-color: $b-special-color;
+          color: $common-color;
+          .label {
+            color: $font-color-title;
+            span {
+
+            }
+          }
+        }
+        .order-address {
+          .address-detail {
+            background: url("../../images/cute10/right_arrow.png") right center / 2em 3em no-repeat;
+            span {
+            }
+          }
+          .receiver-info {
+
+          }
+        }
+        .payment-method {
+          .top {
+            border-bottom-color: $border-common-color;
+            .other-payment {
+              background: url("../../images/cute10/right_arrow.png") right center / 2em 3em no-repeat;
+              span {
+                font-size: 3em;
+                color: $active-link-color;
+              }
+            }
+          }
+          table {
+            width: 100%;
+            tr {
+              &:last-child {
+                td {
+                  border-bottom: none;
+                }
+              }
+              td {
+                border-bottom-color: $border-common-color;
+                &:first-child {
+                }
+                img {
+                }
+                span {
+
+                }
+              }
+            }
+          }
+        }
+
+        .order-price-detail {
+          table {
+
+          }
+        }
+
+        .invoice-wrapper {
+          .icheckbox {
+            background-image: url("../../images/cute10/icheckbox.png");
+          }
+          table {
+            border-top-color:  $border-common-color;
+            border-bottom-color:  $border-common-color;
+            td {
+              &:first-child {
+                border-right-color:  $border-common-color;
+              }
+            }
+          }
+        }
+
+      }
+      .addresses-list {
+        .order-address {
+          &.active {
+            background-color: $active-bg-color;
+            color: $f-special-color;
+          }
+          .address-detail {
+            background: none;
+            padding-right: 0;
+          }
+          .receiver-info {
+
+          }
+        }
+      }
+
+      //关于我们
+      .about_us_wrapper {
+        width: 100%;
+        background: $backgournd-color;
+        .about-content {
+          color: $font-color-s-c;
+        }
+        .copy-right {
+          color: $font-color-s-c;
+        }
+      }
+
+      //售后服务
+      .sale_service_wrapper {
+        ul {
+          color: $font-color-m-t;
+        }
+      }
+
+
+  }
+
+  #addresses-list-wrapper {
+    background: url("../../images/cute10/body_bg.png") repeat #edebde;
+    background: $backgournd-color;
+  }
+
+  //商品属性选择表单
+  #product-attr-select-form-bg {
+    background: url("../../images/cute10/grey_bg.png") 0 0 repeat;
+
+    #product-attr-select-form-wrapper {
+
+      background-color: $b-special-color;
+
+      #close-form-button {
+
+        background: url("../../images/cute10/close_icon.png") center center / 5em 5em no-repeat;
+
+      }
+      .product-base-info {
+                background-color: $b-special-color;
+
+        border-bottom-color: $border-color;
+
+        .prod-price {
+
+          span {
+            color: $price-color;
+            &.prod-stock {
+              color: $font-color-m-t;
+            }
+          }
+        }
+        .prod-selected-attr {
+          span {
+            color: $font-color-m-t;
+          }
+        }
+      }
+
+      #product-attributes {
+        .attribute {
+          border-bottom-color: $border-color;
+          .attr-name {
+            color: $font-color-m-t;
+          }
+          .attr-list {
+            li {
+              border-color: $border-color;
+              span {
+                color: $font-color-m-t;
+              }
+              &.selected {
+                background-color:$button-main-color;
+                span {
+                  color: $f-special-color;
+                }
+              }
+              &.disabled {
+                background: #eee;
+                border-color:  $border-common-color;
+                span {
+                  color: $common-color;
+                }
+              }
+            }
+          }
+        }
+        #product-buy-count {
+          @extend .attribute;
+
+          label {
+            color: $font-color-m-t;
+          }
+          .buy-count-form {
+
+            input {
+              color: $font-color-m-t;
+              border-color: $border-color;
+            }
+            span {
+              color: $font-color-m-t;
+              border-color: $border-color;
+              &.sub {
+
+              }
+              &.plus {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #footer {
+    border-top-color: $border-color;
+    background-color: $b-special-color;
+
+    .shopping-cart-base {
+      background: url("../../images/cute10/shopping_cart.png") center center / 4.4em 4.4em no-repeat;
+      span.cart-prod-num {
+        background-color: $num-icon-bg;
+        color: $f-special-color;
+        span {
+        }
+      }
+
+    }
+    .buy-button {
+      background-color: $button-main-color;
+      span {
+        color: $f-special-color;
+      }
+    }
+    .add-to-cart-button {
+
+      background-color: $button-other-color;
+    }
+    .total-price {
+      color: $common-color;
+      .price {
+        color: $price-color;
+      }
+    }
+    .submit-button {
+      @extend  .add-to-cart-button;
+      &.brown-bg {
+        background-color:  $button-main-color;
+      }
+    }
+
+    &.selecting {
+      table {
+        td {
+          &:last-child {
+
+          }
+        }
+      }
+    }
+  }
+
+  #back-to-top img {
+    background-color: $head-dropdown-color;
+  }
+
+}

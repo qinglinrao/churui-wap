@@ -1,0 +1,1883 @@
+@charset "Utf-8";
+$pem: .4em;
+$prem: .4rem;
+
+
+// todo $brown-color : #a78873;
+$brown-color : #FFF;
+//todo $price-color : #8f3523;
+$price-color : #5B3C80;
+
+//todo $link-color : #634932;
+$link-color : #5B3C80;
+//todo $border: 1px solid #eee0d7;
+$border: 1px solid #EBC7B9;;
+$button-bg: #8f6142;
+
+#sunn_main{
+    width: 100%;
+	min-width:320px;
+	max-width:640px;
+	margin: 0 auto;
+	position: relative;
+
+	.header{
+		width: 100%;
+		height: 8.7*$pem;
+		border-bottom:1px solid #2b286f;
+		background:#fff;
+		text-align: center;
+		position: relative;
+		.htitle{
+			display: inline-block;
+			line-height: 8.7*$prem;
+
+		}
+		.companyt{
+			font-size: 4*$prem;
+			color: #5b3c80;
+		}
+		.common{
+			font-size: 3.4*$prem;
+			color: #3f3f3f;
+		}
+		.search{
+			width: 42*$pem;
+			height: 7.3*$pem;
+			margin: 0 auto;
+			padding-top: 2.6*$pem;
+			background:url(../images/searchbg.png) left bottom no-repeat;
+			background-size:contain;
+			-webkit-background-size:contain;
+			-moz-background-size:contain;
+			-o-background-size:contain;
+			.input-submit{
+				width: 5.2*$pem;
+				height: 4.1*$pem;
+				display: inline-block;
+				float: left;
+				border: none;
+				background:url(../images/search.png) center center no-repeat;
+				background-size:3*$prem 3*$prem;
+				-webkit-background-size:3*$prem 3*$prem;
+				-moz-background-size:3*$prem 3*$prem;
+				-o-background-size:3*$prem 3*$prem;
+				text-indent: -99999px;
+			}
+			.input-text{
+				width: 35*$pem;
+				height: 4.1*$pem;
+				border:none;
+				background:none;
+			}
+		}
+
+		.homesearch.search{
+			width: 32*$pem;
+			background:url(../images/search-home.png) left bottom no-repeat;
+			background-size:contain;
+			-webkit-background-size:contain;
+			-moz-background-size:contain;
+			-o-background-size:contain;
+			margin:0 0 0 21*$pem;
+			.input-text{
+				width: 26*$pem;
+				height: 4.1*$pem;
+				border:none;
+				background:none;
+			}
+		}
+        .homesearch.search.htitle{
+          margin:0;
+          .input-text{
+            width: 24*$pem;
+            height: 4.1*$pem;
+            border:none;
+            float:right;
+            background:none;
+          }
+        }
+
+		.logo{
+			width: 12*$pem;
+			height: 8.7*$pem;
+			display: block;
+			background:url(../images/logo.png) center center no-repeat;
+			background-size:10.9*$prem 3.9*$prem;
+			-webkit-background-size:10.9*$prem 3.9*$prem;
+			-moz-background-size:10.9*$prem 3.9*$prem;
+			-o-background-size:10.9*$prem 3.9*$prem;
+			position: absolute;
+			left: 4*$pem;
+			top: 0;
+		}
+		.monav{
+			width: 8.7*$pem;
+			height: 8.7*$pem;
+			display: block;
+			background:url(../images/navigation.png) center center no-repeat;
+			background-size:5*$prem 5*$prem;
+			-webkit-background-size:5*$prem 5*$prem;
+			-moz-background-size:5*$prem 5*$prem;
+			-o-background-size:5*$prem 5*$prem;
+			position: absolute;
+			right: 0;
+			top: 0;
+
+		}
+
+		.hleft{
+			width: 8.7*$pem;
+			height: 8.7*$pem;
+			display: block;
+			background:url(../images/left-arrow.png) center center no-repeat;
+			background-size:2.4*$prem 4.5*$prem;
+			-webkit-background-size:2.4*$prem 4.5*$prem;
+			-moz-background-size:2.4*$prem 4.5*$prem;
+			-o-background-size:2.4*$prem 4.5*$prem;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.hright{
+			line-height: 8.7*$prem;
+			display: inline-block;
+			position: absolute;
+			right: 2.5*$prem;
+			top: 0;
+			font-size: 3*$prem;
+		}
+
+		.edit{
+			width: 8.7*$pem;
+			height: 8.7*$pem;
+			display: block;
+			background:url(../images/edit.png) center center no-repeat;
+			background-size:4.6*$prem 4.6*$prem;
+			-webkit-background-size:4.6*$prem 4.6*$prem;
+			-moz-background-size:4.6*$prem 4.6*$prem;
+			-o-background-size:4.6*$prem 4.6*$prem;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}//头部
+
+	.usr-mess{
+		width: 100%;
+		height: 39.1*$pem;
+		background:url(../images/head-usr-bg.jpg)  no-repeat;
+		background-size:cover;
+		-webkit-background-size:cover;
+		-moz-background-size:cover;
+		-o-background-size:cover;
+		text-align: center;
+		position: relative;
+		.head-portrait{
+			width: 12*$pem;
+			height:12*$pem;
+			margin: 0 auto;
+			margin-top: 5.1*$pem;
+			img{
+				width: 100%;
+				border:0.2*$pem solid #c9cde7;
+				border-radius:50%;}
+		}
+		.sex-name{
+			height: 4*$prem;
+			line-height: 4*$prem;
+			padding-left: 4*$prem;
+			display: inline-block;
+			color: #fff;
+			margin-top: 1.3*$prem;
+			background:url(../images/lady.png) left center no-repeat;
+			background-size:2.9*$prem 3.3*$prem;
+			-webkit-background-size:2.9*$prem 3.3*$prem;
+			-moz-background-size:2.9*$prem 3.3*$prem;
+			-o-background-size:2.9*$prem 3.3*$prem;
+			font-size: 3*$prem;
+		}
+		.usr-data{
+			width: 100%;
+			height: 12*$pem;
+			left: 0;
+			bottom: 0;
+			position: absolute;
+			.ud-box{
+				width: 100%;
+				height: 12*$pem;
+				position: relative;
+				z-index: 1;
+				.ud-bg{
+					width: 100%;
+					height: 12*$pem;
+					background:#271542;
+					filter:alpha(opacity=30);
+					-moz-opacity:0.3;
+					opacity: 0.3;
+					position: absolute;
+					left: 0;
+					top: 0;
+					z-index: -1;
+				}
+				.udrow{
+					width: 33%;
+					height: 8.5*$prem;
+					line-height: 4*$prem;
+					float: left;
+					margin-top: 1.6*$prem;
+					color: #fff;
+
+					.p1{
+						font-size: 3*$prem;
+						color: #fff;
+
+					}
+					.p2{
+						font-size: 2.6*$prem;
+						padding-top: .5*$prem;
+						color: #bfa2eb;
+					}
+				}
+				.udrow.left{
+					float: left;
+				}
+				.udrow.right{
+					float: right;
+				}
+				.udrow.line-right{
+					background:url(../images/udrow.png) right center no-repeat;
+					background-size:.2*$prem 6.7*$prem;
+					-webkit-background-size:.2*$prem 6.7*$prem;
+					-moz-background-size:.2*$prem 6.7*$prem;
+					-o-background-size:.2*$prem 6.7*$prem;
+
+
+				}
+				.udrow.line-left{
+					background:url(../images/udrow.png) left center no-repeat;
+					background-size:.2*$prem 6.7*$prem;
+					-webkit-background-size:.2*$prem 6.7*$prem;
+					-moz-background-size:.2*$prem 6.7*$prem;
+					-o-background-size:.2*$prem 6.7*$prem;
+
+
+				}
+			}
+		}
+		.noblock{
+			width: 100%;
+			height: 1px;
+			clear: both;
+		}
+	}//用户信息
+	.usr-mess.pcenter{
+		height: 28*$pem;
+	}
+
+	.banner{
+		width: 100%;
+		img{width: 100%;}
+	}
+
+	.content{
+
+		.home-category{
+			.hc-block{
+				width: 50%;
+				height: 32.8*$pem;
+				float: left;
+
+				.hcicon{
+					width: 13*$pem;
+					height: 13*$pem;
+					margin: 0 auto;
+					border-radius:50%;
+					margin-top: 7.6*$pem;
+				}
+
+
+				.word{
+					width: 13*$prem;
+					height: 6.7*$prem;
+					line-height: 6.7*$prem;
+					font-size: 3*$prem;
+					text-align: center;
+					margin: 0 auto;
+					color: #3f3f3f;
+				}
+			}
+
+			.hc-block.cl1{
+				.hcicon{
+					background:#15c7cb url(../images/icon/store-icon.png) center center no-repeat;
+					background-size:5.8*$prem 6.5*$prem;
+					-webkit-background-size:5.8*$prem 6.5*$prem;
+					-moz-background-size:5.8*$prem 6.5*$prem;
+					-o-background-size:5.8*$prem 6.5*$prem;
+				}
+				border-right:1px solid #e0e0e0;
+			}
+
+			.hc-block.cl2{
+				.hcicon{
+					background:#d161bb url(../images/icon/financial-icon.png) center center no-repeat;
+					background-size:5.8*$prem 6.5*$prem;
+					-webkit-background-size:5.8*$prem 6.5*$prem;
+					-moz-background-size:5.8*$prem 6.5*$prem;
+					-o-background-size:5.8*$prem 6.5*$prem;
+			    }
+			}
+
+			.hc-block.cl3{
+				.hcicon{
+					background:#43aeff url(../images/icon/order-icon.png) center center no-repeat;
+					background-size:5.8*$prem 6.5*$prem;
+					-webkit-background-size:5.8*$prem 6.5*$prem;
+					-moz-background-size:5.8*$prem 6.5*$prem;
+					-o-background-size:5.8*$prem 6.5*$prem;
+			    }
+			    border-right:1px solid #e0e0e0;
+			    border-top:1px solid #e0e0e0;
+			}
+
+			.hc-block.cl4{
+				.hcicon{
+					background:#6964dc url(../images/icon/persona-icon.png) center center no-repeat;
+					background-size:5.8*$prem 6.5*$prem;
+					-webkit-background-size:5.8*$prem 6.5*$prem;
+					-moz-background-size:5.8*$prem 6.5*$prem;
+					-o-background-size:5.8*$prem 6.5*$prem;
+			    }
+			    border-top:1px solid #e0e0e0;
+			}
+
+			.hc-block.cl5{
+				.hcicon{
+					background:#43aeff url(../images/icon/control-icon.png) center center no-repeat;
+					background-size:5.8*$prem 6.5*$prem;
+					-webkit-background-size:5.8*$prem 6.5*$prem;
+					-moz-background-size:5.8*$prem 6.5*$prem;
+					-o-background-size:5.8*$prem 6.5*$prem;
+			    }
+			    border-right:1px solid #e0e0e0;
+			    border-top:1px solid #e0e0e0;
+			}
+	    }//首页分类
+
+	    .store-top-box{
+	    	width: 100%;
+            background:#fff;
+            border-bottom:1px solid #ebc7b9;
+		    .store-top{
+		    	height: 18*$pem;
+		    	width:92%;
+		    	margin: 0 auto;
+		    	padding:3*$pem 0;
+		    	position: relative;
+		    	border-bottom:1px solid #e2e2e2;
+		    	.storepic{
+		    		width: 12*$pem;
+		    		height: 12*$pem;
+		    		float: left;
+		    		img{
+		    			width: 100%;
+		    			border:0.2*$pem solid #c9cde7;
+					    border-radius:50%;
+		    		}
+		    	}
+		    	.word{
+		    		width: 40*$pem;
+		    		float: left;
+		    		padding-top: 1.5*$pem;
+		    		padding-left: 1.8*$pem;
+		    		.wcoc{
+		    			width: 100%;
+		    			height: 4.6*$prem;
+		    			line-height: 4.6*$prem;
+		    			font-size: 3*$prem;
+		    		}
+		    		.wcoc.weixin{
+		    			color: #666;
+		    			padding-left: 4.2*$prem;
+		    			background:url(../images/icon/weixin-icon.png) left center no-repeat;
+		    			background-size:3.2*$prem 2.5*$prem;
+						-webkit-background-size:3.2*$prem 2.5*$prem;
+						-moz-background-size:3.2*$prem 2.5*$prem;
+						-o-background-size:3.2*$prem 2.5*$prem;
+		    		}
+		    	}
+		    	.arrow{
+		    		height: 12*$pem;
+		    		width: 1.6*$pem;
+		    		float: right;
+		    		background:url(../images/right-arrow.png) center center no-repeat;
+	    			background-size:1.4*$prem 2.7*$prem;
+					-webkit-background-size:1.4*$prem 2.7*$prem;
+					-moz-background-size:1.4*$prem 2.7*$prem;
+					-o-background-size:1.4*$prem 2.7*$prem;
+		    	}
+		    	.shopsplitnum{
+		    		width: 54*$pem;
+		    		float: left;
+		    		height: 12*$pem;
+		    		padding: 2.5*$pem 0;
+		    		.sp-standard{
+		    			float: left;
+		    			line-height: 3.5*$pem;
+		    		}
+		    		.sp-num{
+		    			float: left;
+		    			line-height: 7*$prem;
+		    			margin-left: 4*$prem;
+		    			font-size: 5*$prem;
+		    			color: #614e99;
+		    		}
+		    	}
+
+		    }
+
+		    .seelinks{
+		    	height: 10*$pem;
+		    	width:92%;
+		    	padding: 1.6*$pem;
+		    	margin: 0 auto;
+		    	.slrow{
+		    		width: 50%;
+		    		height: 6.8*$pem;
+		    		float: left;
+		    		text-align: center;
+		    		display: block;
+		    		.sr-bl{
+		    			display: inline-block;
+		    			height: 6.8*$pem;
+		    			line-height: 6.8*$pem;
+		    			padding-left: 5.1*$pem;
+		    		}
+
+		    		.sr-bl.seestore{
+		    			background:url(../images/icon/seemystore.png) left center no-repeat;
+		    			background-size:4.1*$prem 3*$prem;
+						-webkit-background-size:4.1*$prem 3*$prem;
+						-moz-background-size:4.1*$prem 3*$prem;
+						-o-background-size:4.1*$prem 3*$prem;
+
+		    		}
+
+		    		.sr-bl.copylinks{
+		    			background:url(../images/icon/copylinks.png) left center no-repeat;
+		    			background-size:4.1*$prem 3*$prem;
+						-webkit-background-size:4.1*$prem 3*$prem;
+						-moz-background-size:4.1*$prem 3*$prem;
+						-o-background-size:4.1*$prem 3*$prem;
+
+		    		}
+		    	}
+		    	.slrow.br{
+		    		border-right:1px solid #c9cde7;
+		    	}
+		    }
+
+		    .describe{
+		    		width: 92%;
+		    		margin: 0 auto;
+		    		padding: 2*$pem 0;
+		    		line-height: 3.5*$pem
+		        }
+	    }//我的店铺头部
+	    .store-top-box.noborder{
+	    	border-bottom: none;
+	    }
+
+	    .store-top-box.shopsplitting{
+	    	margin-top: 2*$pem;
+	    	border-top:1px solid #ebc7b9;
+	    	border-bottom: none;
+	    	.store-top{
+	    		.word{
+	    			.wcoc.time{
+	    				font-size: 2.5*$pem;
+	    				color: #b4b4b4;
+	    			}
+	    		}
+	    	}
+
+	    }//门店分润
+
+	    .product-list{
+	    	margin-top: 2.4*$pem;
+	    	background: #fff;
+	    	.pl-category{
+	    		width: 100%;
+	    		height: 8*$pem;
+	    		border-top:1px solid #ebc7b9;
+	    		border-bottom:1px solid #ebc7b9;
+	    		background:#fafaf7;
+	    		.pc-ul{
+	    			width: 100%;
+	    			li{
+	    				width: 25%;
+	    				height: 7.8*$pem;
+	    				text-align: center;
+	    				float: left;
+	    				a{
+	    					display: inline-block;
+	    					line-height: 7.5*$pem;
+	    				}
+	    				a.active{
+	    					color: #5b3c80;
+	    					border-bottom:2px solid #5b3c80;
+	    				}
+	    			}
+	    		}
+	    		.pc-ul.addp{
+	    			li{
+	    				width: 20%;
+	    			}
+	    		}
+
+	    		.pc-ul.preview{
+	    			li{
+	    				width: 33%;
+	    			}
+	    		}
+	    	}
+	    	.pl-ul{
+	    		width:92%;
+	    		margin: 0 auto;
+	    		li{
+	    			width: 100%;
+	    			height: 21.1*$pem;
+	    			border-bottom:1px solid #ededed;
+	    			padding: 2*$pem 0;
+	    			position: relative;
+	    			.limg{
+	    				width: 17*$pem;
+	    				height: 17*$pem;
+	    				float: left;
+	    				img{width: 100%;}
+	    			}
+	    			.liword{
+	    				width: 41*$pem;
+	    				height: 17*$pem;
+	    				float: right;
+	    				.title{
+	    					font-size: 2.6*$prem;
+	    					height: 7*$prem;
+	    					line-height: 3.5*$prem;
+	    				}
+	    				.price{
+	    					font-size: 2.8*$prem;
+	    					line-height: 3.5*$prem;
+	    					padding-top: 2.4*$prem;
+	    					color: #5b3c80;
+	    				}
+	    				.repertory{
+	    					line-height: 4*$prem;
+	    					color: #888;
+	    					span{
+	    						padding-right: 2*$pem;
+	    					}
+	    				}
+	    				.repertory.split{
+	    					padding-top: 1.8*$prem;
+	    					line-height: 3.5*$prem;
+	    					span{
+	    						color: #5b3c80;
+	    					}
+	    				}
+	    				.market-price{
+	    					color: #c5c4c4;
+	    				}
+	    			}
+	    			.addbutton{
+	    				width: 15*$prem;
+	    				height: 7*$prem;
+	    				display: block;
+	    				line-height: 6.8*$prem;
+	    				position: absolute;
+	    				right: 0;
+	    				bottom: 2*$prem;
+	    				border: 1px solid #2b286f;
+	    				text-align: center;
+	    				border-radius:1*$prem;
+	    			}
+	    			.count{
+	    				display: inline-block;
+	    				position: absolute;
+	    				right: 2*$prem;
+	    				bottom: 3.8*$prem;
+	    				color: #999;
+	    			}
+	    		}
+	    		li.last{
+	    			border-bottom: none;
+	    		}
+	    	}
+	    }//商品列表
+
+	    .product-list.addproduct{
+	    	margin:0;
+	    	.pl-category{
+	    		border-top: none;
+	    	}
+	    }
+
+	    .product-list.addproduct.orderlist{
+	    	margin-top: 2*$pem;
+	    	border-bottom: 1px solid #ecc9bc;
+	    	.list-top{
+    				width: 100%;
+    				height: 11*$pem;
+    				border-top:1px solid #ebc7b9;
+    				border-bottom:1px solid #ebc7b9;
+    				.lf-img{
+    					width: 8*$pem;
+    					height: 8*$pem;
+    					float: left;
+    					margin: 1.5*$pem 1.1*$pem 1.5*$pem 1.3*$pem;
+    					img{
+    						width: 100%;
+    						border: 0.08em solid #c9cde7;
+                            border-radius: 50%;
+                        }
+    				}
+    				.lr-word{
+    					width: 51.5*$pem;
+    					height: 11*$pem;
+    					float: right;
+    					padding: 1.5*$pem 1.5*$pem 1.5*$pem 0;
+    					.name-time{
+    						width: 100%;
+    						height: 8*$pem;
+    						line-height: 8*$pem;
+    						.name{
+    							width: 30*$prem;
+    							float: left;
+    							color: #333;
+    							font-size: 3*$prem;
+    						}
+    						.time{
+    							width: 19*$pem;
+    							float: left;
+    							color: #b4b4b4;
+    						}
+
+    					}
+
+    				}
+    			}
+    		.statistics-price{
+    			height: 8*$pem;
+    			padding: 1.6*$pem 0;
+    			line-height: 4.8*$pem;
+    			width: 95%;
+    			margin: 0 auto;
+    			border-bottom:1px solid #ebc7b9;
+    			border-top:1px solid #ebc7b9;
+    			div{
+    				margin-right: 3.2*$prem;
+    				font-size: 2.8*$prem;
+    			}
+    			.product-num{
+    				display: inline-block;
+
+    			}
+    			.actual-pay{
+    				display: inline-block;
+    				span{
+    					color: #5b3c80;
+    				}
+    			}
+    			.splitting-money{
+    				display: inline-block;
+    				span{
+    					color: #6964dc;
+    				}
+    			}
+    		}
+    		.pay-state{
+    			width: 95%;
+    			height: 12.1*$pem;
+    			padding: 2.5*$pem 0;
+    			margin: 0 auto;
+    			div{
+    				float: right;
+    				width: 18*$prem;
+    				height: 7*$prem;
+    				border: 1px solid #2b286f;
+    				border-radius:1*$prem;
+    				line-height: 6.9*$prem;
+    				text-align: center;
+    				font-size: 2.8*$prem;
+    			}
+    			.paybutton01{
+                    color: #2b286f;
+    			}
+    			.paybutton02{
+    				color: #fff;
+    				background:#2b286f;
+
+    			}
+    			.paybutton03{
+    				color: #fff;
+    				background:#a4a4a4;
+    				border-color:#a4a4a4 ;
+
+    			}
+
+    		}
+	    }
+
+
+	    .store-edit{
+	    	.editblock{
+	    		width: 100%;
+	    		background:#fff;
+	    		border-top:1px solid #ebc7b9;
+	    		border-bottom:1px solid #ebc7b9;
+	    		margin-top: 2.4*$pem;
+	    		.ed-textarea{
+		    		width: 100%;
+		    		height: 22*$pem;
+		    		padding: 2.5*$pem;
+		    		line-height: 3.5*$pem;
+		    		border: none;
+		    		resize:none;
+		    		font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;
+		    	}
+	    		.changelogo{
+	    			width: 62*$pem;
+	    			height: 18*$pem;
+	    			margin-left: 2*$pem;
+			    	padding:3*$pem 0;
+			    	border-bottom:1px solid #e2e2e2;
+			    	.word{
+			    		width: 17*$prem;
+			    		line-height: 12*$prem;
+			    		float: left;
+			    		color: #3f3f3f;
+			    		font-size: 2.8*$prem;
+			    	}
+			    	.arrow{
+			    		height: 12*$pem;
+			    		width: 1.6*$pem;
+			    		float: right;
+			    		margin-right: 4*$pem;
+			    		background:url(../images/right-arrow.png) center center no-repeat;
+		    			background-size:1.4*$prem 2.7*$prem;
+						-webkit-background-size:1.4*$prem 2.7*$prem;
+						-moz-background-size:1.4*$prem 2.7*$prem;
+						-o-background-size:1.4*$prem 2.7*$prem;
+		    	    }
+
+		    	    .storepic{
+			    		width: 12*$pem;
+			    		height: 12*$pem;
+			    		float: right;
+			    		margin-right: 2*$pem;
+			    		img{
+			    			width: 100%;
+			    			border:0.2*$pem solid #c9cde7;
+						    border-radius:50%;
+			    		}
+			    	}
+	    		}
+
+
+
+	    		.anta-row{
+	    			width: 62*$pem;
+	    			height: 8.1*$pem;
+	    			margin-left: 2*$pem;
+			    	padding:1.8*$pem 0;
+			    	.word{
+			    		height: 4.5*$pem;
+			    		line-height: 4.5*$pem;
+			    		float: left;
+			    	}
+
+			    	.input-box{
+			    		width: 30*$pem;
+			    		height: 4.5*$pem;
+			    		float: right;
+			    		margin-right: 2*$pem;
+			    		overflow: hidden;
+                        text-align: right;
+                        position: relative;
+			    		.inputtext{
+                            width: 28*$pem;
+//                            margin-right:1*$pem;
+			    			text-align: right;
+			    			background:none;
+			    			border: none;
+			    			line-height: 4.5*$pem;
+			    		}
+                      .upload_tip{
+                        width:100%;
+                        text-align: right;
+                        background:none;
+                        border: none;
+                        line-height: 4.5*$pem;
+                        color:#111;
+                      }
+                      #upload_cover_image{
+                        width: 100%;
+                        height:100%;
+                        position: absolute;
+                        left: 0;
+                        top:0;
+                        filter:alpha(opacity=0);
+                        -moz-opacity:0;
+                        opacity:0;
+                      }
+			    	}
+
+			    	.arrow{
+			    		height: 4.5*$pem;
+			    		width: 1.6*$pem;
+			    		float: right;
+			    		margin-right: 4*$pem;
+			    		background:url(../images/right-arrow.png) center center no-repeat;
+		    			background-size:1.4*$prem 2.7*$prem;
+						-webkit-background-size:1.4*$prem 2.7*$prem;
+						-moz-background-size:1.4*$prem 2.7*$prem;
+						-o-background-size:1.4*$prem 2.7*$prem;
+		    	    }
+
+	    		}
+	    		.anta-row.bdb{
+	    			border-bottom: 1px solid #e2e2e2;
+	    		}
+	    	}
+
+	    	.preview-button{
+	    		display: block;
+	    		width: 60.8*$prem;
+	    		height: 8.8*$prem;
+	    		line-height: 8.8*$prem;
+	    		margin: 0 auto;
+	    		margin-top: 6*$prem;
+	    		background:#5e529c;
+	    		border-radius:2*$prem;
+	    		color: #fff;
+	    		text-align: center;
+	    		font-size: 3.2*$prem;
+	    	}
+	    }//店铺编辑
+
+	    .remaining-sum{
+	    	width: 100%;
+	    	height: 20*$pem;
+	    	padding: 4*$pem 0;
+	    	background:#614e99;
+	    	text-align: center;
+	    	.rs-left{
+	    		width: 50%;
+	    		float: left;
+	    		height: 12*$pem;
+	    		text-align: center;
+	    	}
+	    	.rs-right{
+	    		width: 50%;
+	    		float: right;
+	    		height: 12*$pem;
+	    		text-align: center;
+	    		border-left: 1px solid #725ead;
+	    	}
+	    	.rsw-title{
+	    		color: #9f84ee;
+	    		line-height: 4.8*$prem;
+	    	}
+	    	.rsw-p1{
+	    		color: #fff;
+	    		line-height: 7.2*$prem;
+	    		font-size: 6*$prem;
+
+
+	    	}
+	    }//财务管理
+
+	    .usr-sell-data{
+			width: 100%;
+			height: 12*$pem;
+			background:#fff;
+			.ud-box{
+				width: 100%;
+				height: 12*$pem;
+
+				.udrow{
+					width: 33%;
+					height: 8.5*$prem;
+					line-height: 4*$prem;
+					float: left;
+					margin-top: 1.6*$prem;
+					color: #fff;
+					text-align: center;
+
+					.p1{
+						font-size: 3*$prem;
+						color: #6964dc;
+
+					}
+					.p2{
+						font-size: 2.6*$prem;
+						padding-top: .5*$prem;
+						color: #888;
+					}
+				}
+				.udrow.left{
+					float: left;
+				}
+				.udrow.right{
+					float: right;
+				}
+				.udrow.line-right{
+					background:url(../images/udrow02.png) right center no-repeat;
+					background-size:.2*$prem 6.7*$prem;
+					-webkit-background-size:.2*$prem 6.7*$prem;
+					-moz-background-size:.2*$prem 6.7*$prem;
+					-o-background-size:.2*$prem 6.7*$prem;
+
+
+				}
+				.udrow.line-left{
+					background:url(../images/udrow02.png) left center no-repeat;
+					background-size:.2*$prem 6.7*$prem;
+					-webkit-background-size:.2*$prem 6.7*$prem;
+					-moz-background-size:.2*$prem 6.7*$prem;
+					-o-background-size:.2*$prem 6.7*$prem;
+
+
+				}
+			}
+		}
+		.usr-sell-data.unboder{
+			border-bottom:1px solid #ecc9bc;
+		}//用户数据
+		.usr-sell-data.noboder{
+			border-bottom:none;
+		}
+		.usr-sell-data.unboder.datasplitting{
+			.ud-box{
+				.udrow{
+					width: 25%;
+				}
+			}
+		}
+
+		.rowblock{
+	    		width: 100%;
+	    		background:#fff;
+	    		border-top:1px solid #ebc7b9;
+	    		border-bottom:1px solid #ebc7b9;
+	    		margin-top: 2.4*$pem;
+	    		.withdraw{
+	    			height: 11.6*$pem;
+	    			padding: 1.6*$pem 0;
+	    			width: 92%;
+	    			margin: 0 auto;
+	    			.wdleft{
+	    				float: left;
+	    				width: 50%;
+	    				.wdp1{
+	    				    height: 4.8*$prem;
+	    				    color: #000;
+	    				    font-size: 3.2*$prem;
+		    			}
+		    			.wdp2{
+		    				height: 3.6*$pem;
+		    				color: #b4b4b4;
+		    			}
+	    			}
+	    			.wdright{
+	    				float: right;
+	    				width: 30%;
+	    				line-height: 8.4*$prem;
+	    				font-size: 2.8*$prem;
+	    				text-align: center;
+	    				span.cl01{
+	    					color: #f17a1a;
+	    				}
+	    				span.cl02{
+	    					color: #888;
+	    				}
+	    			}
+
+	    		}//提现
+	    		.evticon{
+	    			width: 92%;
+	    			height: 8*$pem;
+	    			padding: 1.8*$pem 0;
+	    			margin: 0 auto;
+	    			.etleft{
+	    				line-height: 4.4*$prem;
+	    				padding-left: 4*$prem;
+	    				font-size: 2.8*$prem;
+	    				float: left;
+	    				background:url(../images/withdraw-record.png) left center no-repeat;
+	    				background-size:3*$prem 3*$prem;
+						-webkit-background-size:3*$prem 3*$prem;
+						-moz-background-size:3*$prem 3*$prem;
+						-o-background-size:3*$prem 3*$prem;
+
+	    			}
+
+	    			.etarrow{
+	    				width: 2.7*$pem;
+	    				height: 4.4*$pem;
+	    				float: right;
+	    				background:url(../images/right-arrow.png) center center no-repeat;
+	    				background-size:1.4*$prem 2.7*$prem;
+						-webkit-background-size:1.4*$prem 2.7*$prem;
+						-moz-background-size:1.4*$prem 2.7*$prem;
+						-o-background-size:1.4*$prem 2.7*$prem;
+
+	    			}
+	    		}//提现记录
+	    		.evticon.pc01{
+	    			border-bottom:1px solid #e2e2e2;
+	    			.etleft{
+	    				background:url(../images/pcenter01.png) left center no-repeat;
+	    				background-size:2.7*$prem 3.4*$prem;
+						-webkit-background-size:2.7*$prem 3.4*$prem;
+						-moz-background-size:2.7*$prem 3.4*$prem;
+						-o-background-size:2.7*$prem 3.4*$prem;
+	    			}
+	    		}
+	    		.evticon.pc02{
+	    			border-bottom:1px solid #e2e2e2;
+	    			.etleft{
+	    				background:url(../images/pcenter02.png) left center no-repeat;
+	    				background-size:2.7*$prem 3.3*$prem;
+						-webkit-background-size:2.7*$prem 3.3*$prem;
+						-moz-background-size:2.7*$prem 3.3*$prem;
+						-o-background-size:2.7*$prem 3.3*$prem;
+	    			}
+	    		}
+	    		.evticon.pc03{
+	    			.etleft{
+	    				background:url(../images/pcenter03.png) left center no-repeat;
+	    				background-size:3.1*$prem 2.9*$prem;
+						-webkit-background-size:3.1*$prem 2.9*$prem;
+						-moz-background-size:3.1*$prem 2.9*$prem;
+						-o-background-size:3.1*$prem 2.9*$prem;
+	    			}
+	    		}
+	    		.evticon.pc04{
+	    			border-bottom:1px solid #e2e2e2;
+	    			.etleft{
+	    				background:url(../images/pcenter04.png) left center no-repeat;
+	    				background-size:3.4*$prem 3.2*$prem;
+						-webkit-background-size:3.4*$prem 3.2*$prem;
+						-moz-background-size:3.4*$prem 3.2*$prem;
+						-o-background-size:3.4*$prem 3.2*$prem;
+	    			}
+	    		}
+	    		.evticon.pc05{
+	    			.etleft{
+	    				background:url(../images/pcenter05.png) left center no-repeat;
+	    				background-size:2.7*$prem 3.5*$prem;
+						-webkit-background-size:2.7*$prem 3.5*$prem;
+						-moz-background-size:2.7*$prem 3.5*$prem;
+						-o-background-size:2.7*$prem 3.5*$prem;
+	    			}
+	    		}
+	    		.evticon.pc06{
+	    			.etleft{
+	    				background:url(../images/pcenter06.png) left center no-repeat;
+	    				background-size:3*$prem 3.1*$prem;
+						-webkit-background-size:3*$prem 3.1*$prem;
+						-moz-background-size:3*$prem 3.1*$prem;
+						-o-background-size:3*$prem 3.1*$prem;
+	    			}
+	    		}
+	    		.evticon.txc{
+	    			text-align: center;
+	    			line-height:4.4*$pem;
+	    		}
+	    		.user-mess{
+	    			width: 62*$pem;
+	    			margin-left: 2*$pem;
+	    			.um-row{
+	    				height: 8*$pem;
+	    				width: 100%;
+	    				padding: 1.4*$pem 0;
+	    				border-bottom:1px solid #e2e2e2;
+	    				.ur-left{
+	    					width: 30%;
+	    					height: 5.1*$pem;
+	    					line-height: 5.1*$pem;
+	    					float: left;
+	    				}
+	    				.ur-right{
+	    					width: 70%;
+	    					height: 5.1*$pem;
+	    					line-height: 5.1*$pem;
+	    					float: right;
+	    					text-align: right;
+	    					padding-right: 2.4*$pem;
+	    					input{
+	    						width: 100%;
+	    						height: 5.1*$pem;
+	    						line-height: 5.1*$pem;
+
+	    						border: none;
+	    						background:none;
+	    						text-align: right;
+	    						font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;
+	    					}
+
+	    				}
+	    			}
+	    			.um-row.last{
+	    				border: none;
+	    			}
+	    			.um-pic{
+	    				width: 100%;
+	    				.up-word{
+	    					width: 100%;
+	    					height: 8*$pem;
+	    					line-height: 5.1*$pem;
+	    					padding: 1.4*$pem 0;
+	    				}
+	    				.up-pic{
+	    					height: 12.8*$pem;
+	    					padding-bottom: 2*$pem;
+	    					li{
+	    						width: 17*$pem;
+	    						height: 11*$pem;
+	    						float: left;
+	    						border: 1px solid #ddd;
+	    						margin-right: 2*$pem;
+                                position: relative;
+                                input[type=file]{
+                                  width:100%;
+                                  height:100%;
+                                  filter:alpha(opacity=0); /*IE滤镜，透明度50%*/
+                                  -moz-opacity:0; /*Firefox私有，透明度50%*/
+                                  opacity:0;/*其他，透明度50%*/
+                                  position: absolute;
+                                }
+	    						img{width: 100%;}
+	    					}
+	    				}
+	    			}
+	    		}//账户信息
+
+	    		.mdnone{
+	    				margin-top: 0;
+	    				border: none;
+	    				.store-top{
+	    					.word{
+	    						.wcoc{
+	    							width: 50%;
+	    						    height: 8*$pem;
+	    						   line-height: 8*$pem;
+	    						}
+	    						.store-name{
+	    							float: left;
+	    						}
+	    						.wcoc.seeba{
+	    							float: right;
+	    							text-align: right;
+	    							color: #666;
+	    						}
+	    					}
+	    				}
+	    			}
+	    }//通用行样式
+
+	    .withdrawform{
+	    	width: 95%;
+	    	margin: 0 auto;
+	    	margin-top: 10*$pem;
+	    	.wd-input{
+	    		width: 100%;
+	    		height: 9*$pem;
+	    		padding: 2.5*$pem 0;
+	    		background:#fff;
+	    		border: 1px solid #ecc9bc;
+	    		border-radius:1*$pem;
+	    		.wi-left{
+	    			width: 15.5*$prem;
+	    			line-height: 4*$prem;
+	    			font-size: 2.6*$prem;
+	    			text-align: center;
+	    			color: #000;
+	    			float: left;
+
+	    		}
+	    		.wi-right{
+	    			width: 41*$pem;
+	    			height: 4*$pem;
+	    			float: left;
+	    			input{
+	    				width: 41*$pem;
+	    				height: 4*$pem;
+	    				line-height: 4*$pem;
+	    				border: none;
+	    				background:none;
+
+	    			}
+	    		}
+	    	}
+	    	.wd-submit{
+	    		width: 100%;
+	    		height: 9*$pem;
+	    		background:#5e529c;
+	    		border-radius:1*$pem;
+	    		margin-top: 4*$pem;
+	    		input{
+	    			width: 100%;
+	    			height: 9*$prem;
+	    			border: none;
+	    			background:none;
+	    			font-size:3.2*$prem;
+	    			color: #fff;
+	    			font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;
+	    		}
+
+	    	}
+	    }//申请表单
+
+	    .my-clients{
+	    	background: #fff;
+	    	.mc-category{
+	    		width: 100%;
+	    		height: 8*$pem;
+	    		border-bottom:1px solid #ebc7b9;
+	    		background:#fafaf7;
+	    		.mc-ul{
+	    			width: 100%;
+	    			li{
+	    				width: 25%;
+	    				height: 7.8*$pem;
+	    				text-align: center;
+	    				float: left;
+	    				a{
+	    					display: inline-block;
+	    					line-height: 7.5*$pem;
+	    				}
+	    				a.active{
+	    					color: #5b3c80;
+	    					border-bottom:2px solid #5b3c80;
+	    				}
+	    			}
+	    		}
+
+	        }
+	        .mcc-ul{
+	        	border-bottom:1px solid #ebc7b9;
+	    			li{
+	    				width: 100%;
+	    				height: 14*$pem;
+	    				.lf-img{
+	    					width: 10*$pem;
+	    					height: 10*$pem;
+	    					float: left;
+	    					margin: 2*$pem 1.1*$pem 2*$pem 1.3*$pem;
+	    					img{
+	    						width: 100%;
+	    						border: 0.08em solid #c9cde7;
+                                border-radius: 50%;
+                            }
+	    				}
+	    				.lr-word{
+	    					width: 51.5*$pem;
+	    					height: 14*$pem;
+	    					float: right;
+	    					padding: 2*$pem 1.5*$pem 2*$pem 0;
+	    					border-bottom: 1px solid #ededed;
+	    					.name-time{
+	    						width: 100%;
+	    						height: 5*$pem;
+	    						line-height: 5*$pem;
+	    						.name{
+	    							width: 30*$prem;
+	    							float: left;
+	    							color: #333;
+	    							font-size: 3*$prem;
+	    						}
+	    						.time{
+	    							width: 19*$pem;
+	    							float: left;
+	    							color: #b4b4b4;
+	    						}
+
+	    					}
+	    					.mun{
+	    						width: 100%;
+	    						height: 5*$pem;
+	    						line-height: 5*$pem;
+	    						span{
+	    							margin-right: 4*$pem;
+	    							font-size: 2.6*$pem;
+	    							color: #888;
+	    						}
+
+	    					}
+	    				}
+	    			}
+	    			li.last{
+	    				.lr-word{
+	    					border-bottom: none;
+	    				}
+	    			}
+	    		}
+	    }//我的客户
+
+	    .myorder-top{
+	    	.mt-category{
+	    		width: 100%;
+	    		height: 8*$pem;
+	    		border-bottom:1px solid #ebc7b9;
+	    		background:#fafaf7;
+	    		.mt-ul{
+	    			width: 100%;
+	    			li{
+	    				width: 25%;
+	    				height: 7.8*$pem;
+	    				text-align: center;
+	    				float: left;
+	    				a{
+	    					display: inline-block;
+	    					line-height: 7.5*$pem;
+	    				}
+	    				a.active{
+	    					color: #5b3c80;
+	    					border-bottom:2px solid #5b3c80;
+	    				}
+	    			}
+	    		}
+
+	        }
+	    }//我的订单
+
+	    .join-inform{
+	    	width: 95%;
+	    	margin: 0 auto;
+            .title{
+              width: 100%;
+              height: auto;
+              padding: 1.9*$pem 2*$pem;
+              color:#666;
+
+            }
+            .title.share{
+              color:$link-color;
+            }
+	    	.inform-row{
+	    		width: 100%;
+	    		height: 9*$pem;
+	    		border: 1px solid #ecc9bc;
+	    		border-radius:1*$pem;
+	    		background:#fff;
+	    		margin-top: 2.4*$pem;
+	    		padding: 1.9*$pem 2.5*$pem;
+	    		input{
+	    				width: 100%;
+	    				height: 5*$pem;
+	    				line-height: 5*$pem;
+	    				border: none;
+	    				background:none;
+
+	    			}
+	    	}
+	    	.inform-submit{
+	    		width: 100%;
+	    		height: 9*$pem;
+	    		border-radius:1*$pem;
+	    		background:#5e529c;
+	    		margin-top: 6*$pem;
+	    		input{
+	    			width: 100%;
+	    			height:  9*$prem;
+	    			border: none;
+	    			background:none;
+	    			color: #fff;
+	    			font-size: 3.2*$prem;
+	    		}
+	    	}
+	    }//申请加盟
+
+	    .control-store{
+	    	width: 95%;
+	    	height: 7*$pem;
+	    	margin: 6*$pem auto;
+	    	.button{
+	    		display: block;
+	    		height: 7*$prem;
+	    		width: 29*$prem;
+	    		line-height: 7*$prem;
+	    		border-radius:1*$prem;
+	    		font-size: 3*$prem;
+	    		text-align: center;
+	    		color: #fff;
+	    	}
+	    	.button.left{
+	    		float: left;
+	    		background:#5b3c80;
+	    	}
+	    	.button.right{
+	    		float: right;
+	    		background:#2b286f;
+	    	}
+	    }
+
+	    .check-block{
+	    	width: 95%;
+	    	margin: 0 auto;
+	    	.cb-time{
+	    		height: 5.6*$prem;
+	    		width: 100%;
+	    		line-height: 5.6*$prem;
+	    		text-align: center;
+	    	}
+	    	.cb-content{
+	    		width: 100%;
+	    		height: 27*$pem;
+	    		border:1px solid #ecc9bc;
+	    		background:#fff;
+	    		.cbcbox{
+	    			width: 58*$pem;
+	    			margin: 0 auto;
+	    			padding-top: 1.8*$pem;
+	    			.cbrow{
+	    				width: 100%;
+	    				height: 4*$pem;
+	    				span{
+	    					color: #888;
+	    				}
+	    				.span1{
+		    				display: inline-block;
+		    				width: 11*$pem;
+		    				text-align: right;
+		    				padding-right: 1.8*$pem;
+		    				color: #3f3f3f;
+	    			    }
+
+	    			}
+	    			.cbbutton{
+	    				width: 45*$pem;
+	    				height: 7*$pem;
+	    				margin: 0 auto;
+	    				margin-top: 3.6*$pem;
+	    				.button{
+	    					width: 21*$prem;
+	    					height: 7*$prem;
+	    					line-height: 6.8*$prem;
+	    					border-radius:1*$prem;
+	    					font-size: 2.8*$prem;
+	    					text-align: center;
+
+	    				}
+	    				.cbbt1{
+	    					border:1px solid #2b286f;
+	    					color: #2b286f;
+	    					float: left;
+
+	    				}
+	    				.cbbt2{
+	    					background: #2b286f;
+	    					color: #fff;
+	    					float: right;
+                            a{
+                              color:#fff;
+                            }
+
+	    				}
+	    				.cbbt3{
+	    					background: #c1c1c1;
+	    					color: #fff;
+	    					margin: 0 auto;
+
+	    				}
+	    			}
+
+	    		}
+	    	}
+	    }
+
+	    .home-newproduct{
+	    	width: 60.8*$pem;
+	    	height: 42*$pem;
+	    	border:1px solid #ebc7b9;
+	    	border-radius:1*$pem;
+	    	margin: 1.6*$pem auto 0 auto;
+	    	background:#fff;
+	    	.hn-title{
+	    		width: 100%;
+	    		height: 8*$prem;
+	    		line-height:7.9*$prem;
+	    		font-size: 3.6*$prem;
+	    		padding-left: 2.6*$prem;
+	    		color: #2f2c71;
+	    		background:url(../images/hn-titlebg.png) left center no-repeat;
+	    		background-size:.8*$prem 3.4*$prem;
+				-webkit-background-size:.8*$prem 3.4*$prem;
+				-moz-background-size:.8*$prem 3.4*$prem;
+				-o-background-size:.8*$prem 3.4*$prem;
+				border-bottom:1px solid #ebc7b9;
+	    	}
+	    	.hn-left{
+	    		width: 24.3*$pem;
+	    		height: 33.8*$pem;
+	    		float: left;
+	    		border-right:1px solid #ebc7b9;
+	    		.hnl-word{
+	    			width: 22*$pem;
+	    			height: 10.6*$pem;
+	    			margin: 0 auto;
+	    			padding-top: 1*$pem;
+	    			.title{
+	    				font-size: 3*$prem;
+	    				line-height: 4*$prem;
+	    				color: #5b3c80;
+	    			}
+	    			.describe{
+	    				font-size: 2.5*$prem;
+	    				line-height: 4*$prem;
+	    				color: #999;
+	    			}
+
+	    		}
+	    		.hnl-img{
+	    			width:100%;
+	    			height: 23*$pem;
+	    			overflow: hidden;
+	    			img{width: 100%;}
+	    		}
+	    	}
+	    	.hn-right{
+	    		width: 36.1*$pem;
+	    		height: 33.8*$pem;
+	    		float: right;
+	    		.hnr-top{
+	    			width: 100%;
+	    			height: 16.9*$pem;
+	    			border-bottom:1px solid #ebc7b9;
+	    			.hnrt-box{
+	    				width: 34*$pem;
+	    				height: 16.9*$pem;
+	    				padding: .45*$pem 0;
+	    				margin: 0 auto;
+	    				.hnrtb-word{
+	    					width: 18*$pem;
+	    					height: 16*$pem;
+	    					padding-top: 3*$pem;
+	    					float: left;
+	    					.title{
+			    				font-size: 3*$prem;
+			    				line-height: 4*$prem;
+			    				color: #5b3c80;
+			    			}
+			    			.describe{
+			    				font-size: 2.5*$prem;
+			    				line-height: 4*$prem;
+			    				color: #999;
+			    			}
+	    				}
+	    				.hnrtb-img{
+	    					width: 15*$pem;
+	    					height: 16*$pem;
+	    					float: right;
+	    					img{width: 100%;}
+	    				}
+	    			}
+	    		}
+	    		.hnr-bottom{
+	    			width: 100%;
+	    			height: 16.9*$pem;
+	    			.hnrb-l{
+	    				float: left;
+	    				width: 18.1*$pem;
+	    				height: 16.9*$pem;
+	    				border-right:1px solid #ebc7b9;
+	    			}
+	    			.hnrb-r{
+	    				float: right;
+	    				width: 18*$pem;
+	    				height: 16.9*$pem;
+	    			}
+	    			.hnrb-box{
+	    				width: 16*$pem;
+	    				height: 17*$pem;
+	    				padding-top: 1*$pem;
+	    				.title{
+	    					width: 100%;
+	    					height: 3.6*$pem;
+	    					line-height: 3.6*$pem;
+	    					text-align: center;
+
+	    				}
+	    				.img{
+	    					width: 100%;
+	    					height: 12*$pem;
+	    					img{width: 100%;}
+
+	    				}
+	    			}
+	    		}
+
+	    	}
+	    }//首页新品
+
+	    .home-ad{
+	    	width: 60.8*$pem;
+	    	height: 28.2*$pem;
+	    	border:1px solid #ebc7b9;
+	    	border-radius:1*$pem;
+	    	margin: 1.6*$pem auto 0 auto;
+	    	background:#fff;
+	    	padding: .4*$pem;
+	    	.ha-img{
+	    		width: 100%;
+	    		height: 22*$pem;
+	    		overflow: hidden;
+	    		img{width: 100%;}
+	    	}
+	    	.ha-activity{
+	    		height: 4.8*$pem;
+	    		width: 100%;
+	    		margin-top: .4*$pem;
+	    		.ha-tag{
+	    			width: 10.8*$pem;
+	    			height: 4.8*$pem;
+	    			line-height: 4.8*$pem;
+	    			padding-left: 2.8*$pem;
+	    			background:url(../images/ad-top.png) no-repeat;
+	    			background-size:cover;
+					-webkit-background-size:cover;
+					-moz-background-size:cover;
+					-o-background-size:cover;
+					color: #fff;
+					float: left;
+	    		}
+	    		.ha-content{
+	    			width: 48*$prem;
+	    			height: 4.8*$prem;
+	    			line-height: 4.8*$prem;
+	    			float: right;
+	    			color: #5b3c80;
+	    			font-size: 2.4*$prem;
+	    		}
+	    	}
+	    }//首页广告推荐
+
+	    .home-newarrival{
+	    	width: 60.8*$pem;
+	    	margin: 0 auto;
+	    	margin-top: 1*$pem;
+	    	.bigtag{
+	    		width: 100%;
+	    		height: 7.8*$prem;
+	    		line-height: 7.8*$prem;
+	    		background:url(../images/hn-titlebg.png) left center no-repeat;
+	    		background-size:.8*$prem 3.4*$prem;
+				-webkit-background-size:.8*$prem 3.4*$prem;
+				-moz-background-size:.8*$prem 3.4*$prem;
+				-o-background-size:.8*$prem 3.4*$prem;
+				padding-left: 2.8*$prem;
+	    		.bt-title{
+	    			float: left;
+	    			color: #2f2c71;
+	    			font-size: 3.6*$prem;
+	    		}
+	    		.bt-more{
+                    display: inline-block;
+                    width: 8*$pem;
+                    text-align: center;
+	    			float: right;
+	    			color: #9966cc;
+                    a{
+                      color: #9966cc;
+                    }
+	    		}
+	    	}
+	    	.hn-nav{
+	    		width: 100%;
+	    		height: 7.1*$pem;
+	    		border-top:1px solid #ebc7b9;
+	    		border-bottom:1px solid #ebc7b9;
+	    		.hn-ul{
+	    			li{
+	    				width: 33%;
+	    				height: 6.9*$pem;
+	    				line-height: 6.9*$pem;
+	    				float: left;
+	    				text-align: center;
+	    				color: #999;
+	    			}
+	    			li.active{
+	    				color: #5b3c80;
+	    				background:url(../images/hn-navlibg.png) center bottom no-repeat;
+	    				background-size:11*$pem .3*$pem;
+						-webkit-background-size:11*$pem .3*$pem;
+						-moz-background-size:11*$pem .3*$pem;
+						-o-background-size:11*$pem .3*$pem;
+	    			}
+	    		}
+	    	}
+	    	.hn-product-list{
+	    		width: 60.8*$pem;
+	    		margin: 0 auto;
+	    		.hpl-ul{
+	    			width: 62.4*$pem;
+	    			li{
+	    				width: 29.6*$pem;
+	    				height: 42*$pem;
+	    				float: left;
+	    				background:#fff;
+	    				border:1px solid #ebc7b9;
+	    				margin-top: 1.6*$pem;
+	    				margin-right: 1.6*$pem;
+	    				position: relative;
+	    				.pro-logo{
+	    					width: 11.2*$pem;
+	    					height: 2.3*$pem;
+	    					background:url(../images/pro-logo.png) no-repeat;
+	    					background-size:cover;
+							-webkit-background-size:cover;
+							-moz-background-size:cover;
+							-o-background-size:cover;
+							position: absolute;
+							top: .5*$pem;
+							left: .5*$pem;
+
+	    				}
+	    				.pro-img{
+	    					width: 100%;
+	    					height: 28.8*$pem;
+	    					img{width: 100%;}
+	    				}
+	    				.pro-word{
+	    					width: 27.8*$pem;
+	    					height: 12.5*$pem;
+	    					margin: 0 auto;
+	    					.title{
+	    						width: 100%;
+	    						height: 7*$prem;
+	    						line-height: 3.5*$prem;
+	    						font-size: 2.4*$prem;
+	    						margin: .5*$prem 0;
+	    					}
+	    					.price{
+	    						width: 100%;
+	    						height: 4.2*$pem;
+	    						.span1{
+	    							float: left;
+	    							color: #5b3c80;
+	    						}
+	    						.span2{
+	    							float: right;
+	    							color: #888;
+	    						}
+	    					}
+	    				}
+	    			}
+	    		}
+	    	}
+	    }
+
+        //商品列表
+        .products-list{
+          margin: 0 auto;
+          &.one-col{
+            padding: 2*$pem;
+            background-color: #ffffff;
+            .product{
+              padding-bottom: 2*$pem;
+              margin-bottom: 2*$pem;
+              border-bottom: 1px solid #ccbaae;
+              .prod-img{
+                float: left;
+                width: 17*$pem;
+                height: 17*$pem;
+                margin-right: 1*$pem;
+                img{
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .prod-name{
+                width: 30*$pem;
+                float: left;
+                padding: 1.5*$pem 0;
+                a{
+                  font-size: 2.4*$pem;
+                  color: $link-color;
+                }
+              }
+              .prod-par-price{
+                float: left;
+                width: 30*$pem;
+                padding-bottom: 2*$pem;
+                span{
+                  color: #c5c4c4;
+                  text-decoration: line-through;
+                  font-size: 2*$pem;
+                }
+              }
+              .prod-sale-price{
+                float: left;
+                width: 30*$pem;
+                span{
+                  color: $price-color;
+                  font-size: 2.8*$pem;
+                }
+              }
+              .prod-sales-count{
+                //          display: none;
+                float: left;
+                width: 30*$pem;
+                span{
+                  font-size: 2.4*$pem;
+                  color: #888;
+                }
+              }
+            }
+          }
+
+        }
+	}
+
+
+  .content{
+    .nav_link{
+      width:100%;
+      height:auto;
+      overflow: hidden;
+     margin-top:0.5em;
+     ul{
+       width: 100%;
+       padding:0;
+       margin:0;
+       list-style: none;
+       margin-top: 0.5em;
+       li{
+         width: 25%;
+         float:left;
+          img{
+            width: 60%;
+            margin:0 auto;
+            display: block;
+          }
+         b{
+           width:100%;
+           padding-top:0.3em;
+           text-align: center;
+           height:1.2em;
+           line-height: 1.2em;
+           display: block;
+         }
+       }
+     }
+    }
+  }
+
+
+
+
+}

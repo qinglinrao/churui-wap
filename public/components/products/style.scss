@@ -1,0 +1,199 @@
+
+
+.component-product{
+    &.has-border{
+        border: 1px solid #ccbaae;
+        border-radius: 0.4em;
+        overflow: hidden;
+        &.tpl_1{
+            border: none;
+        }
+        &.tpl_2{
+            .product{
+                &:last-child{
+                    margin-bottom: 0px;
+                    border-bottom-left-radius: 0.4em;
+                    border-bottom-right-radius: 0.4em;
+                }
+            }
+        }
+    }
+    .component-title{
+        color: #634932;
+        height: 1em;
+        line-height: 0.9em;
+        margin-top: 0.5em;
+        margin-bottom: 0.4em;
+        > span{
+            font-size: 0.9em;
+        }
+        &.title-theme-2{
+            border-left: 0.2em solid #46939c;
+        }
+    }
+
+    &.tpl_1{
+        .product{
+            width: 7.25em;
+            float: left;
+            margin-bottom: 0.5em;
+            background-color: #fff;
+            margin-left: 0.5em;
+            .prod-img{
+                width: 100%;
+                height: 7.25em;
+                background: #ccc;
+                margin-bottom: 0.25em;
+            }
+            .prod-name{
+                span{
+                    font-size: 0.6em;
+                }
+                color: #63492f;
+                height: 2em;
+                line-height: 0.75em;
+                padding: 0 0.25em;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                position: relative;
+            }
+            .prod-saleprice{
+                span{
+                    font-size: 0.6em;
+                }
+                color: #8f3523;
+                float: left;
+                height: 1em;
+                line-height: 0.75em;
+                padding: 0 0.25em;
+            }
+            .prod-parprice{
+                color: #8f3523;
+                padding: 0 0.25em;
+                span{
+                    font-size: 0.6em;
+                }
+            }
+            .prod-sale{
+                color: #888;
+                float: right;
+                height: 1em;
+                line-height: 0.75em;
+                padding: 0 0.25em;
+                span{
+                    font-size: 0.6em;
+                }
+            }
+        }
+        &.has-border{
+            .product{
+                border: 1px solid #ccbaae;
+                &.last{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        &.theme-2{
+            .product .prod-img{
+                background: #30cab2;
+            }
+        }
+    }
+
+    &.tpl_2{
+        background: #fff;
+        width: 15em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        .component-title{
+            margin-bottom: 0;
+        }
+
+        .product{
+            border-bottom: 1px solid transparent;
+            background-color: #fff;
+            border-bottom: 1px solid #ccbaae;
+            &:last-child{
+                border-bottom: 0;
+            }
+            &:first-child{
+                padding-top: 0;
+            }
+            .prod-img{
+                float: left;
+                width: 5em;
+                height: 5em;
+                background: #ccc;
+                margin: 0.25em;
+            }
+            .prod-name{
+                color: #63492f;
+                float: left;
+                width: 8.25em;
+                height: 2em;
+                line-height: 0.75em;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                position: relative;
+                margin-top: 0.5em;
+                span{
+                    font-size: 0.75em;
+
+                }
+            }
+            .prod-parprice{
+                color: #c5c4c4;
+                padding-top: 0.25em;
+                text-decoration: line-through;
+                width: 8.25em;
+                float: left;
+                line-height: 1em;
+                span{
+                    font-size: 0.7em;
+                }
+            }
+            .prod-saleprice{
+                color: #8f3523;
+                float: left;
+                width: 8.25em;
+                line-height: 1em;
+                span{
+                    font-size: 1em;
+                }
+            }
+
+        }
+
+        &.theme-2{
+            .product{
+                .prod-img{
+                    background: #30cab2;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+* ==== edit form ======
+*/
+
+.products-list li {
+    margin-bottom: 10px;
+    height: 70px;
+}
+.products-list li .prod-img{
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.products-list li .prod-name,
+.products-list li .prod-desc{
+    float: left;
+    width: 260px;
+}

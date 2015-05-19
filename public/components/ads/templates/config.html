@@ -1,0 +1,28 @@
+<div id='component-banner-form'>
+    <form>     
+        <div class="section">广告图片</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">上间距</div> 
+            <div class="field">
+                无：<input <% if(hasMarginTop == 'no') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top' value='no'/> 
+                有：<input <% if(hasMarginTop == 'yes')  print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top' value='yes'/>
+            </div>
+        </div>
+    </form>
+    <div class="section">
+        广告图片属性
+    </div>
+    <div id="banner-list" class="clearfix">
+        <form>
+            <ul class="list-unstyled">
+                <li class="clearfix">
+                    <div class="banner-img image-upload">
+                        <img src="<%= data.src %>"/>
+                    </div>
+                    <div class="slide-name"><input type="text" name="slide_name" value="<%= data.name %>"/></div>
+                    <div class="slide-link"><input type="text" name="slide_link" value="<%= data.link %>"/></div>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>

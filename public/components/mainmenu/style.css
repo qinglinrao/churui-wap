@@ -1,0 +1,69 @@
+.component-mainmenu {
+  background-color: #fff; }
+  .component-mainmenu .component-title.title-theme-1 {
+    padding: 0.1em 0.5em;
+    margin: 0.1em; }
+  .component-mainmenu .component-title.title-theme-2 {
+    padding: 0.1em 0.5em;
+    border-left: 0.25em solid #000;
+    margin: 0.1em; }
+  .component-mainmenu .nav-item {
+    width: 3.45em;
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid #baa699;
+    height: 2.15em; }
+    .component-mainmenu .nav-item .nav-item-name {
+      text-align: center;
+      height: 2em;
+      line-height: 2em;
+      overflow: hidden;
+      position: relative;
+      color: #baa699; }
+      .component-mainmenu .nav-item .nav-item-name span {
+        font-size: 0.7em; }
+  .component-mainmenu.theme-1 .nav-item .active .nav-item-name {
+    color: #46939c;
+    border-bottom: 1px solid #46939c;
+    padding-bottom: 0.5em; }
+  .component-mainmenu.theme-2 .nav-item .active .nav-item-name span {
+    color: #fff;
+    padding: 0 0.5em;
+    border-radius: 0.5em;
+    background-color: #46939c; }
+  .component-mainmenu.theme-3 .nav-item {
+    border-bottom: 1px solid #baa699;
+    min-width: 20%;
+    background: url("./images/mainmenu_line_bg.png") right center/1px 0.8em no-repeat; }
+    .component-mainmenu.theme-3 .nav-item:last-child {
+      background: none; }
+  .component-mainmenu.theme-3 .active .nav-item-name {
+    color: #46939c; }
+  .component-mainmenu.theme-4 .nav-item .active .nav-item-name {
+    color: #46939c; }
+    .component-mainmenu.theme-4 .nav-item .active .nav-item-name span {
+      font-size: 0.8em; }
+
+/*
+* ==== edit form =====
+*/
+#component-mainmenu-form .sortable-field li {
+  padding: 5px;
+  border: 2px solid transparent;
+  position: relative; }
+  #component-mainmenu-form .sortable-field li:hover {
+    border-color: #30cab2; }
+  #component-mainmenu-form .sortable-field li .toggle-visible {
+    float: right;
+    margin-right: 50px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    background: #7f7f7f;
+    padding: 0 5px;
+    cursor: pointer; }
+    #component-mainmenu-form .sortable-field li .toggle-visible.visible {
+      background-color: #30cab2; }
+  #component-mainmenu-form .sortable-field li .name-field {
+    border: 1px solid #cecccd;
+    padding: 0 10px; }

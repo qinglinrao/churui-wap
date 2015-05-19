@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes...
+#    RewriteRule ^(.*)\.html(.*)$ /$1 [L,P]
+#    RewriteRule ^(.*)\.html$ /$1 [P]
+#    RewriteRule ^ index.php [L]
+#    RewriteRule ^(.*)\.html(.*)$ /$1 [L,P]
+#    RewriteRule ^(.*)/$ /$1 [L]
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+
+</IfModule>

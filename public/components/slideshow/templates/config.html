@@ -1,0 +1,51 @@
+<div id='component-slideshow-form'>
+    <form>     
+        <div class="section">轮播设置</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">滚动方向</div> 
+            <div class="field">
+                <select data-role="rtl">
+                    <option value="0" <% if(rtl == 0) print ('selected="selected"') %>>从右向左</option>
+                    <option value="1" <% if(rtl == 1) print ('selected="selected"') %>>从左向右</option>
+                </select>
+            </div>
+        </div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">时间间隔</div> 
+            <div class="field">
+                <select data-role="autoplayTimeout">
+                    <% for(i=1;i<=10;i++){ %>
+                    <option value="<%= i*1000 %>" <% if( autoplayTimeout == i*1000) print ('selected="selected"') %>><%= i %></option>
+                    <% } %>
+                </select>后自动播放下一张图片
+            </div>
+        </div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">上间距</div> 
+            <div class="field">
+                无：<input <% if(hasMarginTop == 'no') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top with-role' value='no'/> 
+                    有：<input <% if(hasMarginTop == 'yes') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top with-role' value='yes'/>
+            </div>
+        </div>
+
+    </form>
+    <div class="section">
+        幻灯片信息 <a class="add-slide float-right" href="javascript:void(0)">+添加图片</a>
+    </div>
+    <div id="slides-list" class="slide-list clearfix">
+        <form>
+            <ul class="list-unstyled">
+                <% for (i in data){ %>
+                <li class="slide clearfix">
+                    <div class="delete-item"><img src="../images/delete_item.png"/></div>
+                    <div class="slide-img image-upload">
+                        <img src="<%= data[i].src %>"/>
+                    </div>
+                    <div class="slide-name"><input type="text" name="slide_name" value="<%= data[i].name %>"/></div>
+                    <div class="slide-link"><input type="text" name="slide_link" value="<%= data[i].link %>"/></div>
+                </li>
+                <% } %>
+            </ul>
+        </form>
+    </div>
+</div>

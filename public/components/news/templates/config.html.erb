@@ -1,0 +1,66 @@
+<div id='component-news-form'>
+    <form>     
+        <div class="section">橱窗信息</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">栏目标题</div> 
+            <div class="field">
+                无：<input <% if(hasTitle == 'no') print('checked="checked"') %> data-role='hasTitle' type='radio' name='has_title' class='field-has-title with-role' value='no'/> 
+                有：<input <% if(hasTitle == 'yes') print('checked="checked"') %> data-role='hasTitle' type='radio' name='has_title' class='field-has-title with-role' value='yes'/>
+                <div class="section-title-info clearfix">
+                    <input data-role="componentName" type="text" class="field-title" placeholder="栏目标题" value="<%= componentName %>"/>
+                    <br/><br/>标题样式<br/>
+                    <div class="select-wrapper <% if(titleTheme == 'title-theme-1') print('active') %>" data-role="titleTheme" data-val="title-theme-1" >
+                        <img src="/marionette/js/components/products/images/title_theme_1.png">
+                        <div class="selected-icon"></div>
+                    </div>
+                    <div class="select-wrapper <% if(titleTheme == 'title-theme-2') print('active') %>"  data-role="titleTheme" data-val="title-theme-2">
+                        <img  src="/marionette/js/components/products/images/title_theme_2.png">
+                        <div class="selected-icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">商品数量</div> 
+            <div class="field">
+                <input data-role='dataLimit' type='text' name='product_num' value="<%= dataLimit %>" class='product-num spin-button with-role'/>
+            </div>
+        </div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">上间距</div> 
+            <div class="field">
+                无：<input <% if(hasMarginTop == 'no') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top with-role' value='no'/> 
+                有：<input <% if(hasMarginTop == 'yes') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top with-role' value='yes'/>
+            </div>
+        </div>
+
+        <div class="section">文本样式</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="title-theme">
+                <div class="select-wrapper <% if(templateId == 'tpl_1') print('active') %>" data-role="templateId" data-val="tpl_1">
+                    <img src="/marionette/js/components/news/images/tpl_1.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(templateId == 'tpl_2') print('active') %>" data-role="templateId" data-val="tpl_2">
+                    <img src="/marionette/js/components/news/images/tpl_2.png">
+                    <div class="selected-icon"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="section">
+        文章列表 <a class="fancybox add-product" data-fancybox-type="iframe" href="http://backbonejs.org/#Events-listenTo">+添加文章</a>
+    </div>
+    <div class="news-list clearfix">
+        <ul class="sortable-list list-unstyled">
+            <% for (i in data){ %>
+            <li class="news clearfix">
+                <div class="news-img"><img src="<%= data[i].src %>"/></div>
+                <div class="news-name"><%=data[i].name %></div>
+                <div class="news-desc"><%=data[i].desc %></div>
+            </li>
+            <% } %>
+        </ol>
+    </div>
+</div>

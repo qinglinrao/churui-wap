@@ -1,0 +1,69 @@
+<div id='component-search-form'>
+    <form>     
+        <div class="section">搜索框设置</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">上间距</div> 
+            <div class="field">
+                无：<input <% if(hasMarginTop == 'no') print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top' value='no'/> 
+                有：<input <% if(hasMarginTop == 'yes')  print('checked="checked"') %> data-role='hasMarginTop' type='radio' name='has_margin_top' class='field-margin-top' value='yes'/>
+            </div>
+        </div>
+        <div class='filed-wrapper clearfix'>
+            <div class="field-label">Logo</div> 
+            <div class="field">
+                <div class="logo image-upload">
+                    <img src="<%= logo %>"/>
+                </div>
+            </div>
+        </div>
+    
+        <div class="section">选择模板</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="title-theme">
+                <div class="select-wrapper <% if(templateId == 'tpl_1') print('active') %>" data-role="templateId" data-val="tpl_1">
+                    <img src="/marionette/js/components/search/images/tpl_1.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(templateId == 'tpl_2') print('active') %>" data-role="templateId" data-val="tpl_2">
+                    <img src="/marionette/js/components/search/images/tpl_2.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(templateId == 'tpl_3') print('active') %>" data-role="templateId" data-val="tpl_3">
+                    <img src="/marionette/js/components/search/images/tpl_3.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(templateId == 'tpl_4') print('active') %>" data-role="templateId" data-val="tpl_4">
+                    <img src="/marionette/js/components/search/images/tpl_4.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(templateId == 'tpl_5') print('active') %>" data-role="templateId" data-val="tpl_5">
+                    <img src="/marionette/js/components/search/images/tpl_5.png">
+                    <div class="selected-icon"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">选择搜索框样式</div>
+        <div class='filed-wrapper clearfix'>
+            <div class="title-theme">
+                <div class="select-wrapper <% if(themeId == 'theme-1') print('active') %>" data-role="themeId" data-val="theme-1">
+                    <img src="/marionette/js/components/search/images/theme_1.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(themeId == 'theme-2') print('active') %>" data-role="themeId" data-val="theme-2">
+                    <img src="/marionette/js/components/search/images/theme_2.png">
+                    <div class="selected-icon"></div>
+                </div>
+                <div class="select-wrapper <% if(themeId == 'theme-3') print('active') %>" data-role="themeId" data-val="theme-3">
+                    <img src="/marionette/js/components/search/images/theme_3.png">
+                    <div class="selected-icon"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">搜索关键字提示</div>
+        <div class='filed-wrapper clearfix'>
+            <input data-role="placeholder" type="text" class="field-title with-role" placeholder="搜索关键字提示" value="<%= placeholder %>"/>
+        </div>
+    </form>
+</div>

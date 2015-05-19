@@ -1,0 +1,43 @@
+commit 45940111f720cbbed567574012c2cd94d5fd2d87
+Merge: 1cf71b6 134e36f
+Author: root <root@Aaron.(none)>
+Date:   Mon Jan 5 18:49:23 2015 +0800
+
+    个人中心功能
+
+commit 1cf71b64baec68044bd2cdcd16e07b8a4e86b110
+Author: root <root@Aaron.(none)>
+Date:   Mon Jan 5 18:36:40 2015 +0800
+
+    个人中心功能完成
+
+commit d7651fc27fdb9992023f64ebf1edd595463a1a1f
+Author: root <root@Aaron.(none)>
+Date:   Sun Jan 4 19:05:09 2015 +0800
+
+    个人中心功能基本完成，收货地址未设置默认地址
+
+commit 134e36f647923db68e2496f96eac90bc2fdcd97f
+Author: hardywen <375480616@qq.com>
+Date:   Wed Dec 31 17:21:57 2014 +0800
+
+    add controllers
+    add views
+
+commit 3eb08c48a42aba9accac8590cbcf818a332a7f53
+Author: root <root@Aaron.(none)>
+Date:   Wed Dec 31 16:05:28 2014 +0800
+
+    修改控制器登录、注册功能
+
+commit f0365e026edb67175cf58f3c1ea9dbad9de728bc
+Author: root <root@Aaron.(none)>
+Date:   Wed Dec 31 16:04:30 2014 +0800
+
+    add model
+
+commit 3d4ea7ad3eab3a804a87f41a4b1a1b1a8f210978
+Author: hardywen <375480616@qq.com>
+Date:   Tue Dec 30 17:41:48 2014 +0800
+
+    project init

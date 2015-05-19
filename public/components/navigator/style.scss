@@ -1,0 +1,131 @@
+
+.component-navigator {
+    .component-title{
+        &.title-theme-1{
+            padding: 0.1em 0.5em;
+            margin: 0.1em;
+        }
+        &.title-theme-2{
+            padding: 0.1em 0.5em;
+            border-left: 0.25em solid #000;
+            margin: 0.1em;
+        }
+    }
+
+    .nav-item{
+        float: left;
+        padding-bottom: 0.75em;
+        min-width: 25%;
+
+        .nav-item-img{
+            height: 2.25em;
+            margin: 0 auto;
+        }
+
+        .nav-item-name{
+            text-align: center;
+            height: 1em;
+            line-height: 1em;
+            overflow: hidden;
+            position: relative;
+            span{
+                font-size: 0.6em;
+            }
+        }
+    }
+    @for $i from 1 through 2{
+        &.theme-#{$i}{
+            .nav-item{
+                .nav-item-img{
+                    &.shopping-cart{
+                        background: url('./images/shopping_cart_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.orders{
+                        background: url('./images/orders_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.categories{
+                        background: url('./images/categories_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.cod{
+                        background: url('./images/cod_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.collect{
+                        background: url('./images/collect_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.deliver{
+                        background: url('./images/deliver_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.guarantee{
+                        background: url('./images/guarantee_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.maintain{
+                        background: url('./images/maintain_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.postage{
+                        background: url('./images/postage_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.profile{
+                        background: url('./images/profile_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.returns{
+                        background: url('./images/returns_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                    &.service{
+                        background: url('./images/service_#{$i}.png') center center no-repeat;
+                        background-size: 2em 2em;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+
+/*
+* ==== edit form====
+*/
+#component-navigator-form .sortable-field li{
+    padding: 5px;
+    border: 2px solid transparent;
+    position: relative;
+}
+#component-navigator-form .sortable-field li:hover{
+    border-color: #30cab2;
+}
+
+#component-navigator-form .sortable-field li .toggle-visible {
+    float: right;
+    margin-right: 50px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    background: #7f7f7f;
+    padding: 0 5px;
+    cursor: pointer
+}
+
+#component-navigator-form .sortable-field li .toggle-visible.visible{
+    background-color: #30cab2
+}
+
+
+#component-navigator-form .sortable-field li .name-field{
+    border: 1px solid #cecccd;
+    padding: 0 10px;
+}
+
