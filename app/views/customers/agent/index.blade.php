@@ -3,7 +3,7 @@
 @section('wrapper')
     <div class="top">
         <ul>
-            <li class="back-arrow"><a href="javascript:history.go(-1)"><img src="/assets/images/back-arrow.png" width="60%" height="60%" ></a></li>
+            <li class="back-arrow"><a href="javascript:history.go(-1)"><img src="/assets/images/churui/back-arrow.png" width="60%" height="60%" ></a></li>
             <li class="title">代理提成</li>
             <li class="forward"><a href="{{ URL::route('cash.index') }}" >提现记录</a></li>
         </ul>
@@ -26,11 +26,11 @@
                         <p class="fr-wenzi">销售额</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi"><a href="{{ URL::route('agent.products')  }}">{{ count($orders) }}</a></p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.my_orders') }}">{{ count($orders) }}</a></p>
                         <p class="fr-wenzi">订单</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi">{{ count($two_agents) }}</p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.my_members') }}">{{ count($two_agents) }}</a></p>
                         <p class="fr-wenzi">会员</p>
                     </div>
                     <div>

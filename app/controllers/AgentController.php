@@ -22,10 +22,21 @@ class AgentController extends BaseController {
             ,'orders','two_order','three_order','two_money','three_money'));
     }
 
-    public function getAgentProducts(){
-        $products = Product::where('visible',1)->get();
-        return View::make('customers.agent.products',compact('products'));
+    public function getAgentMyOrders(){
+
+        return View::make('customers.agent.my_orders');
     }
+
+    public function getAgentMyMembers(){
+
+        return View::make('customers.agent.my_members');
+    }
+
+    public function getAgentOrderLists(){
+
+        return View::make('customers.agent.order_lists');
+    }
+
 
     public function ProductsDetail($id){
         $product = Product::where('id',$id)->first();

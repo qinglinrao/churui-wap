@@ -49,6 +49,8 @@
       {{HTML::script('assets/js/jquery.sha1.js')}}
       {{HTML::script('http://res.wx.qq.com/open/js/jweixin-1.0.0.js')}}
       {{HTML::script('libraries/jquery.wechat.share.js')}}
+      {{HTML::script('assets/js/jquery.spinner.js')}}
+      {{HTML::script('assets/js/jquery.SuperSlide.2.1.1.js')}}
       @yield('scripts')
       {{--{{HTML::script('packages/frenzy/turbolinks/turbolinks.js')}}--}}
     </div>
