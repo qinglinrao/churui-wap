@@ -37,6 +37,11 @@ class AgentController extends BaseController {
         return View::make('customers.agent.order_lists');
     }
 
+    public function getAgentOrderDetail($id){
+
+        return View::make('customers.agent.order_detail');
+    }
+
 
     public function ProductsDetail($id){
         $product = Product::where('id',$id)->first();

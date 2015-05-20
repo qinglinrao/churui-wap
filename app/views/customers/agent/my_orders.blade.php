@@ -35,7 +35,7 @@
 
                     <li class="mydd-lists">
                         <div  class="mydd-list">
-                            <a href="">
+                            <a href="{{ URL::route('agent.order_detail',array('id'=>1)) }}">
                                 <div  class="shangping-photo">
                                     <img src="/assets/images/churui/example1.jpg" width="100%" height="100%" border="0" alt="商品图片">
                                 </div>

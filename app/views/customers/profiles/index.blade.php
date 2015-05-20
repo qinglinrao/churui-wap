@@ -12,23 +12,25 @@
 
 
     <div  class="content">
+        @if($auth_checked)
         <div  class="head-bg">
             <div  class="head-photo">
-                <img src="/assets/images/churui/touxiang.jpg" width="100%" height="100%" border="0" alt="头像">
+                <img src="{{$customer->detail &&$customer->detail->image?AppHelper::imgSrc($customer->detail->image->url):'/assets/images/prod_thumb.png'}}" width="100%" height="100%" border="0" alt="头像">
             </div>
             <div  class="name">
-                <p>阿甘</p>
+                <p>{{$customer->detail->username}}</p>
             </div>
             <div  class="phone">
-                <p>18597483819</p>
+                <p>{{$customer->mobile}}</p>
             </div>
         </div>
+        @endif
 
         <div  class="gr-detailed">
             <div  class="gr-member">
                 <a href="{{ URL::route('agent.my_members') }}" >
                     <span class="gr-item">我的会员</span>
-                    <span class="gr-value">5</span>
+                    <span class="gr-value">{{$customer->customer_num}}</span>
                 </a>
             </div>
 
@@ -42,10 +44,10 @@
             <div  class="gr-ticheng">
                 <a href="{{ URL::route('agent.index') }}" >
                     <span class="gr-item">代理提成</span>
-                    <span class="gr-value">￥14500.00</span>
+                    <span class="gr-value">￥{{AppHelper::money($customer->total_pay)}}</span>
                 </a>
             </div>
         </div>
-        <a href="#"><div  class="gr-tixian">申请提现</div>	</a>
+        <a href="{{ URL::route('cash.apply') }}"><div  class="gr-tixian">申请提现</div>	</a>
     </div>
 @stop

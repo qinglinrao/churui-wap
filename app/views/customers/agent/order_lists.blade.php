@@ -3,7 +3,7 @@
 @section('wrapper')
     <div class="top">
         <ul>
-            <li class="back-arrow"><a href="#"><img src="/assets/images/churui/back-arrow.png" width="60%" height="60%" ></a></li>
+            <li class="back-arrow"><a href="javascript:history.go(-1)"><img src="/assets/images/churui/back-arrow.png" width="60%" height="60%" ></a></li>
             <li class="title">订单列表</li>
             <li class="forward"> <a href="#" class="shenqing"></a></li>
         </ul>

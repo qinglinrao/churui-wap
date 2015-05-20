@@ -3,7 +3,7 @@
 @section('wrapper')
     <div class="top">
         <ul>
-            <li class="back-arrow"><a href="javascript:history.go(-1)"><img src="/assets/images/back-arrow.png" width="60%" height="60%" ></a></li>
+            <li class="back-arrow"><a href="javascript:history.go(-1)"><img src="/assets/images/churui/back-arrow.png" width="60%" height="60%" ></a></li>
             <li class="title">账户信息</li>
             <li class="forward"><a href="javascript:history.go(-1)" >确定</a></li>
         </ul>
