@@ -37,7 +37,7 @@
             <div  class="gr-dingdan">
                 <a href="{{ URL::route('agent.order_lists') }}" >
                     <span class="gr-item">订单总数</span>
-                    <span class="gr-value">10</span>
+                    <span class="gr-value">{{ $orders }}</span>
                 </a>
             </div>
 

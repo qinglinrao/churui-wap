@@ -28,8 +28,13 @@ class AgentController extends BaseController {
     }
 
     public function getAgentMyMembers(){
+        $customer = Auth::customer()->check()?Auth::customer()->user():null;
+        //下级会员
+        $next_agents = Customer::where('leader_id', $customer->id)->get();
+        //订单总数
 
-        return View::make('customers.agent.my_members');
+
+        return View::make('customers.agent.my_members', compact('next_agents'));
     }
 
     public function getAgentOrderLists(){

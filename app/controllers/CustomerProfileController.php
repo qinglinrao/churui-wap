@@ -4,14 +4,38 @@ class CustomerProfileController extends BaseController {
 
     //客户个人中心主页
     public function getIndex(){
+
+        $customer = Auth::customer()->check()?Auth::customer()->user():null;
+
+        $num = array();
+        $next_agents = Customer::where('leader_id',$customer->id)->get();
+        if(count($next_agents)>0){
+            foreach($next_agents as $n){
+                $num[] = $n->id;
+            }
+        }
+        if(count($num)>0){
+            $next_agents = Customer::whereIn('leader_id',$num)->get();
+            if(count($next_agents)>0){
+                foreach($next_agents as $n){
+                    $num[] = $n->id;
+                }
+            }
+        }
+        $orders = Order::whereIn('customer_id',$num)->count();
+
+
         $waiting_pay = Order::customer()->statusIn(get_order_status_group(1))->count();
         $waiting_receive = Order::customer()->statusIn(get_order_status_group(3))->count();
+
+
         $after_sales = Order::customer()->statusIn([7])->count();
         return View::make('customers.profiles.index')
+                    ->with('orders',$orders)
                      ->with('waiting_pay',$waiting_pay)
                      ->with('waiting_receive',$waiting_receive)
                      ->with('after_sales',$after_sales)
-                     ->with('customer',Auth::customer()->check()?Auth::customer()->user():null)
+                     ->with('customer',$customer)
                      ->with('auth_checked',Auth::customer()->check());
     }
 
