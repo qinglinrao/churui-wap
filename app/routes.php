@@ -170,10 +170,10 @@ Route::group(['before'=>'get_mid'],function(){
 
             //初睿代理
             Route::get('agent', ['as' => 'agent.index', 'uses' => 'AgentController@getIndex']);
-            Route::get('agent/my_orders', ['as' => 'agent.my_orders', 'uses' => 'AgentController@getAgentMyOrders']);
+            Route::get('agent/orders/{id}', ['as' => 'agent.orders', 'uses' => 'AgentController@getAgentOrders']);
             Route::get('agent/order_lists', ['as' => 'agent.order_lists', 'uses' => 'AgentController@getAgentOrderLists']);
             Route::get('agent/order_detail/{id}', ['as' => 'agent.order_detail', 'uses' => 'AgentController@getAgentOrderDetail']);
-            Route::get('agent/my_members', ['as' => 'agent.my_members', 'uses' => 'AgentController@getAgentMyMembers']);
+            Route::get('agent/next_members/{id}', ['as' => 'agent.next_members', 'uses' => 'AgentController@getAgentNextMembers'])->where('id','\d+');
             Route::get('agent/{id}/code', ['as' => 'agent.code', 'uses' => 'AgentController@getCode']);
             Route::get('agent/product/{id}/detail', ['as' => 'agent.products.detail', 'uses' => 'AgentController@ProductsDetail']);
 

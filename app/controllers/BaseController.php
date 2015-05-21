@@ -150,6 +150,65 @@ class BaseController extends Controller {
 
     }
 
+    //查出所有的订单（自己，下级，下下级）
+    function get_total_orders($customer,$status_id=''){
+
+        $num = array();
+        $num[] = $customer->id;
+        $next_agents = Customer::where('leader_id',$customer->id)->get();
+        if(count($next_agents)>0){
+            foreach($next_agents as $n){
+                $num[] = $n->id;
+            }
+        }
+        if(count($num)>1){
+            $next_agents = Customer::whereIn('leader_id',$num)->get();
+            if(count($next_agents)>0){
+                foreach($next_agents as $n){
+                    $num[] = $n->id;
+                }
+            }
+        }
+        if($status_id != ''){
+            return Order::with('products.product.image')->whereIn('customer_id',$num)->where('status_id',$status_id)->get();
+
+        }else{
+            return Order::with('products.product.image')->whereIn('customer_id',$num)->get();
+        }
+    }
+
+        //查询下级会员
+        public function get_next_agents($next_agents=''){
+
+            $agents = array();
+            if(count($next_agents)>0){
+                foreach($next_agents as $agent){
+
+                    $customer = Customer::where('leader_id', $agent->id)->first();
+
+                    if($customer){
+                        $agents[] = $customer;
+                    }
+                }
+            }
+            return $agents;
+         }
+
+    //获取下级会员的id
+    public function get_next_agent_ids($agents){
+        $ids = array();
+        if(count($agents)>0){
+            foreach($agents as $agent){
+                $ids[] = $agent->id;
+            }
+        }
+
+        return $ids;
+    }
+
+
+
+
 
 
 

@@ -15,7 +15,7 @@
         @if($auth_checked)
         <div  class="head-bg">
             <div  class="head-photo">
-                <img src="{{$customer->detail &&$customer->detail->image?AppHelper::imgSrc($customer->detail->image->url):'/assets/images/prod_thumb.png'}}" width="100%" height="100%" border="0" alt="头像">
+                <a href="{{URL::route('customers.profile.detail')}}"><img src="{{$customer->detail &&$customer->detail->image?AppHelper::imgSrc($customer->detail->image->url):'/assets/images/prod_thumb.png'}}" width="100%" height="100%" border="0" alt="头像"></a>
             </div>
             <div  class="name">
                 <p>{{$customer->detail->username}}</p>
@@ -28,7 +28,7 @@
 
         <div  class="gr-detailed">
             <div  class="gr-member">
-                <a href="{{ URL::route('agent.my_members') }}" >
+                <a href="{{ URL::route('agent.next_members',array('id'=>1)) }}" >
                     <span class="gr-item">我的会员</span>
                     <span class="gr-value">{{$customer->customer_num}}</span>
                 </a>

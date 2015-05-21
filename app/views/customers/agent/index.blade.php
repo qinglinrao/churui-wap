@@ -26,11 +26,11 @@
                         <p class="fr-wenzi">销售额</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi"><a href="{{ URL::route('agent.my_orders') }}">{{ count($orders) }}</a></p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.orders',array('id'=>1)) }}">{{ count($orders) }}</a></p>
                         <p class="fr-wenzi">订单</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi"><a href="{{ URL::route('agent.my_members') }}">{{ count($two_agents) }}</a></p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.next_members',array('id'=>1)) }}">{{ count($two_agents) }}</a></p>
                         <p class="fr-wenzi">会员</p>
                     </div>
                     <div>
@@ -45,19 +45,19 @@
                 </div>
                 <div  class="item">
                     <div>
-                        <p class="fr-shuzi">{{ $two_money[0] }}</p>
+                        <p class="fr-shuzi">{{ $two_money[0]?$two_money[0]:0 }}</p>
                         <p class="fr-wenzi">销售额</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi">{{ $two_order }}</p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.orders',array('id'=>2)) }}">{{ $two_order?$two_order:0 }}</a></p>
                         <p class="fr-wenzi">订单</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi">{{ count($three_agents) }}</p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.next_members',array('id'=>2)) }}">{{ count($three_agents) }}</a></p>
                         <p class="fr-wenzi">会员</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi">{{ $two_money[1] }}</p>
+                        <p class="fr-shuzi">{{ $two_money[1]?$two_money[1]:0 }}</p>
                         <p class="fr-wenzi">佣金</p>
                     </div>
                 </div>
@@ -68,19 +68,19 @@
                 </div>
                 <div  class="item">
                     <div>
-                        <p class="fr-shuzi">{{ $three_money[0] }}</p>
+                        <p class="fr-shuzi">{{ $three_money[0]?$three_money[0]:0 }}</p>
                         <p class="fr-wenzi">销售额</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi">{{ $three_order }}</p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.orders',array('id'=>3)) }}">{{ $three_order?$three_order:0 }}</a></p>
                         <p class="fr-wenzi">订单</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi">{{ count($four_agents) }}</p>
+                        <p class="fr-shuzi"><a href="{{ URL::route('agent.next_members',array('id'=>3)) }}">{{ count($four_agents) }}</a></p>
                         <p class="fr-wenzi">会员</p>
                     </div>
                     <div>
-                        <p class="fr-shuzi">{{ $three_money[1] }}</p>
+                        <p class="fr-shuzi">{{ $three_money[1]?$three_money[1]:0 }}</p>
                         <p class="fr-wenzi">佣金</p>
                     </div>
                 </div>

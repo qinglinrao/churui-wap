@@ -7,22 +7,7 @@ class CustomerProfileController extends BaseController {
 
         $customer = Auth::customer()->check()?Auth::customer()->user():null;
 
-        $num = array();
-        $next_agents = Customer::where('leader_id',$customer->id)->get();
-        if(count($next_agents)>0){
-            foreach($next_agents as $n){
-                $num[] = $n->id;
-            }
-        }
-        if(count($num)>0){
-            $next_agents = Customer::whereIn('leader_id',$num)->get();
-            if(count($next_agents)>0){
-                foreach($next_agents as $n){
-                    $num[] = $n->id;
-                }
-            }
-        }
-        $orders = Order::whereIn('customer_id',$num)->count();
+        $orders = $this->get_total_orders($customer);
 
 
         $waiting_pay = Order::customer()->statusIn(get_order_status_group(1))->count();
@@ -31,7 +16,7 @@ class CustomerProfileController extends BaseController {
 
         $after_sales = Order::customer()->statusIn([7])->count();
         return View::make('customers.profiles.index')
-                    ->with('orders',$orders)
+                    ->with('orders',count($orders))
                      ->with('waiting_pay',$waiting_pay)
                      ->with('waiting_receive',$waiting_receive)
                      ->with('after_sales',$after_sales)

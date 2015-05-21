@@ -24,180 +24,142 @@
 
             <div class="bd">
                 <ul>
+                    @foreach($orders as $order)
+                    @foreach($order->products as $product)
                     <div class="ddlb-daifukuang">
                         <div  class="ddlb-xinxi">
                             <div  class="ddlb-list">
                                 <a href="" class="shangping-url">
                                     <div  class="sp-photo">
-                                        <img src="/assets/images/churui/example.jpg" width="100%" height="100%" border="0" alt="商品图片">
+                                        <img src="{{$product->product&&$product->product->image?AppHelper::imgSrc($product->product->image->url):''}}" width="100%" height="100%" border="0" alt="商品图片">
                                     </div>
                                     <div  class="sp-title">
-                                        美即mg野玫瑰紧肤舒颜面膜欢乐限量版预防细纹紧致护肤
+                                        {{mb_substr( $product->name, 0, 22, 'utf-8')}}
                                     </div>
                                     <div  class="sp-xinxi">
-                                        <p class="sp-price">￥198.00</p>
-                                        <p class="sp-num">×1</p>
+                                        <p class="sp-price">￥{{$product->price}}</p>
+                                        <p class="sp-num">×{{$product->quantity}}</p>
                                     </div>
                                 </a>
                             </div>
                             <div  class="ddlb-sum">
-                                <span class="total-num">共<b>1</b>件商品 </span>
-                                <span class="yunfei">运费：<b>￥0.00</b></span>
-                                <span class="total-price">实付：<b>￥198.00</b></span>
+                                <span class="total-num">共<b>{{get_order_product_num($order)}}</b>件商品 </span>
+                               {{-- <span class="yunfei">运费：<b>￥0.00</b></span>--}}
+                                <span class="total-price">实付：<b>￥{{$order->total}}</b></span>
                             </div>
                         </div>
                         <div  class="ddlb-zhuangtai">
-                            <a href="#"> <div  class="ddlb-zhifu">支付</div></a>
+                            <a href="#"> <div  class="ddlb-zhifu">{{get_order_deal_operate($order)}}</div></a>
                         </div>
                     </div>
+                    @endforeach
+                    @endforeach
 
-                    <div class="ddlb-daishouhuo">
-                        <div  class="ddlb-xinxi">
-                            <div  class="ddlb-list">
-                                <a href="" class="shangping-url">
-                                    <div  class="sp-photo">
-                                        <img src="/assets/images/churui/example.jpg" width="100%" height="100%" border="0" alt="商品图片">
-                                    </div>
-                                    <div  class="sp-title">
-                                        美即mg野玫瑰紧肤舒颜面膜欢乐限量版预防细纹紧致护肤
-                                    </div>
-                                    <div  class="sp-xinxi">
-                                        <p class="sp-price">￥198.00</p>
-                                        <p class="sp-num">×1</p>
-                                    </div>
-                                </a>
-                            </div>
 
-                            <div  class="ddlb-sum">
-                                <span class="total-num">共<b>1</b>件商品 </span>
-                                <span class="yunfei">运费：<b>￥0.00</b></span>
-                                <span class="total-price">实付：<b>￥198.00</b></span>
-                            </div>
-                        </div>
-                        <div  class="ddlb-zhuangtai">
-                            <a href="#"> <div  class="ddlb-shouhuo">确认收货</div></a>
-                            <a href="#"> <div  class="ddlb-checkwuliu">查看物流</div></a>
-                        </div>
-                    </div>
-
-                    <div class="ddlb-daipingjia">
-                        <div  class="ddlb-xinxi">
-                            <div  class="ddlb-list">
-                                <a href="" class="shangping-url">
-                                    <div  class="sp-photo">
-                                        <img src="/assets/images/churui/example.jpg" width="100%" height="100%" border="0" alt="商品图片">
-                                    </div>
-                                    <div  class="sp-title">
-                                        美即mg野玫瑰紧肤舒颜面膜欢乐限量版预防细纹紧致护肤
-                                    </div>
-                                    <div  class="sp-xinxi">
-                                        <p class="sp-price">￥198.00</p>
-                                        <p class="sp-num">×1</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div  class="ddlb-sum">
-                                <span class="total-num">共<b>1</b>件商品 </span>
-                                <span class="yunfei">运费：<b>￥0.00</b></span>
-                                <span class="total-price">实付：<b>￥198.00</b></span>
-                            </div>
-                        </div>
-                        <div  class="ddlb-zhuangtai">
-                            <a href="#"> <div  class="ddlb-pingjia">评价订单</div></a>
-                            <a href="#"> <div  class="ddlb-delete">删除订单</div></a>
-                        </div>
-                    </div>
 
                 </ul><!--全部-->
 
                 <ul>
+                    @foreach($orders1 as $order)
+                    @foreach($order->products as $product)
                     <div class="ddlb-daifukuang">
                         <div  class="ddlb-xinxi">
                             <div  class="ddlb-list">
                                 <a href="" class="shangping-url">
                                     <div  class="sp-photo">
-                                        <img src="/assets/images/churui/example.jpg" width="100%" height="100%" border="0" alt="商品图片">
+                                        <img src="{{$product->product&&$product->product->image?AppHelper::imgSrc($product->product->image->url):''}}" width="100%" height="100%" border="0" alt="商品图片">
                                     </div>
                                     <div  class="sp-title">
-                                        美即mg野玫瑰紧肤舒颜面膜欢乐限量版预防细纹紧致护肤
+                                        {{$order->order_title}}
                                     </div>
                                     <div  class="sp-xinxi">
-                                        <p class="sp-price">￥198.00</p>
-                                        <p class="sp-num">×1</p>
+                                        <p class="sp-price">￥{{$product->price}}</p>
+                                        <p class="sp-num">×{{$product->quantity}}</p>
                                     </div>
                                 </a>
                             </div>
                             <div  class="ddlb-sum">
-                                <span class="total-num">共<b>1</b>件商品 </span>
-                                <span class="yunfei">运费：<b>￥0.00</b></span>
-                                <span class="total-price">实付：<b>￥198.00</b></span>
+                                <span class="total-num">共<b>{{get_order_product_num($order)}}</b>件商品 </span>
+                                {{--<span class="yunfei">运费：<b>￥0.00</b></span>--}}
+                                <span class="total-price">实付：<b>￥{{$order->total}}</b></span>
                             </div>
                         </div>
                         <div  class="ddlb-zhuangtai">
-                            <a href="#"> <div  class="ddlb-zhifu">支付</div></a>
+                            <a href="#"> <div  class="ddlb-zhifu">{{get_order_deal_operate($order)}}</div></a>
                         </div>
                     </div>
+                    @endforeach
+                    @endforeach
 
                 </ul><!--代付款-->
 
                 <ul>
+                    @foreach($orders3 as $order)
+                    @foreach($order->products as $product)
                     <div class="ddlb-daishouhuo">
                         <div  class="ddlb-xinxi">
                             <div  class="ddlb-list">
                                 <a href="" class="shangping-url">
                                     <div  class="sp-photo">
-                                        <img src="/assets/images/churui/example.jpg" width="100%" height="100%" border="0" alt="商品图片">
+                                        <img src="{{$product->product&&$product->product->image?AppHelper::imgSrc($product->product->image->url):''}}" width="100%" height="100%" border="0" alt="商品图片">
                                     </div>
                                     <div  class="sp-title">
-                                        美即mg野玫瑰紧肤舒颜面膜欢乐限量版预防细纹紧致护肤
+                                        {{$order->order_title}}
                                     </div>
                                     <div  class="sp-xinxi">
-                                        <p class="sp-price">￥198.00</p>
-                                        <p class="sp-num">×1</p>
+                                        <p class="sp-price">￥{{$product->price}}</p>
+                                        <p class="sp-num">×{{$product->quantity}}</p>
                                     </div>
                                 </a>
                             </div>
 
                             <div  class="ddlb-sum">
-                                <span class="total-num">共<b>1</b>件商品 </span>
-                                <span class="yunfei">运费：<b>￥0.00</b></span>
-                                <span class="total-price">实付：<b>￥198.00</b></span>
+                                <span class="total-num">共<b>{{get_order_product_num($order)}}</b>件商品 </span>
+                                {{--<span class="yunfei">运费：<b>￥0.00</b></span>--}}
+                                <span class="total-price">实付：<b>￥{{$order->total}}</b></span>
                             </div>
                         </div>
                         <div  class="ddlb-zhuangtai">
-                            <a href="#"> <div  class="ddlb-shouhuo">确认收货</div></a>
+                            <a href="#"> <div  class="ddlb-shouhuo">{{get_order_deal_operate($order)}}</div></a>
                             <a href="#"> <div  class="ddlb-checkwuliu">查看物流</div></a>
                         </div>
                     </div>
+                        @endforeach
+                        @endforeach
                 </ul><!--待收货-->
                 <ul>
+
+                    @foreach($orders4 as $order)
+                    @foreach($order->products as $product)
                     <div class="ddlb-daipingjia">
                         <div  class="ddlb-xinxi">
                             <div  class="ddlb-list">
                                 <a href="" class="shangping-url">
                                     <div  class="sp-photo">
-                                        <img src="/assets/images/churui/example.jpg" width="100%" height="100%" border="0" alt="商品图片">
+                                        <img src="{{$product->product&&$product->product->image?AppHelper::imgSrc($product->product->image->url):''}}" width="100%" height="100%" border="0" alt="商品图片">
                                     </div>
                                     <div  class="sp-title">
-                                        美即mg野玫瑰紧肤舒颜面膜欢乐限量版预防细纹紧致护肤
+                                        {{$order->order_title}}
                                     </div>
                                     <div  class="sp-xinxi">
-                                        <p class="sp-price">￥198.00</p>
-                                        <p class="sp-num">×1</p>
+                                        <p class="sp-price">￥{{$product->price}}</p>
+                                        <p class="sp-num">×{{$product->quantity}}</p>
                                     </div>
                                 </a>
                             </div>
                             <div  class="ddlb-sum">
-                                <span class="total-num">共<b>1</b>件商品 </span>
-                                <span class="yunfei">运费：<b>￥0.00</b></span>
-                                <span class="total-price">实付：<b>￥198.00</b></span>
+                                <span class="total-num">共<b>{{get_order_product_num($order)}}</b>件商品 </span>
+                               {{-- <span class="yunfei">运费：<b>￥0.00</b></span>--}}
+                                <span class="total-price">实付：<b>￥{{$order->total}}</b></span>
                             </div>
                         </div>
                         <div  class="ddlb-zhuangtai">
-                            <a href="#"> <div  class="ddlb-pingjia">评价订单</div></a>
+                            <a href="#"> <div  class="ddlb-pingjia">{{get_order_deal_operate($order)}}</div></a>
                             <a href="#"> <div  class="ddlb-delete">删除订单</div></a>
                         </div>
                     </div>
+                        @endforeach
+                        @endforeach
                 </ul><!--待评价-->
             </div>
         </div>

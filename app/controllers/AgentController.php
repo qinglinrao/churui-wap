@@ -2,6 +2,12 @@
 
 class AgentController extends BaseController {
 
+    public $customer;
+
+    function __construct(){
+        $this->customer = Auth::customer()->check()?Auth::customer()->user():null;
+    }
+
     public function getIndex(){
 
         $customer = Auth::customer()->check()?Auth::customer()->user():null;
@@ -22,24 +28,51 @@ class AgentController extends BaseController {
             ,'orders','two_order','three_order','two_money','three_money'));
     }
 
-    public function getAgentMyOrders(){
+    public function getAgentOrders($id){
 
-        return View::make('customers.agent.my_orders');
+        if($id == 1){
+            $orders = Order::with('products.product.image')->where('customer_id',$this->customer->id)->get();
+
+        }
+
+        if($id > 1){
+            $agents = Customer::where('leader_id',$this->customer)->get();
+            $ids = $this->get_next_agent_ids($agents);
+            $orders = Order::with('products.product.image')->whereIn('customer_id',$ids)->get();
+        }
+
+        if($id > 2){
+            $ids = $this->get_next_agent_ids($agents);
+            $orders = Order::with('products.product.image')->whereIn('customer_id',$ids)->get();
+        }
+
+
+
+
+        return View::make('customers.agent.orders',compact('orders'));
     }
 
-    public function getAgentMyMembers(){
-        $customer = Auth::customer()->check()?Auth::customer()->user():null;
-        //下级会员
-        $next_agents = Customer::where('leader_id', $customer->id)->get();
-        //订单总数
+    public function getAgentNextMembers($id){
 
-
-        return View::make('customers.agent.my_members', compact('next_agents'));
+        if($id > 0){
+            $next_agents = Customer::where('leader_id', $this->customer->id)->get();
+        }
+        if($id > 1){
+            $next_agents = $this->get_next_agents($next_agents);
+        }
+        if($id > 2){
+            $next_agents = $this->get_next_agents($next_agents);
+        }
+        return View::make('customers.agent.next_members', compact('next_agents','id'));
     }
 
     public function getAgentOrderLists(){
-
-        return View::make('customers.agent.order_lists');
+        //所有订单
+        $orders = $this->get_total_orders($this->customer);
+        $orders1 = $this->get_total_orders($this->customer,1);
+        $orders3 = $this->get_total_orders($this->customer,3);
+        $orders4 = $this->get_total_orders($this->customer,4);
+        return View::make('customers.agent.order_lists',compact('orders','orders1','orders3','orders4'));
     }
 
     public function getAgentOrderDetail($id){
