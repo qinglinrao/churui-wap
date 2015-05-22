@@ -30,12 +30,12 @@
             <div  class="gr-member">
                 <a href="{{ URL::route('agent.next_members',array('id'=>1)) }}" >
                     <span class="gr-item">我的会员</span>
-                    <span class="gr-value">{{$customer->customer_num}}</span>
+                    <span class="gr-value">{{ $my_agents }}</span>
                 </a>
             </div>
 
             <div  class="gr-dingdan">
-                <a href="{{ URL::route('agent.order_lists') }}" >
+                <a href="{{ URL::route('agent.my_orders') }}" >
                     <span class="gr-item">订单总数</span>
                     <span class="gr-value">{{ $orders }}</span>
                 </a>
@@ -44,7 +44,7 @@
             <div  class="gr-ticheng">
                 <a href="{{ URL::route('agent.index') }}" >
                     <span class="gr-item">代理提成</span>
-                    <span class="gr-value">￥{{AppHelper::money($customer->total_pay)}}</span>
+                    <span class="gr-value">￥{{AppHelper::money($customer->total_profit)}}</span>
                 </a>
             </div>
         </div>

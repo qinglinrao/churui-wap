@@ -168,22 +168,25 @@ Route::group(['before'=>'get_mid'],function(){
             Route::post('profile/username/update', ['as' => 'customers.profile.username.update', 'uses' => 'CustomerProfileController@postUserName']);
             Route::post('profile/image/upload', ['as' => 'customers.profile.image.upload', 'uses' => 'CustomerProfileController@postUserImage']);
 
-            //初睿代理
+            //初睿代理（初睿）
             Route::get('agent', ['as' => 'agent.index', 'uses' => 'AgentController@getIndex']);
-            Route::get('agent/orders/{id}', ['as' => 'agent.orders', 'uses' => 'AgentController@getAgentOrders']);
+            Route::get('agent/my_orders', ['as' => 'agent.my_orders', 'uses' => 'AgentController@getAgentMyOrders']);
             Route::get('agent/order_lists', ['as' => 'agent.order_lists', 'uses' => 'AgentController@getAgentOrderLists']);
             Route::get('agent/order_detail/{id}', ['as' => 'agent.order_detail', 'uses' => 'AgentController@getAgentOrderDetail']);
             Route::get('agent/next_members/{id}', ['as' => 'agent.next_members', 'uses' => 'AgentController@getAgentNextMembers'])->where('id','\d+');
             Route::get('agent/{id}/code', ['as' => 'agent.code', 'uses' => 'AgentController@getCode']);
             Route::get('agent/product/{id}/detail', ['as' => 'agent.products.detail', 'uses' => 'AgentController@ProductsDetail']);
 
-            //提现
+            //提现（初睿）
             Route::get('cash', ['as' => 'cash.index', 'uses' => 'CashController@getIndex']);
             Route::get('cash/apply', ['as' => 'cash.apply', 'uses' => 'CashController@getApply']);
             Route::post('cash/apply', ['as' => 'cash.apply', 'uses' => 'CashController@getApplyPost']);
 
-            //账户信息
+            //账户信息（初睿）
             Route::get('account', ['as' => 'account.index', 'uses' => 'AccountController@getIndex']);
+            Route::post('account/edit', ['as' => 'account.edit', 'uses' => 'AccountController@postEdit']);
+
+
 
             Route::get('favorites', ['as' => 'favorites', 'uses' => 'FavoriteController@getIndex']);
             Route::get('favorites/{id}/del', ['as' => 'favorite.del', 'uses' => 'FavoriteController@getDel']);

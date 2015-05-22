@@ -9,12 +9,12 @@ class AgentController extends BaseController {
     }
 
     public function getIndex(){
-
-        $customer = Auth::customer()->check()?Auth::customer()->user():null;
-        $orders = Order::customer()->get();
+        $customer = $this->customer;
+        //我的订单总数
+        $orders = Order::where('agent_id',$this->customer->id)->count();
 
         //二级会员和订单总数
-        $two_agents = Customer::where('leader_id',$customer->id)->get();
+        $two_agents = Customer::where('leader_id',$this->customer->id)->get();
         $two_order = $this->getNextAgentOrder($two_agents);
         $two_money = $this->getNextAgentMoney($two_agents);
 
@@ -24,32 +24,22 @@ class AgentController extends BaseController {
         $three_money = $this->getNextAgentMoney($three_agents);
         $four_agents = $this->getNextAgent($three_agents);
 
-        return View::make('customers.agent.index',compact('customer','two_agents','three_agents','four_agents'
-            ,'orders','two_order','three_order','two_money','three_money'));
+        return View::make('customers.agent.index',compact('customer','orders','two_agents','three_agents','four_agents'
+            ,'two_order','three_order','two_money','three_money'));
     }
 
-    public function getAgentOrders($id){
+    public function getAgentMyOrders(){
 
-        if($id == 1){
-            $orders = Order::with('products.product.image')->where('customer_id',$this->customer->id)->get();
+        //全部
+        $orders = Order::with('products.product.image')->where('agent_id',$this->customer->id)->get();
+        //未付款
+        $orders2 = Order::with('products.product.image')->where('agent_id',$this->customer->id)->whereIn('status_id',array('1'))->get();
+        //已付款
+        $orders3 = Order::with('products.product.image')->where('agent_id',$this->customer->id)->whereIn('status_id',array('2','3','4','5','6','12'))->get();
+        //已分润
+        $orders4 = Order::with('products.product.image')->where('agent_id',$this->customer->id)->where('is_profited',1)->get();
 
-        }
-
-        if($id > 1){
-            $agents = Customer::where('leader_id',$this->customer)->get();
-            $ids = $this->get_next_agent_ids($agents);
-            $orders = Order::with('products.product.image')->whereIn('customer_id',$ids)->get();
-        }
-
-        if($id > 2){
-            $ids = $this->get_next_agent_ids($agents);
-            $orders = Order::with('products.product.image')->whereIn('customer_id',$ids)->get();
-        }
-
-
-
-
-        return View::make('customers.agent.orders',compact('orders'));
+        return View::make('customers.agent.my_orders',compact('orders','orders2','orders3','orders4'));
     }
 
     public function getAgentNextMembers($id){
@@ -114,7 +104,7 @@ class AgentController extends BaseController {
 
         $order_num = '';
         foreach($agents as $order){
-            $order_num += Order::where('customer_id', $order->id)->count();
+            $order_num += Order::where('agent_id', $order->id)->count();
         }
         return $order_num;
     }

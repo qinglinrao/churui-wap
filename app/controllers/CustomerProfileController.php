@@ -6,9 +6,9 @@ class CustomerProfileController extends BaseController {
     public function getIndex(){
 
         $customer = Auth::customer()->check()?Auth::customer()->user():null;
+        $my_agents = Customer::where('leader_id',$customer->id)->count();
 
-        $orders = $this->get_total_orders($customer);
-
+        $orders = Order::where('agent_id',$customer->id)->get();
 
         $waiting_pay = Order::customer()->statusIn(get_order_status_group(1))->count();
         $waiting_receive = Order::customer()->statusIn(get_order_status_group(3))->count();
@@ -17,6 +17,7 @@ class CustomerProfileController extends BaseController {
         $after_sales = Order::customer()->statusIn([7])->count();
         return View::make('customers.profiles.index')
                     ->with('orders',count($orders))
+                    ->with('my_agents',$my_agents)
                      ->with('waiting_pay',$waiting_pay)
                      ->with('waiting_receive',$waiting_receive)
                      ->with('after_sales',$after_sales)

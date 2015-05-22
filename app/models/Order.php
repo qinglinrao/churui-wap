@@ -81,6 +81,10 @@ class Order  extends Base{
         return $this->belongsTo('Customer','customer_id','id');
     }
 
+    public function agent(){
+        return $this->belongsTo('Customer','agent_id','id');
+    }
+
     public function realProducts(){
         return $this->belongsToMany('Product','customer_order_products','order_id','product_id');
     }

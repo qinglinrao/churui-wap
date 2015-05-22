@@ -170,7 +170,24 @@
     @parent
     <script type="text/javascript">
         $(document).ready(function(){
-            jQuery(".slideTxtBox").slide({});
+            $('#photo-upload').fileupload({
+                url: '/photo-upload',
+                dataType: 'json',
+                formData: {},
+                done: function (e, data) {
+                    var $data = data.result;
+                    $('#photo-warp').empty();
+                    $('#photo-warp').append('<div class="item">\
+                <div class="image">\
+                    <img src="/'+$data.url+'">\
+                </div>\
+                <div class="content">\
+                    <input type="text" placeholder="图片ALT" name="image[alt]">\
+                    <input type="hidden" name="image[id]" value="'+$data.id+'">\
+                </div>\
+            </div>')
+                }
+            });
         });
     </script>
 @stop
