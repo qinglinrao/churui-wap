@@ -3,7 +3,7 @@
 @section('wrapper')
     <div class="top">
         <ul>
-            <li class="back-arrow"><a href="{{URL::route('agent.code',$product->id)}}"><img src="/assets/images/back-arrow.png" width="60%" height="60%" ></a></li>
+            <li class="back-arrow"><a href="{{URL::route('agent.code',$product->id)}}"><img src="/assets/images/churui/back-arrow.png" width="60%" height="60%" ></a></li>
             <li class="title">代理</li>
             <li class="forward"><a href="#" ></a></li>
         </ul>

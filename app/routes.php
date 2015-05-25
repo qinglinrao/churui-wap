@@ -119,7 +119,6 @@ Route::group(['before'=>'get_mid'],function(){
     });
 //,'before' => 'auth_merchant'
 
-
     Route::group(['prefix'=>'customer'],function(){
 
         Route::get('login',['as'=>'customers.login','uses'=>'CustomerController@getLogin']);
@@ -185,6 +184,9 @@ Route::group(['before'=>'get_mid'],function(){
             //账户信息（初睿）
             Route::get('account', ['as' => 'account.index', 'uses' => 'AccountController@getIndex']);
             Route::post('account/edit', ['as' => 'account.edit', 'uses' => 'AccountController@postEdit']);
+            Route::post('photo-upload', ['as'=>'photo-upload', 'uses'=>'AccountController@postPhotoUpload']);
+            Route::post('photo-upload2', ['as'=>'photo-upload2', 'uses'=>'AccountController@postPhotoUpload2']);
+
 
 
 

@@ -69,15 +69,20 @@
                 <p>身份证</p>
                 @if(isset($account->front_image->url))
                 {{AppHelper::img($account->front_image->url,$account->front_image->alt,array('width'=>'25%', 'height'=>'25%', 'border'=>0))}}
+                <input type="hidden" name="photo1" value="{{$account->front_image->id}}">
                 @else
-
-                    {{ Form::button(' 点击上传身份证正面',array('id'=>'img1')) }}
+                    <input id="photo-upload" type="file" name="photo1" multiple>
+                    <div id="photo-warp">
+                    </div>
                 @endif
 
                 @if(isset($account->back_image->url))
                 {{AppHelper::img($account->back_image->url,$account->front_image->alt,array('width'=>'25%', 'height'=>'25%', 'border'=>0))}}
+                <input type="hidden" name="photo2" value="{{$account->back_image->id}}">
                 @else
-                    {{ Form::button(' 点击上传身份证反面',array('id'=>'img2')) }}
+                   <input id="photo-upload2" type="file" name="photo2" multiple>
+                    <div id="photo-warp2">
+                    </div>
                 @endif
             </div>
         </div>
@@ -87,8 +92,9 @@
     @parent
     <script type="text/javascript">
         $(document).ready(function(){
-          alert(123);
+
         });
     </script>
+
 @stop
 @stop

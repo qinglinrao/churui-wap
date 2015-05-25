@@ -51,6 +51,9 @@
       {{HTML::script('libraries/jquery.wechat.share.js')}}
       {{HTML::script('assets/js/jquery.spinner.js')}}
       {{HTML::script('assets/js/jquery.SuperSlide.2.1.1.js')}}
+        {{ HTML::script('assets/js/fileupload/js/vendor/jquery.ui.widget.js') }}
+        {{ HTML::script('assets/js/fileupload/js/jquery.iframe-transport.js') }}
+        {{ HTML::script('assets/js/fileupload/js/jquery.fileupload.js') }}
       @yield('scripts')
       {{--{{HTML::script('packages/frenzy/turbolinks/turbolinks.js')}}--}}
     </div>
