@@ -52,6 +52,12 @@
 								{{$customer->mobile}}<span>更改</span>
 							</a>
 						</li>
+                        <li class="phone">
+                            <span class="label">管理收货地址</span>
+                            <a href="{{URL::route('addresses')}}" class="value">
+                                <span>更改</span>
+                            </a>
+                        </li>
 					</ul>
 
 					<div class="logout">

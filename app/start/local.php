@@ -373,6 +373,8 @@ function get_merchant_grade($merchant){
     }
 }
 
+
+
 /**
  * 计算产品分润 （如果商品由该商家卖出,总利润=商家本等级利润+下线等级利润;
  *              否则,总利润=商家本等级利润）
@@ -381,6 +383,24 @@ function get_merchant_grade($merchant){
  * @param $flag 是否由该商家卖出产品
  * @return float|int
  */
+function get_product_profit_churui($product,$merchant,$flag){
+    if($flag){
+        switch(get_merchant_grade($merchant)){
+            case 'three':
+                return $product['three_profit']/100.0*$product->profit;
+                break;
+            case 'two':
+                return ($product['three_profit']+$product['two_profit'])/100.0*$product->profit;
+                break;
+            case 'first':
+                return ($product['three_profit']+$product['two_profit']+$product['first_profit'])/100.0*$product->profit;
+                break;
+        }
+    }else{
+        return $product[get_merchant_grade($merchant).'_profit']/100.0*$product->profit;
+    }
+}
+
 function get_product_profit($product,$merchant,$flag){
     if($flag){
         switch(get_merchant_grade($merchant)){

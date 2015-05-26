@@ -40,6 +40,7 @@ class AutoProfitCommand extends Command {
 
         //已收货或已评价 已经支付  没有分润 支付时间超过两分钟的订单
         $orders = Order::whereIn('status_id',[4,5])->where('is_payed',1)->where('is_profited',0)->where('pay_at','<=',Carbon::now()->subMinutes(2))->get();
+
         $this->info('--自动扫描-'.Carbon::now());
         foreach($orders as $order){
             if($order->order_type ==  1){   //普通订单处理
@@ -50,48 +51,57 @@ class AutoProfitCommand extends Command {
                     $products = $order->products;
                     if($products){
                         foreach($products as $product){
-                            if($product->ownShop){
-                                $merchant = $product->ownShop->owner;
-                                if($merchant){
 
+                            if($product->ownAgent){
+                                $merchant = $product->ownAgent;
+
+                                if($merchant){
                                     $customer = $order->buyer;
-                                    $merchant_profit_money = get_product_profit($product->product,$merchant,true) * $product->quantity;
+                                    $merchant_profit_money = get_product_profit_churui($product->product,$merchant,true) * $product->quantity;
                                     $merchant->money += $merchant_profit_money;
-                                    $merchant->shop_profit += $merchant_profit_money;
+                                    //$merchant->shop_profit += $merchant_profit_money;
                                     if($merchant->leader)
-                                        $merchant->leader_profit += get_product_profit($product->product,$merchant->leader,false) * $product->quantity;
+                                        $merchant->leader_profit += get_product_profit_churui($product->product,$merchant->leader,false) * $product->quantity;
                                     $merchant->total_profit += $merchant_profit_money;
-                                    $this->info('给ID:'.$merchant->id.'NAME:'.$merchant->username.'分润:'.$merchant_profit_money);
+                                    $this->info('给ID:'.$merchant->id.'NAME:'.$merchant->detail->username.'分润:'.$merchant_profit_money);
 
                                     $this->updateCustomerLeaderProfit($customer,$merchant,$merchant_profit_money);
                                     $this->addProfitLog($merchant,$order,$product->product,$merchant_profit_money,true);
                                     $merchant->save();
 
-                                    //间接给上级分润
-                                    while($merchant->leader){
-                                        $leader = $merchant->leader;
-                                        $leader_profit_money = get_product_profit($product->product,$leader,false) * $product->quantity;
+                                    if($merchant->leader){
+                                        $x=1;
+                                        while($x<=2){
 
-                                        $leader->money += $leader_profit_money;
+                                            $leader = $merchant->leader;
+                                            echo $leader->mobile;
+                                            $leader_profit_money = get_product_profit_churui($product->product,$leader,false) * $product->quantity;
+
+                                            $leader->money += $leader_profit_money;
 //                                        $leader->shop_profit += $leader_profit_money;
-                                        if($leader->leader){
-                                            $leader->leader_profit += get_product_profit($product->product,$leader->leader,false) * $product->quantity;
-                                        }
-                                        $leader->total_profit += $leader_profit_money;
-                                        $leader->follower_profit += $merchant_profit_money;
-                                        $this->info('给ID:'.$leader->id.'NAME:'.$leader->username.'分润:'.$leader_profit_money);
-                                        $leader->save();
-                                        $merchant = $leader;
-                                        $this->updateCustomerLeaderProfit($customer,$merchant,$leader_profit_money);
-                                        $this->addProfitLog($merchant,$order,$product->product,$leader_profit_money,false);
+                                            if($leader->leader){
+                                                $leader->leader_profit += get_product_profit_churui($product->product,$leader->leader,false) * $product->quantity;
+                                            }
+                                            $leader->total_profit += $leader_profit_money;
+                                            $leader->follower_profit += $merchant_profit_money;
+                                            $this->info('给ID:'.$leader->id.'NAME:'.$leader->detail->username.'分润:'.$leader_profit_money);
+                                            $leader->save();
+                                            $merchant = $leader;
+                                            $this->updateCustomerLeaderProfit($customer,$merchant,$leader_profit_money);
+                                            $this->addProfitLog($merchant,$order,$product->product,$leader_profit_money,false);
 
+                                            $x++;
+                                        }
                                     }
+                                    //间接给上级分润
+
+                                exit;
                                 }
                             }
 
                         }
 
-                        $order->is_profited = 1;
+                       $order->is_profited = 1;
                         $order->save();
                     }
 
@@ -170,7 +180,7 @@ class AutoProfitCommand extends Command {
             $account_log->status = 2;
             $account_log->log = '从订单【'.$order->order_sn.($direct?'】直接':'】间接').'获得分润￥'.$money.'
             (产品ID:'.$product->id.';SKU:'.$product->sku.';销售价:'.$product->sale_price.';分润额:'.$product->profit.';
-            分润配置:[BA:'.$product->ba_profit.'%,门店:'.$product->store_profit.'%,代理商:'.$product->agent_profit.'%]
+            分润配置:[第三级分润:'.$product->three_profit.'%,第二级分润:'.$product->two_profit.'%,第三级分润:'.$product->first_profit.'%]
             )';
             $account_log->save();
         }else{

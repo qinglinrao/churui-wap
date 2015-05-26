@@ -168,27 +168,17 @@
     </div>
 @section('scripts')
     @parent
+    <script src="js/jquery.ScrollPic.js " type="text/javascript "></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            $('#photo-upload').fileupload({
-                url: '/photo-upload',
-                dataType: 'json',
-                formData: {},
-                done: function (e, data) {
-                    var $data = data.result;
-                    $('#photo-warp').empty();
-                    $('#photo-warp').append('<div class="item">\
-                <div class="image">\
-                    <img src="/'+$data.url+'">\
-                </div>\
-                <div class="content">\
-                    <input type="text" placeholder="图片ALT" name="image[alt]">\
-                    <input type="hidden" name="image[id]" value="'+$data.id+'">\
-                </div>\
-            </div>')
-                }
+
+        $(function(){
+
+            $('.yiz-slider-2').ScrollPic({
+                Time: '3000',
+                speed: '1000',
+                autoscrooll: true
             });
-        });
+        })
     </script>
 @stop
 @stop

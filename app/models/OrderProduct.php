@@ -25,6 +25,10 @@ class OrderProduct  extends Base{
         return $this->belongsTo('Shop','shop_id','id');
     }
 
+    public function ownAgent(){
+        return $this->belongsTo('customer','agent_id','id');
+    }
+
 
 
 } 

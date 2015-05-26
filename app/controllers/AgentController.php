@@ -71,7 +71,7 @@ class AgentController extends BaseController {
     }
 
 
-    public function ProductsDetail($id){
+    public function AgentDetail($id){
         $product = Product::where('id',$id)->first();
 
         return View::make('customers.agent.detail',compact('product'));

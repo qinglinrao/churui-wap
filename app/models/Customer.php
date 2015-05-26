@@ -30,9 +30,12 @@ class Customer extends Base implements UserInterface, RemindableInterface {
     }
 
     public function leader(){
-        return $this->belongsTo('Merchant','merchant_id','id');
+        return $this->belongsTo('Customer','leader_id','id');
     }
 
+    public function account(){
+        return $this->hasOne('CustomerAccount','customer_id','id');
+    }
 
 
 }
