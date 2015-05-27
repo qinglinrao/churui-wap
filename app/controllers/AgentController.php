@@ -37,9 +37,28 @@ class AgentController extends BaseController {
         //已付款
         $orders3 = Order::with('products.product.image')->where('agent_id',$this->customer->id)->whereIn('status_id',array('2','3','4','5','6','12'))->get();
         //已分润
-        $orders4 = Order::with('products.product.image')->where('agent_id',$this->customer->id)->where('is_profited',1)->get();
+        $orders4 = Order::where('agent_id',$this->customer->id)->where('is_profited',1)->orderBy('pay_at','desc')->get();
 
-        return View::make('customers.agent.my_orders',compact('orders','orders2','orders3','orders4'));
+        //查询出已经分润的有几个日期
+        $arr = array();
+        $profit_orders = array();
+        foreach($orders4 as $order){
+            $time = date("Y-m-d",strtotime($order->pay_at));
+            if (!in_array($time, $arr)) {
+                $arr[] = $time;
+            }
+        }
+
+        //根据日期来查询已经分润的订单
+        foreach($arr as $a){
+            $profit_orders["$a"] = Order::with('products.product.image')->where('agent_id',$this->customer->id)->where('is_profited',1)->where('pay_at','like','%'.$a.'%')->get();
+        }
+
+
+        $merchant = $this->customer;
+
+
+        return View::make('customers.agent.my_orders',compact('orders','orders2','orders3','orders4','profit_orders','merchant'));
     }
 
     public function getAgentNextMembers($id){

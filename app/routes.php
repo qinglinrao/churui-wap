@@ -173,7 +173,9 @@ Route::group(['before'=>'get_mid'],function(){
             Route::get('agent/order_lists', ['as' => 'agent.order_lists', 'uses' => 'AgentController@getAgentOrderLists']);
             Route::get('agent/order_detail/{id}', ['as' => 'agent.order_detail', 'uses' => 'AgentController@getAgentOrderDetail']);
             Route::get('agent/next_members/{id}', ['as' => 'agent.next_members', 'uses' => 'AgentController@getAgentNextMembers'])->where('id','\d+');
+            //生成二维码
             Route::get('agent/{id}/code', ['as' => 'agent.code', 'uses' => 'AgentController@getCode']);
+            //分享页面（id:产品ID）-->商品详情
             Route::get('agent/{id}/detail', ['as' => 'agent.detail', 'uses' => 'AgentController@AgentDetail'])->where('id','\d+');
 
             //提现（初睿）
@@ -189,7 +191,7 @@ Route::group(['before'=>'get_mid'],function(){
 
 
             //商品详情
-            Route::get('agent/product/detail', ['as' => 'agent.product_detail', 'uses' => 'AgentProductController@AgentProductDetail']);
+            Route::get('agent/product/{id}/detail', ['as' => 'agent.product_detail', 'uses' => 'AgentProductController@AgentProductDetail'])->where('id','\d+');
 
 
             Route::get('favorites', ['as' => 'favorites', 'uses' => 'FavoriteController@getIndex']);

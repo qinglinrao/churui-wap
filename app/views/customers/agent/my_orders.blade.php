@@ -42,7 +42,7 @@
                     <li class="yonghu">
                         <a href="">
                             <div class="yonghu-photo">
-                                <img src="/assets/images/churui/myphoto.jpg" width="100%" height="100%" border="0" alt="用户头像">
+                                <img src="{{$order->buyer->detail &&$order->buyer->detail->image?AppHelper::imgSrc($order->buyer->detail->image->url):'/assets/images/prod_thumb.png'}}" width="100%" height="100%" border="0" alt="用户头像">
                             </div>
                             <p>
                                     <span class="name">
@@ -115,7 +115,7 @@
                     <li class="yonghu">
                         <a href="">
                             <div class="yonghu-photo">
-                                <img src="/assets/images/churui/myphoto.jpg" width="100%" height="100%" border="0" alt="用户头像">
+                                <img src="{{$order->buyer->detail &&$order->buyer->detail->image?AppHelper::imgSrc($order->buyer->detail->image->url):'/assets/images/prod_thumb.png'}}" width="100%" height="100%" border="0" alt="用户头像">
                             </div>
                             <p>
                                     <span class="name">
@@ -187,7 +187,8 @@
                     <li class="yonghu">
                         <a href="">
                             <div class="yonghu-photo">
-                                <img src="/assets/images/churui/myphoto.jpg" width="100%" height="100%" border="0" alt="用户头像">
+
+                                <img src="{{$order->buyer->detail &&$order->buyer->detail->image?AppHelper::imgSrc($order->buyer->detail->image->url):'/assets/images/prod_thumb.png'}}" width="100%" height="100%" border="0" alt="用户头像">
                             </div>
                             <p>
                                     <span class="name">
@@ -255,88 +256,70 @@
                 </ul>
                 <!-- 已付款 -->
                 <ul>
+                    @foreach($profit_orders as $k=>$order)
                     <li>
+
                         <div class="yfr-title">
                                 <span class="yfr-date">
-                                    2014-12-25
+                                    {{$k}}
                                 </span>
                                 <span class="arrow down">
                                 </span>
                         </div>
                         <ul class="menu" style="display:none;">
+                            @foreach($order as $o)
                             <li class="yonghu">
                                 <a href="">
                                     <div class="yonghu-photo">
-                                        <img src="./img/myphoto.jpg" width="100%" height="100%" border="0" alt="用户头像">
+                                        <img src="{{$o->buyer->detail &&$o->buyer->detail->image?AppHelper::imgSrc($o->buyer->detail->image->url):'/assets/images/prod_thumb.png'}}" width="100%" height="100%" border="0" alt="用户头像">
                                     </div>
                                     <p>
                                             <span class="name">
-                                                珍妮
+                                                 {{ $o->buyer->detail->username }}
                                             </span>
+
                                     </p>
                                 </a>
                             </li>
+
+                            @foreach($o->products as $product)
                             <li class="mydd-lists">
                                 <div class="mydd-list">
                                     <a href="">
                                         <div class="shangping-photo">
-                                            <img src="./img/example1.jpg" width="100%" height="100%" border="0" alt="商品图片">
+                                            <img src="{{$product->product&&$product->product->image?AppHelper::imgSrc($product->product->image->url):''}}" width="100%" height="100%" border="0" alt="商品图片">
                                         </div>
                                         <p class="shangping-title">
-                                            UNES优理氏玻尿酸原液 玻尿酸肽原液深层保湿面部精华补水精华液
+                                            {{mb_substr( $product->name, 0, 22, 'utf-8')}}
                                         </p>
                                     </a>
                                     <p class="price">
-                                        ￥158.00
+                                        ￥{{$product->price}}
                                     </p>
                                     <p>
                                             <span class="kefenrun">
                                                 可分润：
                                                 <b>
-                                                    ￥58.00
+                                                    ￥{{$product->product->profit}}
                                                 </b>
                                             </span>
                                             <span class="mydd-num">
-                                                ×1
+                                                ×{{$product->quantity}}
                                             </span>
                                     </p>
                                 </div>
                             </li>
-                            <li class="mydd-lists">
-                                <div class="mydd-list">
-                                    <a href="">
-                                        <div class="shangping-photo">
-                                            <img src="./img/example1.jpg" width="100%" height="100%" border="0" alt="商品图片">
-                                        </div>
-                                        <p class="shangping-title">
-                                            UNES优理氏玻尿酸原液 玻尿酸肽原液深层保湿面部精华补水精华液
-                                        </p>
-                                    </a>
-                                    <p class="price">
-                                        ￥188.00
-                                    </p>
-                                    <p>
-                                            <span class="kefenrun">
-                                                可分润：
-                                                <b>
-                                                    ￥88.00
-                                                </b>
-                                            </span>
-                                            <span class="mydd-num">
-                                                ×1
-                                            </span>
-                                    </p>
-                                </div>
-                            </li>
+                            @endforeach
+
                             <li class="mydd-sum">
                                 <div class="mydd-sum1">
                                         <span class="mydd-sum-num">
-                                            2件商品
+                                            {{get_order_product_num($o)}}件商品
                                         </span>
                                         <span class="mydd-shifu">
                                             实付：
                                             <b>
-                                                ￥346.00
+                                                ￥{{$o->total}}
                                             </b>
                                         </span>
                                         <span class="mydd-fenrun">
@@ -347,21 +330,23 @@
                                         </span>
                                 </div>
                             </li>
+                            @endforeach
                         </ul>
                     </li>
+                    @endforeach
 
                     <li>
                         <div class="bottom-bar">
                                 <span class="yfr-sum-num">
-                                    3件商品
+                                    {{count($orders4)}}件商品
                                 </span>
                                 <span class="yfr-zongji">
-                                    总计：￥158.00
+                                    总计：￥{{ $merchant->total_pay }}
                                 </span>
                                 <span class="yfr-fr">
                                     分润：
                                     <b>
-                                        ￥204.00
+                                        ￥{{ $merchant->total_profit }}
                                     </b>
                                 </span>
                         </div>

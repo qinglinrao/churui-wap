@@ -14,24 +14,27 @@
     <div  class="spxq-sp">
         <div  class="spxq-photo yiz-slider-2">
             <ul style="width: 100%;  left: 0px;">
+                @foreach($product->images as $image)
                 <li style="width: 100%; height: 12.3rem;">
+                    {{--<img src="/assets/images/churui/example2.jpg" width="100%" height="100%" border="0" alt="商品图片">--}}
+                    {{AppHelper::img($image->url,$image->alt,array('width'=>'100%','height'=>'100%','border'=>0,'alt'=>'商品图片'))}}
+                </li>
+                {{--<li style="width: 100%; height: 12.3rem;">
                     <img src="/assets/images/churui/example2.jpg" width="100%" height="100%" border="0" alt="商品图片">
                 </li>
                 <li style="width: 100%; height: 12.3rem;">
                     <img src="/assets/images/churui/example2.jpg" width="100%" height="100%" border="0" alt="商品图片">
-                </li>
-                <li style="width: 100%; height: 12.3rem;">
-                    <img src="/assets/images/churui/example2.jpg" width="100%" height="100%" border="0" alt="商品图片">
-                </li>
+                </li>--}}
+                @endforeach
             </ul>
 
 
         </div>
         <div  class="spxq-title">
-            <p>美即mg野玫瑰紧肤舒颜面膜欢乐限量版预防细纹紧致护肤正品护肤品</p>
+            <p>{{$product->name}}</p>
         </div>
         <div  class="spxq-price">
-            <b>￥198.00</b> 市场价：<s>￥698.00</s>
+            <b>￥{{AppHelper::price($product->sale_price)}}</b> 市场价：<s>￥{{AppHelper::price($product->par_price)}}</s>
         </div>
     </div>
     <div  class="spxq-sp1">
@@ -42,7 +45,7 @@
         </a>
         <a href="">
             <div  class="spxq-tuwen">
-                图文详情
+                <a href="{{URL::route('products.more',array('id'=>$product->id,'SPID'=>Input::get('SPID'),'MID'=>Input::get('MID')))}}">图文详情</a>
                 <span class="spxq-tip">建议在WIFI下查看</span>
             </div>
         </a>

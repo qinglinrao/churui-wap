@@ -50,18 +50,25 @@ class AutoProfitCommand extends Command {
                     DB::beginTransaction();
                     $products = $order->products;
                     if($products){
-                        foreach($products as $product){
+                        foreach($products as $product){  //遍历每个customer_order_products(OrderProduct表)
 
-                            if($product->ownAgent){
+                            if($product->ownAgent){  //通过customer_order_products的agent_id的字段来判断上一级买家
                                 $merchant = $product->ownAgent;
-
                                 if($merchant){
+                                    $x = 1;
                                     $customer = $order->buyer;
-                                    $merchant_profit_money = get_product_profit_churui($product->product,$merchant,true) * $product->quantity;
+
+                                    $merchant_profit_money = get_product_profit_churui($product->product,$merchant,true,$x) * $product->quantity;
+
                                     $merchant->money += $merchant_profit_money;
                                     //$merchant->shop_profit += $merchant_profit_money;
-                                    if($merchant->leader)
-                                        $merchant->leader_profit += get_product_profit_churui($product->product,$merchant->leader,false) * $product->quantity;
+
+                                    if($merchant->leader){
+                                        $x += 1;
+                                        $merchant->leader_profit += get_product_profit_churui($product->product,$merchant->leader,false,$x) * $product->quantity;
+                                    }
+
+
                                     $merchant->total_profit += $merchant_profit_money;
                                     $this->info('给ID:'.$merchant->id.'NAME:'.$merchant->detail->username.'分润:'.$merchant_profit_money);
 
@@ -69,18 +76,21 @@ class AutoProfitCommand extends Command {
                                     $this->addProfitLog($merchant,$order,$product->product,$merchant_profit_money,true);
                                     $merchant->save();
 
-                                    if($merchant->leader){
-                                        $x=1;
-                                        while($x<=2){
+                                        $a=1;
+
+                                        while($a<=2 && $merchant->leader){
 
                                             $leader = $merchant->leader;
-                                            echo $leader->mobile;
-                                            $leader_profit_money = get_product_profit_churui($product->product,$leader,false) * $product->quantity;
+                                            $leader_profit_money = get_product_profit_churui($product->product,$leader,false,$x) * $product->quantity;
 
                                             $leader->money += $leader_profit_money;
 //                                        $leader->shop_profit += $leader_profit_money;
+
                                             if($leader->leader){
-                                                $leader->leader_profit += get_product_profit_churui($product->product,$leader->leader,false) * $product->quantity;
+
+                                                $x += 1;
+
+                                                $leader->leader_profit += get_product_profit_churui($product->product,$leader->leader,false,$x) * $product->quantity;
                                             }
                                             $leader->total_profit += $leader_profit_money;
                                             $leader->follower_profit += $merchant_profit_money;
@@ -90,13 +100,11 @@ class AutoProfitCommand extends Command {
                                             $this->updateCustomerLeaderProfit($customer,$merchant,$leader_profit_money);
                                             $this->addProfitLog($merchant,$order,$product->product,$leader_profit_money,false);
 
-                                            $x++;
+                                            $a++;
                                         }
-                                    }
-                                    //间接给上级分润
 
-                                exit;
                                 }
+
                             }
 
                         }

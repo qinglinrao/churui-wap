@@ -383,21 +383,23 @@ function get_merchant_grade($merchant){
  * @param $flag 是否由该商家卖出产品
  * @return float|int
  */
-function get_product_profit_churui($product,$merchant,$flag){
+function get_product_profit_churui($product,$merchant,$flag,$x){
+
     if($flag){
-        switch(get_merchant_grade($merchant)){
-            case 'three':
+        return $product['three_profit']/100.0*$product->profit;
+    }else{
+
+        switch($x){
+            case 1:
                 return $product['three_profit']/100.0*$product->profit;
                 break;
-            case 'two':
-                return ($product['three_profit']+$product['two_profit'])/100.0*$product->profit;
+            case 2:
+                return $product['two_profit']/100.0*$product->profit;
                 break;
-            case 'first':
-                return ($product['three_profit']+$product['two_profit']+$product['first_profit'])/100.0*$product->profit;
+            case 3:
+                return $product['first_profit']/100.0*$product->profit;
                 break;
         }
-    }else{
-        return $product[get_merchant_grade($merchant).'_profit']/100.0*$product->profit;
     }
 }
 
