@@ -67,6 +67,7 @@
                 }else{
                     var buyDirect = true;
                 }
+
                 openAttributesForm(true,buyDirect);
             }
         });
@@ -127,9 +128,9 @@
             //set attributes form height in product detail page
             showing = true;
             var win_h = $(window).height();
-            if($wrapper.height() > win_h*0.6){
+           /*if($wrapper.height() > win_h*0.6){
                 $wrapper.height(win_h*0.6);
-            }
+            }*/
             $attributes.height($wrapper.height() - $prodInfo.outerHeight())
 
             scrollTop = $(window).scrollTop();

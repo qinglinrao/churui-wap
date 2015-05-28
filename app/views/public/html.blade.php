@@ -10,7 +10,6 @@
       <meta name="description" content=""/>
     {{HTML::style('assets/css/base.css')}}
     {{HTML::style('assets/css/public.css')}}
-    {{--{{HTML::style('assets/css/layout.css')}}--}}
     {{HTML::style('assets/css/layout.css')}}
     {{HTML::style('libraries/owl-carousel/owl.carousel.css')}}
     {{HTML::style('libraries/owl-carousel/owl.transitions.css')}}

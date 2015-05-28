@@ -52,6 +52,7 @@ Route::filter('auth_merchant', function()
 
 Route::filter('auth_customer', function()
 {
+
     if (Auth::customer()->guest())
     {
         Session::put('redirectUrl',URL::previous());
@@ -61,7 +62,6 @@ Route::filter('auth_customer', function()
         }
         else
         {
-
             return Redirect::route('customers.login');
         }
     }
@@ -76,6 +76,11 @@ Route::filter('auth.basic', function()
 Route::filter('get_mid', function()
 {
     get_merchant_id_from_url();
+});
+
+Route::filter('get_cid', function()
+{
+    get_customer_id_from_url();
 });
 
 /*

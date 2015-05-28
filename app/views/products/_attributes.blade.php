@@ -41,6 +41,17 @@
 					<span class="plus">+</span>
 				</div>
 			</div>
+
+            <div id="sure">
+                <table class="add-to-cart">
+                    <tbody>
+                    <tr>
+                        <td class="confirm"><span class="submit-button"><span>确定</span></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
 			{{Form::hidden('entityId',0,['id'=>'entityId'])}}
 			{{Form::hidden('productId',$product->id)}}
 			{{Form::hidden('shopId',$shop_id,['id'=>'shopId'])}}

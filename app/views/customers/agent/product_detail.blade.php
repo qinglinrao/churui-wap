@@ -50,11 +50,16 @@
             </div>
         </a>
     </div>
-    <a href="">
-        <div  class="spxq-buy">
-            <p>立即购买</p>
-        </div>
-    </a>
+    @include('products._attributes')
+
+    <div id="footer">
+        <a href="javascript:void(0)">
+            <div  class="spxq-buy">
+                <p class="buy-button">立即购买</p>
+            </div>
+        </a>
+
+    </div>
 @section('scripts')
     @parent
     <script src="/assets/js/jquery.ScrollPic.js " type="text/javascript "></script>

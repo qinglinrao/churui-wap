@@ -325,6 +325,19 @@ function get_merchant_id_from_url()
         Session::put('JC', 0);
     }
 }
+
+function get_customer_id_from_url()
+{
+    if (Input::has('CID')) {
+        Session::put('CID', Input::get('CID'));
+    } else if (!Session::has('CID')) {
+        Session::put('CID', 0);
+    }
+
+
+}
+
+
 /**
  * 判断邀请码MID是否正确
 * @param $mid
@@ -335,6 +348,16 @@ function judge_right_MID($mid){
     $merchant = Merchant::where('id',$mid)->first();
     if($merchant){
         return $merchant->id;
+    }else{
+        return 0;
+    }
+}
+
+function judge_right_CID($cid){
+    $cid = base64_decode($cid);
+    $customer = Customer::where('id',$cid)->first();
+    if($customer){
+        return $customer->id;
     }else{
         return 0;
     }

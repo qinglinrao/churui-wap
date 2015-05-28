@@ -98,9 +98,10 @@ class AgentController extends BaseController {
 
     public function getCode($id){
 
-        $value="http://m.unesmall.com/products/".$id;
+        $value="http://120.24.164.194:8070/agent/product/6/detail?CID=".base64_encode(2);
+
         $errorCorrectionLevel = "L";
-        $matrixPointSize = "10";
+        $matrixPointSize = "3";
         QRcode::png($value, false, $errorCorrectionLevel, $matrixPointSize);
         exit;
     }

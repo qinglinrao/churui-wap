@@ -119,7 +119,6 @@ class ShoppingController extends BaseController {
 
     //直接购买check
     public function anyCheckoutDirect(){
-
         $data = Input::all();
 
         $addresses = Address::customer()->get();

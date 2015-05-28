@@ -52,7 +52,7 @@ class CustomerController extends BaseController{
 
     //跳转向客户注册页面
     public function getRegister(){
-        return View::make('customers.register')->with('MID',Session::get('MID'));
+        return View::make('customers.register')->with('CID',Session::get('CID'));
     }
 
     //客户注册操作
@@ -61,7 +61,7 @@ class CustomerController extends BaseController{
             'mobile' => Input::get('mobile'),
             'password' => Input::get('password'),
             'authcode' => Input::get('authcode'),
-            'merchant_id' => judge_right_MID(Input::get('merchant_id'))
+            'leader_id' => judge_right_CID(Input::get('leader_id'))
         );
         $rules = array(
             'mobile' =>"required|cnphone|unique:customers",
@@ -89,7 +89,7 @@ class CustomerController extends BaseController{
             $customer->mobile = $data['mobile'];
             $customer->encrypted_password = Hash::make($data['password']);
             $customer->confirmed = 1;
-            $customer->merchant_id = $data['merchant_id'];
+            $customer->leader_id = $data['leader_id'];
             $customer->status = 1;
 
             DB::transaction(function() use ($customer,$data){
