@@ -97,8 +97,9 @@ class AgentController extends BaseController {
     }
 
     public function getCode($id){
+        $customer_id = Auth::customer()->check()?Auth::customer()->user()->id:0;
 
-        $value="http://120.24.164.194:8070/agent/product/6/detail?CID=".base64_encode(2);
+        $value="http://120.24.164.194:8070/agent/product/6/detail?CID=".base64_encode($customer_id);
 
         $errorCorrectionLevel = "L";
         $matrixPointSize = "3";

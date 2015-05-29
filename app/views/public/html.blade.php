@@ -14,7 +14,10 @@
     {{HTML::style('libraries/owl-carousel/owl.carousel.css')}}
     {{HTML::style('libraries/owl-carousel/owl.transitions.css')}}
     {{HTML::style("assets/css/classical-style.css")}}
-    {{HTML::style("assets/css/agent.css")}}
+      @if(!isset($css_link))
+      {{HTML::style("assets/css/agent.css")}}
+      @endif
+
     {{HTML::script('libraries/jquery-1.11.1.js')}}
     {{--{{HTML::script('assets/js/media.js')}}--}}
 {{--    {{HTML::style("assets/css/fashion-style.css")}}--}}

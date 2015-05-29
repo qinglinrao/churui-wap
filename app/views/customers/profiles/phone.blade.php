@@ -1,6 +1,9 @@
 @extends('public.html')
 
 @section('wrapper')
+    <link rel="stylesheet" type="text/css" href="/assets/css/agent_layout.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/layout_new.css">
+
 	<div id="main-wrapper">
 	<p class="form-tip">{{$errors->first()}}</p>
 		<div id="header" class="clearfix">

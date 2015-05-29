@@ -40,8 +40,9 @@ class CustomerProfileController extends BaseController {
 
     //修改绑定手机页
     public function getPhone(){
-
+        $css_link = 'customer_link';
         return View::make('customers.profiles.phone')
+                     ->with('css_link',$css_link)
                      ->with('customer',Auth::customer()->check()?Auth::customer()->user():null);
     }
 

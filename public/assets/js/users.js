@@ -378,7 +378,7 @@
             }
             $.ajax({
                 url: $(this).attr('action'),
-                data:{'mobile':phone,'password':password,'authcode':authcode,'merchant_id':merchant_id},
+                data:{'mobile':phone,'password':password,'authcode':authcode,'leader_id':merchant_id},
                 dataType: 'json',
                 type: 'post',
                 beforeSend:function(){

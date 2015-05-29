@@ -11,6 +11,7 @@
 
 
 @section('wrapper')
+    <link rel="stylesheet" type="text/css" href="/assets/css/agent_layout.css">
 	<div id="main-wrapper">
 		<div id="header" class="clearfix">
 			<div class="left">

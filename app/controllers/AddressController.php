@@ -11,8 +11,13 @@ class AddressController  extends BaseController{
     //获取地址列表
     public function getIndex(){
 
-        $addresses = Address::customer()->orderBy('id','desc')->get();
+        //默认地址
+        $d_address = Address::customer()->where('default',1)->first();
+        //其他地址
+        $addresses = Address::customer()->where('default','!=',1)->orderBy('id','desc')->get();
+
         return View::make('customers.addresses.index')
+                     ->with('d_address',$d_address)
                      ->with('addresses',$addresses);
     }
 

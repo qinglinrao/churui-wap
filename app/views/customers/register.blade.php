@@ -1,35 +1,7 @@
 @extends('public.html')
 
 @section('wrapper')
-<style type="text/css">
-    @media (max-width: 640px) {
-        html {
-            font-size: 15px; } }
-    @media (max-width: 600px) {
-        html {
-            font-size: 14px; } }
-    @media (max-width: 560px) {
-        html {
-            font-size: 13px; } }
-    @media (max-width: 520px) {
-        html {
-            font-size: 12px; } }
-    @media (max-width: 480px) {
-        html {
-            font-size: 11px; } }
-    @media (max-width: 440px) {
-        html {
-            font-size: 10px; } }
-    @media (max-width: 400px) {
-        html {
-            font-size: 9px; } }
-    @media (max-width: 360px) {
-        html {
-            font-size: 8px; } }
-    @media (max-width: 320px) {
-        html {
-            font-size: 8px; } }
-</style>
+    <link rel="stylesheet" type="text/css" href="/assets/css/agent_layout.css">
 
 	<div id="main-wrapper">
 

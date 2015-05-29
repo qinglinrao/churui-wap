@@ -1,7 +1,11 @@
 @extends('public.html')
 
 @section('wrapper')
-
+    <style type="text/css">
+        .phone{
+            font-size: 1.1rem;
+        }
+    </style>
     <div class="top">
         <ul>
             <li class="back-arrow"><a href="#"><img src="/assets/images/churui/back-arrow.png" width="60%" height="60%" ></a></li>
