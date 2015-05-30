@@ -32,7 +32,8 @@
     <div  class="other-dizhi">
         <div  class="dizhi-title">
             <p>
-                <a href=""><span class="dizhi-item">地址</span></a>
+                <a href="javascript:void(0)"><span class="dizhi-item">地址</span></a>
+                <a href="{{ URL::route('address.default',array('id'=>$address->id)) }}"><span class="dizhi-item" style="font-size: 10px;">(点击设置为默认地址)</span></a>
                 <a href="{{URL::route('address.del',array('id'=>$address->id))}}" onclick="return confirm('你确定要删除该地址吗?')"><span class="dizhi-del">删除</span></a>
                 <a href="{{URL::route('address.edit',array('id'=>$address->id))}}"><span class="dizhi-edit">编辑</span></a>
             </p>

@@ -161,7 +161,7 @@ Route::group(['before'=>'get_cid'],function(){
             Route::get('address/{id}/del', ['as' => 'address.del', 'uses' => 'AddressController@getDel']);
             Route::get('address/{id}/edit', ['as' => 'address.edit', 'uses' => 'AddressController@getEdit']);
             Route::post('address/update', ['as' => 'address.update', 'uses' => 'AddressController@postEdit']);
-            Route::post('address/{id}/default', ['as' => 'address.default', 'uses' => 'AddressController@postSetDefault']);
+            Route::get('address/{id}/default', ['as' => 'address.default', 'uses' => 'AddressController@postSetDefaultChurui']);
 
             Route::get('profile', ['as' => 'customers.profile', 'uses' => 'CustomerProfileController@getIndex']);
             Route::get('profile/detail', ['as' => 'customers.profile.detail', 'uses' => 'CustomerProfileController@getDetail']);

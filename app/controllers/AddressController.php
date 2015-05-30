@@ -179,6 +179,21 @@ class AddressController  extends BaseController{
         }
     }
 
+    public function postSetDefaultChurui($id){
+
+        $address = Address::where('id',$id)->customer()->first();
+        if($address){
+            DB::transaction(function() use ($address){
+                Address::customer()->whereNotIn('id', array($address->id))->update(array('default' => 0));
+                $address->default = 1;
+                $address->save();
+            });
+            return Redirect::route('addresses');
+        }else{
+            return Redirect::route('addresses')->withErrors(array('error'=>'地址不存在'));
+        }
+    }
+
 
     //获取已选择的地区编号
    public function getSelectAddress($p_id,$c_id,$d_id){

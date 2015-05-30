@@ -37,6 +37,9 @@ class CashController extends BaseController {
             }
             $account_log = new CustomerAccountLog;
             $account_log->money = $data['money'];
+            $account_log->log = '申请提现'.$data['money'].'元';
+            $account_log->trade_type = 0;  //0--支出 1--收入
+            $account_log->operate_type = 1; //1--提现 2--佣金
             $account_log->customer_id = Input::get('customer_id');
 
             $customer->money -=  $data['money'];
