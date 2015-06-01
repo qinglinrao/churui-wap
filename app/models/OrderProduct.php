@@ -29,6 +29,10 @@ class OrderProduct  extends Base{
         return $this->belongsTo('customer','agent_id','id');
     }
 
+    public function expectProfit(){
+        return $this->hasMany('CustomerAccountLog','order_id','order_id');
+    }
+
 
 
 } 

@@ -128,11 +128,11 @@ class OrderController extends BaseController {
         $order->status_id = 1; //待支付
         $order->status_name = '待支付';
         $order->payment_method = Input::get('payment');
+        $order->agent_id = Auth::customer()->user()->leader->id?Auth::customer()->user()->leader->id:0;
         $order->customer_id = Auth::customer()->user()->id;
 
         if($order->save()){
             Session::forget('buyDirectData');//删除直接购买的商品SESSION
-
             $this->bindOrderProducts($type,$order,$entities);
             $this->bindOrderAddress($order);
             $this->addOrderHistory($order,1);
@@ -147,11 +147,13 @@ class OrderController extends BaseController {
 
     //绑定订单产品
     private function bindOrderProducts($type,$order,$entities){
+        $agent_id = Auth::customer()->user()->leader->id?Auth::customer()->user()->leader->id:0;
+
         if($type === 'buy_direct'){ //直接购买
 
             $entity = $entities[0];
 
-            $orderProduct = $this->getOrderProduct($order,$entity,Input::get('quantity'),Input::get('shopId'));
+            $orderProduct = $this->getOrderProduct($order,$entity,Input::get('quantity'),Input::get('shopId'),$agent_id);
 
             DB::table('customer_order_products')->insert($orderProduct);
 
@@ -161,7 +163,7 @@ class OrderController extends BaseController {
             $orderProducts = [];
             foreach($cartItems as $item){
                 $entity = $item->entity;
-                $orderProducts[] = $this->getOrderProduct($order,$entity,$item->quantity,$item->shop_id);
+                $orderProducts[] = $this->getOrderProduct($order,$entity,$item->quantity,$item->shop_id,$agent_id);
             }
 
             DB::table('customer_order_products')->insert($orderProducts);
@@ -189,7 +191,7 @@ class OrderController extends BaseController {
     }
 
     //获取(设置)订单产品信息
-    private function getOrderProduct($order,$entity,$quantity,$shop_id){
+    private function getOrderProduct($order,$entity,$quantity,$shop_id,$agent_id){
 
         $orderProduct = [
             'name' => $entity->product->name,
@@ -203,6 +205,7 @@ class OrderController extends BaseController {
             'product_entity_id' => $entity->id,
             'order_id' => $order->id,
             'image_url'=> $entity->product->image->url,
+            'agent_id' => $agent_id,
             'shop_id' => $shop_id
         ];
 

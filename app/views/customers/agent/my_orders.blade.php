@@ -73,7 +73,7 @@
                                         <span class="kefenrun">
                                             可分润：
                                             <b>
-                                                ￥{{$product->product->profit}}
+                                                ￥{{$product->expect_profit[0]->money}}
                                             </b>
                                         </span>
                                         <span class="mydd-num">
@@ -97,7 +97,7 @@
                                 <span class="mydd-fenrun">
                                     分润：
                                     <b>
-                                        ￥146.00
+                                        ￥{{number_format($product->expect_profit[0]->money * $product->quantity,2)}}
                                     </b>
                                 </span>
                         </div>
@@ -145,7 +145,7 @@
                                         <span class="kefenrun">
                                             可分润：
                                             <b>
-                                                ￥{{$product->product->profit}}
+                                                ￥{{$product->expect_profit[0]->money}}
                                             </b>
                                         </span>
                                         <span class="mydd-num">
@@ -169,7 +169,7 @@
                                 <span class="mydd-fenrun">
                                     分润：
                                     <b>
-                                        ￥146.00
+                                        ￥{{number_format($product->expect_profit[0]->money * $product->quantity,2)}}
                                     </b>
                                 </span>
                         </div>
@@ -218,7 +218,7 @@
                                         <span class="kefenrun">
                                             可分润：
                                             <b>
-                                                ￥{{$product->product->profit}}
+                                                ￥{{$product->expect_profit[0]->money}}
                                             </b>
                                         </span>
                                         <span class="mydd-num">
@@ -242,7 +242,7 @@
                                 <span class="mydd-fenrun">
                                     分润：
                                     <b>
-                                        ￥146.00
+                                        ￥{{number_format($product->expect_profit[0]->money * $product->quantity,2)}}
                                     </b>
                                 </span>
                         </div>
@@ -300,7 +300,7 @@
                                             <span class="kefenrun">
                                                 可分润：
                                                 <b>
-                                                    ￥{{$product->product->profit}}
+                                                    ￥{{$product->expect_profit[0]->money}}
                                                 </b>
                                             </span>
                                             <span class="mydd-num">
@@ -325,7 +325,7 @@
                                         <span class="mydd-fenrun">
                                             分润：
                                             <b>
-                                                ￥146.00
+                                                ￥{{number_format($product->expect_profit[0]->money * $product->quantity,2)}}
                                             </b>
                                         </span>
                                 </div>

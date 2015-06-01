@@ -146,7 +146,7 @@ class AutoProfitCommand extends Command {
         }
 
         //判断每一个订单，代理能分多少。
-        $orders2 = Order::where('is_profited','!=',2)->get();
+        $orders2 = Order::where('is_expected',0)->get();
 
         //$orders = Order::whereIn('status_id',[4,5])->where('is_payed',1)->where('is_profited',0)->where('pay_at','<=',Carbon::now()->subMinutes(2))->get();
 
@@ -167,7 +167,7 @@ class AutoProfitCommand extends Command {
                                     $x = 1;
                                     $customer = $order->buyer;
 
-                                    $merchant_profit_money = get_product_profit_churui($product->product,$merchant,true,$x) * $product->quantity;
+                                    $merchant_profit_money = get_product_profit_churui($product->product,$merchant,true,$x);
 
                                     // $merchant->money += $merchant_profit_money;
                                     //$merchant->shop_profit += $merchant_profit_money;
@@ -190,7 +190,7 @@ class AutoProfitCommand extends Command {
                                     while($a<=2 && $merchant->leader){
 
                                         $leader = $merchant->leader;
-                                        $leader_profit_money = get_product_profit_churui($product->product,$leader,false,$x) * $product->quantity;
+                                        $leader_profit_money = get_product_profit_churui($product->product,$leader,false,$x);
 
                                         // $leader->money += $leader_profit_money;
 //                                        $leader->shop_profit += $leader_profit_money;
@@ -218,7 +218,7 @@ class AutoProfitCommand extends Command {
 
                         }
 
-                        $order->is_profited = 2;
+                        $order->is_expected = 1;
                         $order->save();
                     }
 

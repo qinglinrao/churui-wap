@@ -31,13 +31,14 @@ class AgentController extends BaseController {
     public function getAgentMyOrders(){
 
         //全部
-        $orders = Order::with('products.product.image')->where('agent_id',$this->customer->id)->get();
+        $orders = Order::with(array('products.expectProfit'=>function($query){$query->where('type','expect')->where('customer_id',$this->customer->id);}))->with('products.product.image')->where('agent_id',$this->customer->id)->get();
         //未付款
-        $orders2 = Order::with('products.product.image')->where('agent_id',$this->customer->id)->whereIn('status_id',array('1'))->get();
+        $orders2 = Order::with(array('products.expectProfit'=>function($query){$query->where('type','expect')->where('customer_id',$this->customer->id);}))->with('products.product.image')->where('agent_id',$this->customer->id)->whereIn('status_id',array('1'))->get();
         //已付款
-        $orders3 = Order::with('products.product.image')->where('agent_id',$this->customer->id)->whereIn('status_id',array('2','3','4','5','6','12'))->get();
+        $orders3 = Order::with(array('products.expectProfit'=>function($query){$query->where('type','expect')->where('customer_id',$this->customer->id);}))->with('products.product.image')->where('agent_id',$this->customer->id)->whereIn('status_id',array('2','3','4','5','6','12'))->get();
         //已分润
         $orders4 = Order::where('agent_id',$this->customer->id)->where('is_profited',1)->orderBy('pay_at','desc')->get();
+
 
         //查询出已经分润的有几个日期
         $arr = array();
@@ -51,9 +52,8 @@ class AgentController extends BaseController {
 
         //根据日期来查询已经分润的订单
         foreach($arr as $a){
-            $profit_orders["$a"] = Order::with('products.product.image')->where('agent_id',$this->customer->id)->where('is_profited',1)->where('pay_at','like','%'.$a.'%')->get();
+            $profit_orders["$a"] = Order::with(array('products.expectProfit'=>function($query){$query->where('type','expect')->where('customer_id',$this->customer->id);}))->with('products.product.image')->where('agent_id',$this->customer->id)->where('is_profited',1)->where('pay_at','like','%'.$a.'%')->get();
         }
-
 
         $merchant = $this->customer;
 
